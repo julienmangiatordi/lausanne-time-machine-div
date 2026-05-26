@@ -512,21 +512,21 @@ const METIERS_SALARIES_1951 = [
 
   // Divers salariés
   'religieuse', 'representant',
-  'vendeur', 'vendeuse',
+  'vendeur', 'vendeuse', 'etud',
   'employe', 'employee', 'empl',
 
   // Profession = juste "hôtel" → domicile chez l'habitant
-  'hotel',
+  'hotel', 
 ];
 
 function normaliserTexte(s) {
   return (s || '')
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')  // accents
-    .replace(/[''`']/g, '')           // apostrophes
-    .replace(/[.,]/g, ' ')            // points et virgules → espace
-    .replace(/\s+/g, ' ')             // espaces multiples → 1 espace
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[\u0027\u0060\u00b4\u2018\u2019\u201a\u201b\u2032]/g, '') // ← TOUTES les apostrophes unicode
+    .replace(/[.,]/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
