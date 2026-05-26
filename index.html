@@ -202,7 +202,6 @@ header{
 @keyframes spin{to{transform:rotate(360deg);}}
 #loading p{font-size:var(--text-sm);color:var(--text-muted);}
 
-
 /* ── MODE TABS ───────────────────────────────────────── */
 #mode-tabs {
   flex-shrink:0;
@@ -347,7 +346,6 @@ header{
   </div>
 </header>
 
-
 <div id="mode-tabs">
   <button class="mode-tab active" data-mode="carte">🗺 Carte</button>
   <button class="mode-tab" data-mode="evolution">📈 Évolution</button>
@@ -394,7 +392,6 @@ header{
     <p>Aucun lieu ne correspond<br>aux filtres sélectionnés.</p>
   </div>
 
-
   <div id="evol-info">
     <div class="evol-info-title">Centre de densité</div>
     <div class="evol-info-year" id="evol-info-year">—</div>
@@ -405,11 +402,13 @@ header{
       Trajectoire
     </div>
   </div>
+
   <div id="heat-legend">
     <div class="evol-info-title">Densité</div>
     <div class="heat-grad"></div>
     <div class="heat-grad-labels"><span>Faible</span><span>Forte</span></div>
   </div>
+
   <div id="legend">
     <div class="legend-title">Précision</div>
     <div class="legend-item"><div class="legend-dot" style="background:#6daa45"></div>Adresse exacte</div>
@@ -418,9 +417,6 @@ header{
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-//  CONFIG
-// ═══════════════════════════════════════════════════════
 const PERIODS = [
   { year:1832, label:'1832', file:'1832.geojson' },
   { year:1888, label:'1888', file:'1888.geojson' },
@@ -429,7 +425,6 @@ const PERIODS = [
   { year:2026, label:'2026', file:'2026.geojson' },
 ];
 
-// Catégories normalisées du site avec leurs couleurs
 const CAT_COLORS = {
   'Bar / Café':              '#c4954a',
   'Restaurant':              '#6daa45',
@@ -441,128 +436,134 @@ const CAT_COLORS = {
   'Autre':                   '#7a7974',
 };
 
-// ═══════════════════════════════════════════════════════
-//  MAPPING DES CATÉGORIES GEOJSON → CATÉGORIES DU SITE
-// ═══════════════════════════════════════════════════════
-function normaliserCategorie(properties, annee) {
+const PROFESSIONS_A_EXCLURE_1951 = [
+  'cuisinier','cuisiniere','chef de cuisine','g. de cuisine',
+  'maitre d\'hotel','maître d\'hôtel','m. d\'hotel','m d\'hotel',
+  'sous-dir.','sous-directeur','directeur','dir.',
+  'employe d\'hotel','employé d\'hôtel','emp. d\'hotel','emp. d\'hôtel','empi, hôtel',
+  'argentier','portier','concierge','receptionniste','réceptionniste',
+  'lingere','lingère','gouvernante','femme de chambre',
+  'sommelier','sommel.','garcon','garçon','serveur','serveuse',
+  'caissiere','caissière','vendeur','vendeuse',
+  'domest.','domestique','religieuse','representant','représentant'
+];
 
-  // ── 1832 ─────────────────────────────────────────────
+function normaliserTexte(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
+
+function estEntreeAMetierExclure1951(props) {
+  const prof = normaliserTexte(props.profession);
+  const adr = normaliserTexte(props.adresse);
+  const ligne = normaliserTexte(props.ligne_brute);
+  const texte = [prof, adr, ligne].join(' ');
+
+  if (!texte) return false;
+
+  return PROFESSIONS_A_EXCLURE_1951.some(m =>
+    texte === m ||
+    texte.startsWith(m + ' ') ||
+    texte.startsWith(m + ',') ||
+    texte.includes(m + ' ')
+  );
+}
+
+function normaliserCategorie(properties, annee) {
   if (annee === 1832) {
     const t = (
-      properties.type_simplifie_1832 ||   // ← nom réel du champ
-      properties.typesimplifie1832   ||   // fallback ancienne version
+      properties.type_simplifie_1832 ||
+      properties.typesimplifie1832 ||
       ''
     ).trim();
 
-  const map = {
-    'Débit de boisson':       'Bar / Café',
-    'Traiteur / Restaurant':  'Restaurant',
-    'Hôtel / Auberge':        'Hôtel / Pension',
-    'Café-billard':           'Café-Billard',
-    'Spectacle / Sociabilité':'Spectacle / Sociabilité',
-    'Brasserie':              'Brasserie',
+    const map = {
+      'Débit de boisson':       'Bar / Café',
+      'Traiteur / Restaurant':  'Restaurant',
+      'Hôtel / Auberge':        'Hôtel / Pension',
+      'Café-billard':           'Café-Billard',
+      'Spectacle / Sociabilité':'Spectacle / Sociabilité',
+      'Brasserie':              'Brasserie',
     };
     return map[t] || 'Autre';
-   }
+  }
 
-  // ── 1888 ─────────────────────────────────────────────
   if (annee === 1888) {
     const t = (properties.type_simplifie || '').trim();
-
-    // Catégories directes
-    if (t === 'Café')     return 'Bar / Café';
-    if (t === 'Pinte')    return 'Bar / Café';
-    if (t === 'Hôtel')    return 'Hôtel / Pension';
+    if (t === 'Café') return 'Bar / Café';
+    if (t === 'Pinte') return 'Bar / Café';
+    if (t === 'Hôtel') return 'Hôtel / Pension';
     if (t === 'Brasserie') return 'Brasserie';
 
-    // Affinage des "Autre" via le champ 'use'
     if (t === 'Autre') {
       const use = (properties.use || '').toLowerCase();
-
-      // Casino-Théâtre
       if (use.includes('casino') || use.includes('théâtre')) return 'Spectacle / Sociabilité';
-      // Billard
-      if (use.includes('billard'))        return 'Café-Billard';
-      // Jeux de quilles
+      if (use.includes('billard')) return 'Café-Billard';
       if (use.includes('jeux de quille')) return 'Spectacle / Sociabilité';
-      // Salle à manger
       if (use.includes('salle à manger') || use.includes('salle manger')) return 'Restaurant';
-      // Salles de réunion / société (salle vitrée, magasins+salle, entrée de salle, salle seule)
-      if (use.includes('salle vitrée'))   return 'Club / Société';
+      if (use.includes('salle vitrée')) return 'Club / Société';
       if (use.includes('entrée de salle')) return 'Club / Société';
-      if (use.includes('salle'))          return 'Club / Société';
-      // Balcons, hangars, forges, chaudières → vraiment Autre
+      if (use.includes('salle')) return 'Club / Société';
       return 'Autre';
-  }
-
+    }
     return 'Autre';
   }
-  // ── 1923 ─────────────────────────────────────────────
+
   if (annee === 1923) {
     const t = (properties.type_simplifie || properties.typesimplifie || '').trim();
     const map = {
-      // Valeurs réelles du fichier 1923
-      'Spectacle / Sociabilité':  'Spectacle / Sociabilité',
-      'Traiteur / Restaurant':    'Restaurant',
-      'Hôtel / Auberge':          'Hôtel / Pension',
-      'Débit de boisson':         'Bar / Café',
-      'Brasserie':                'Brasserie',
-      // Variantes sans accents
       'Spectacle / Sociabilité': 'Spectacle / Sociabilité',
-      'Hôtel / Auberge':         'Hôtel / Pension',
-      'Débit de boisson':        'Bar / Café',
-      // Variantes anciennes au cas où
-      'Hôtel Auberge':            'Hôtel / Pension',
-      'Htel Auberge':             'Hôtel / Pension',
-      'Débit de boisson':         'Bar / Café',
-      'Dbit de boisson':          'Bar / Café',
-      'Café-billard':             'Café-Billard',
-      'Caf-billard':              'Café-Billard',
-      'Traiteur Restaurant':      'Restaurant',
-      'Spectacle Sociabilité':    'Spectacle / Sociabilité',
-      'Spectacle Sociabilit':     'Spectacle / Sociabilité',
-      'Cercle Club Société':      'Club / Société',
-      'Cercle Club Socit':        'Club / Société',
+      'Traiteur / Restaurant': 'Restaurant',
+      'Hôtel / Auberge': 'Hôtel / Pension',
+      'Débit de boisson': 'Bar / Café',
+      'Brasserie': 'Brasserie',
+      'Hôtel Auberge': 'Hôtel / Pension',
+      'Htel Auberge': 'Hôtel / Pension',
+      'Dbit de boisson': 'Bar / Café',
+      'Café-billard': 'Café-Billard',
+      'Caf-billard': 'Café-Billard',
+      'Traiteur Restaurant': 'Restaurant',
+      'Spectacle Sociabilité': 'Spectacle / Sociabilité',
+      'Spectacle Sociabilit': 'Spectacle / Sociabilité',
+      'Cercle Club Société': 'Club / Société',
+      'Cercle Club Socit': 'Club / Société',
     };
     return map[t] || t || 'Autre';
   }
 
-  // ── 1951 ─────────────────────────────────────────────
-  if (annee === 1951) { 
+  if (annee === 1951) {
     const t = (
-      properties.type_simplifie_1951 ||  // ← nom réel du champ
-      properties.typesimplifie1951   ||  // fallback ancienne version
+      properties.type_simplifie_1951 ||
+      properties.typesimplifie1951 ||
       ''
     ).trim();
 
     const map = {
-      'Hôtel / Auberge':           'Hôtel / Pension',
-      'Restaurant / Traiteur':     'Restaurant',
-      'Café / Bar':                'Bar / Café',
-      'Théâtre / Spectacle':       'Spectacle / Sociabilité',
-      'Cercle / Club / Société':   'Club / Société',
-      'Brasserie':                 'Brasserie',
-      'Café-Billard':              'Café-Billard',
+      'Hôtel / Auberge': 'Hôtel / Pension',
+      'Restaurant / Traiteur': 'Restaurant',
+      'Café / Bar': 'Bar / Café',
+      'Théâtre / Spectacle': 'Spectacle / Sociabilité',
+      'Cercle / Club / Société': 'Club / Société',
+      'Brasserie': 'Brasserie',
+      'Café-Billard': 'Café-Billard',
       'Cabaret / Dancing / Boîte': 'Club / Discothèque',
     };
     return map[t] || 'Autre';
-}
+  }
 
-  // ── 2026 (OpenStreetMap) ──────────────────────────────
   if (annee === 2026) {
     const tourism = (properties.tourism || '').trim().toLowerCase();
     if (tourism === 'hotel' || tourism === 'hostel') return 'Hôtel / Pension';
     const a = (properties.amenity || '').trim().toLowerCase();
     const map = {
       'restaurant': 'Restaurant',
-      'cafe':       'Bar / Café',
-      'bar':        'Bar / Café',
-      'pub':        'Bar / Café',
-      'nightclub':  'Club / Discothèque',
-      'theatre':    'Spectacle / Sociabilité',
-      'cinema':     'Spectacle / Sociabilité',
-      'hotel':      'Hôtel / Pension',
-      'hostel':     'Hôtel / Pension',
+      'cafe': 'Bar / Café',
+      'bar': 'Bar / Café',
+      'pub': 'Bar / Café',
+      'nightclub': 'Club / Discothèque',
+      'theatre': 'Spectacle / Sociabilité',
+      'cinema': 'Spectacle / Sociabilité',
+      'hotel': 'Hôtel / Pension',
+      'hostel': 'Hôtel / Pension',
     };
     return map[a] || 'Autre';
   }
@@ -570,53 +571,47 @@ function normaliserCategorie(properties, annee) {
   return 'Autre';
 }
 
-// ═══════════════════════════════════════════════════════
-//  EXTRACTION DES PROPRIÉTÉS SELON L'ANNÉE
-// ═══════════════════════════════════════════════════════
 function extractProps(props, y) {
   let nom, metier, adresse, catRaw, precision;
 
   if (y === 1832) {
-    nom      = props.nom || '—';
-    metier   = props.metier || '';
-    adresse  = props.adressebrute || props['adresse_brute'] || '';
-    catRaw   = props.typesimplifie1832 || '';
-    precision= props.geocodageprecision || props['geocodage_precision'] || null;
+    nom = props.nom || '—';
+    metier = props.metier || '';
+    adresse = props.adressebrute || props['adresse_brute'] || '';
+    catRaw = props.typesimplifie1832 || '';
+    precision = props.geocodageprecision || props['geocodage_precision'] || null;
   } else if (y === 1888) {
-    nom      = props.owner || '—';
-    metier   = props.use || '';
-    adresse  = props.adressecomplete || props['adresse_complete'] || '';
-    catRaw   = props.typesimplifie || '';
-    precision= null;
+    nom = props.owner || '—';
+    metier = props.use || '';
+    adresse = props.adressecomplete || props['adresse_complete'] || '';
+    catRaw = props.typesimplifie || '';
+    precision = null;
   } else if (y === 1923) {
-    nom      = props.nom || '—';
-    metier   = props.metier || '';
-    adresse  = props['adresse_brute'] || props.adressebrute || '';
-    catRaw   = props['type_simplifie'] || props.type_simplifie || '';
-    precision= props['geocodage_precision'] || props.geocodage_precision || null;
+    nom = props.nom || '—';
+    metier = props.metier || '';
+    adresse = props['adresse_brute'] || props.adressebrute || '';
+    catRaw = props['type_simplifie'] || props.type_simplifie || '';
+    precision = props['geocodage_precision'] || props.geocodage_precision || null;
   } else if (y === 1951) {
-    nom      = props.nom || '—';
-    metier   = props.profession || '';
-    adresse  = props.lignebrute || props.adresse || '';
-    catRaw   = props.typesimplifie1951 || '';
-    precision= props.geocodageprecision || null;
+    nom = props.nom || '—';
+    metier = props.profession || '';
+    adresse = props.ligne_brute || props.adresse || '';
+    catRaw = props.typesimplifie1951 || '';
+    precision = props.geocodageprecision || null;
   } else if (y === 2026) {
-    nom      = props.name || '—';
-    metier   = props.amenity || '';
-    const num= props['addr:housenumber'] || props.addrhousenumber || '';
-    const rue= props['addr:street']      || props.addrstreet      || '';
-    adresse  = [num, rue].filter(Boolean).join(' ') || '';
-    catRaw   = props.amenity || '';
-    precision= 'adresse';
+    nom = props.name || '—';
+    metier = props.amenity || '';
+    const num = props['addr:housenumber'] || props.addrhousenumber || '';
+    const rue = props['addr:street'] || props.addrstreet || '';
+    adresse = [num, rue].filter(Boolean).join(' ') || '';
+    catRaw = props.amenity || '';
+    precision = 'adresse';
   }
 
   const catNorm = normaliserCategorie(props, y);
   return { nom, metier, adresse, catRaw, catNorm, precision };
 }
 
-// ═══════════════════════════════════════════════════════
-//  ÉTAT
-// ═══════════════════════════════════════════════════════
 const state = {
   periodIdx: 0,
   activeCats: new Set(Object.keys(CAT_COLORS)),
@@ -624,18 +619,14 @@ const state = {
   loaded: new Set(),
 };
 
-// ═══════════════════════════════════════════════════════
-//  CARTE
-// ═══════════════════════════════════════════════════════
 const map = L.map('map', { center:[46.521, 6.631], zoom:14 });
 let tileBase, tileLabels;
-// place to keep optional historic GeoTIFF overlays (year -> layer)
 const geoTiffOverlays = {};
 let overlaysControl = null;
 
 function setTiles() {
   const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-  if (tileBase)   map.removeLayer(tileBase);
+  if (tileBase) map.removeLayer(tileBase);
   if (tileLabels) map.removeLayer(tileLabels);
   const baseUrl = dark
     ? 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
@@ -644,91 +635,42 @@ function setTiles() {
     ? 'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'
     : 'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png';
   const attr = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OSM</a> &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>';
-  tileBase   = L.tileLayer(baseUrl, { attribution:attr, subdomains:'abcd', maxZoom:19 }).addTo(map);
-  tileLabels = L.tileLayer(labUrl,  { attribution:'',   subdomains:'abcd', maxZoom:19 }).addTo(map);
+  tileBase = L.tileLayer(baseUrl, { attribution:attr, subdomains:'abcd', maxZoom:19 }).addTo(map);
+  tileLabels = L.tileLayer(labUrl, { attribution:'', subdomains:'abcd', maxZoom:19 }).addTo(map);
 }
 setTiles();
 
 const markersLayer = L.layerGroup().addTo(map);
 
-// PNG overlay loader using pre-computed bounds from bounds.json
-// Expected files: assets/images/{year}.png + bounds in assets/images/bounds.json
-
 async function loadImageOverlays() {
   const overlays = {};
-  
   try {
-    // Load bounds from JSON file
     const boundsResp = await fetch('./assets/images/bounds.json');
-    if (!boundsResp.ok) {
-      console.warn('[Overlay] bounds.json not found');
-      return;
-    }
-    
+    if (!boundsResp.ok) return;
     const boundsData = await boundsResp.json();
-    console.log('[Overlay] Loaded bounds:', boundsData);
-    
-    // For each period, try to load PNG with bounds from JSON
     for (const p of PERIODS) {
       const imageUrl = `./assets/images/${p.label}.png`;
       const boundsKey = p.label;
-      
-      // Check if we have bounds for this year
-      if (!boundsData[boundsKey]) {
-        console.debug(`[Overlay] No bounds for ${p.label}`);
-        continue;
-      }
-      
+      if (!boundsData[boundsKey]) continue;
       const bounds = boundsData[boundsKey];
-      
       try {
-        console.log(`[Overlay] Attempting to load ${p.label}...`);
-        
-        // Fetch the image
         const imgResp = await fetch(imageUrl);
-        if (!imgResp.ok) {
-          console.warn(`[Overlay] PNG not found for ${p.label}: ${imgResp.status}`);
-          continue;
-        }
-        
-        // Create image overlay with bounds from JSON
+        if (!imgResp.ok) continue;
         const overlay = L.imageOverlay(imageUrl, bounds, {
           opacity: 0.7,
           interactive: false,
           className: `overlay-${p.label}`
         });
-        
         overlays[`${p.label} (Carte historique)`] = overlay;
-        
-        console.log(`✓ [Overlay] Successfully loaded overlay for ${p.label}`, { bounds });
-        
-      } catch (err) {
-        console.error(`✗ [Overlay] Failed to load overlay for ${p.label}:`, err.message);
-      }
+      } catch {}
     }
-    
-    // Add layers control if we loaded any overlays
     if (Object.keys(overlays).length > 0) {
       overlaysControl = L.control.layers(null, overlays, { collapsed: false }).addTo(map);
-      console.log(`✓ [Overlay] Added ${Object.keys(overlays).length} overlay(s) to layers control`);
-    } else {
-      console.warn('[Overlay] No overlays were loaded');
     }
-    
-  } catch (err) {
-    console.error('[Overlay] Error in loadImageOverlays:', err.message);
-  }
+  } catch {}
 }
+setTimeout(() => { loadImageOverlays(); }, 500);
 
-// Delay loading overlays to ensure map is ready
-setTimeout(() => {
-  console.log('[Overlay] Starting overlay loader...');
-  loadImageOverlays();
-}, 500);
-
-// ═══════════════════════════════════════════════════════
-//  CHARGEMENT GEOJSON
-// ═══════════════════════════════════════════════════════
 async function loadPeriod(p) {
   if (state.loaded.has(p.year)) return;
   try {
@@ -737,22 +679,26 @@ async function loadPeriod(p) {
     const gj = await r.json();
     state.data[p.year] = gj.features || [];
   } catch(e) {
-    console.warn(`Impossible de charger ${p.file}:`, e.message);
     state.data[p.year] = [];
   }
+
+  if (p.year === 1951) {
+    state.data[p.year] = (state.data[p.year] || []).filter(f => {
+      const props = f.properties || {};
+      return !estEntreeAMetierExclure1951(props);
+    });
+  }
+
   state.loaded.add(p.year);
 }
 
-// ═══════════════════════════════════════════════════════
-//  RENDU MARQUEURS
-// ═══════════════════════════════════════════════════════
 function esc(s) {
   return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '';
 }
 
 function buildPopup(props, y) {
-  const { nom, metier, adresse, catRaw, catNorm, precision } = extractProps(props, y);
-  const color     = CAT_COLORS[catNorm] || '#7a7974';
+  const { nom, metier, adresse, catNorm, precision } = extractProps(props, y);
+  const color = CAT_COLORS[catNorm] || '#7a7974';
   const precClass = precision==='adresse' ? 'prec-adresse' : precision==='ville' ? 'prec-ville' : 'prec-null';
   const precLabel = precision==='adresse' ? 'Adresse exacte' : precision==='ville' ? 'Position approchée' : 'Précision inconnue';
   return `
@@ -769,7 +715,7 @@ function buildPopup(props, y) {
 
 function renderMarkers() {
   markersLayer.clearLayers();
-  const period   = PERIODS[state.periodIdx];
+  const period = PERIODS[state.periodIdx];
   const features = state.data[period.year] || [];
   let count = 0;
 
@@ -778,11 +724,11 @@ function renderMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
 
-    const props    = f.properties || {};
+    const props = f.properties || {};
     const { catNorm, precision } = extractProps(props, period.year);
     if (!state.activeCats.has(catNorm)) return;
 
-    const color   = CAT_COLORS[catNorm] || '#7a7974';
+    const color = CAT_COLORS[catNorm] || '#7a7974';
     const fallback = precision === 'ville';
     const r = fallback ? 6 : 7;
 
@@ -804,13 +750,10 @@ function renderMarkers() {
   document.getElementById('empty-state').style.display = count === 0 ? 'block' : 'none';
 }
 
-// ═══════════════════════════════════════════════════════
-//  UI — SLIDER
-// ═══════════════════════════════════════════════════════
 function initSlider() {
-  const slider  = document.getElementById('yearSlider');
+  const slider = document.getElementById('yearSlider');
   const display = document.getElementById('yearDisplay');
-  const ticks   = document.getElementById('yearTicks');
+  const ticks = document.getElementById('yearTicks');
   ticks.innerHTML = PERIODS.map(p => `<span>${p.label}</span>`).join('');
 
   const update = () => {
@@ -829,9 +772,6 @@ function initSlider() {
   });
 }
 
-// ═══════════════════════════════════════════════════════
-//  UI — FILTRES
-// ═══════════════════════════════════════════════════════
 function initCatFilters() {
   const container = document.getElementById('catFilters');
   Object.entries(CAT_COLORS).forEach(([cat, color]) => {
@@ -842,7 +782,7 @@ function initCatFilters() {
     btn.innerHTML = `<div class="dot"></div>${cat}`;
     btn.addEventListener('click', () => {
       if (state.activeCats.has(cat)) { state.activeCats.delete(cat); btn.classList.remove('active'); }
-      else                           { state.activeCats.add(cat);    btn.classList.add('active');    }
+      else { state.activeCats.add(cat); btn.classList.add('active'); }
       renderMarkers();
     });
     container.appendChild(btn);
@@ -850,7 +790,7 @@ function initCatFilters() {
 }
 
 function refreshCatButtons() {
-  const year    = PERIODS[state.periodIdx].year;
+  const year = PERIODS[state.periodIdx].year;
   const present = new Set((state.data[year] || []).map(f => {
     const { catNorm } = extractProps(f.properties || {}, year);
     return catNorm;
@@ -860,9 +800,6 @@ function refreshCatButtons() {
   });
 }
 
-// ═══════════════════════════════════════════════════════
-//  THÈME
-// ═══════════════════════════════════════════════════════
 (function(){
   const btn = document.querySelector('[data-theme-toggle]');
   let t = 'dark';
@@ -881,10 +818,6 @@ function refreshCatButtons() {
   }
 })();
 
-
-// ═══════════════════════════════════════════════════════
-//  MODULE ÉVOLUTION — HEATMAP + TRAJECTOIRE CENTROÏDE
-// ═══════════════════════════════════════════════════════
 const ANNEES = [1832, 1888, 1923, 1951, 2026];
 
 const evol = {
@@ -897,7 +830,6 @@ const evol = {
   active: false,
 };
 
-// ── Calcul du centroïde ──────────────────────────────
 function calculerCentroide(points) {
   if (!points.length) return null;
   const lat = points.reduce((s,p) => s + p[0], 0) / points.length;
@@ -905,7 +837,6 @@ function calculerCentroide(points) {
   return [lat, lon];
 }
 
-// ── Récupérer les points filtrés par année+catégorie ─
 function getPointsEvol(annee, categorie) {
   const features = state.data[annee] || [];
   return features
@@ -922,13 +853,11 @@ function getPointsEvol(annee, categorie) {
     });
 }
 
-// ── Afficher la heatmap + centroïde pour une année ───
 function afficherEvolAnnee(anneeIdx) {
   const annee = ANNEES[anneeIdx];
-  const cat   = evol.categorie;
-  const pts   = getPointsEvol(annee, cat);
+  const cat = evol.categorie;
+  const pts = getPointsEvol(annee, cat);
 
-  // Heatmap
   if (evol.heatLayer) map.removeLayer(evol.heatLayer);
   evol.heatLayer = null;
   if (pts.length) {
@@ -938,7 +867,6 @@ function afficherEvolAnnee(anneeIdx) {
     }).addTo(map);
   }
 
-  // Centroïde de l'année courante
   evol.centroideMarkers.forEach(m => map.removeLayer(m));
   evol.centroideMarkers = [];
   const centre = calculerCentroide(pts.map(p => [p[0], p[1]]));
@@ -954,7 +882,6 @@ function afficherEvolAnnee(anneeIdx) {
     evol.centroideMarkers.push(pulse);
   }
 
-  // Trajectoire de tous les centroïdes jusqu'à cette année
   if (evol.trajectoire) map.removeLayer(evol.trajectoire);
   evol.trajectoire = null;
 
@@ -971,7 +898,6 @@ function afficherEvolAnnee(anneeIdx) {
       weight:3, opacity:0.7, dashArray:'7 6'
     }).addTo(map);
 
-    // Petits marqueurs historiques sur la trajectoire
     trailPoints.slice(0, -1).forEach(tp => {
       const ghost = L.circleMarker(tp.latlng, {
         radius:6, color:CAT_COLORS[cat] || '#c4954a', weight:2,
@@ -984,12 +910,10 @@ function afficherEvolAnnee(anneeIdx) {
     });
   }
 
-  // Mise à jour de l'overlay info
   document.getElementById('evol-info-year').textContent = annee;
   document.getElementById('evol-info-count').textContent =
     pts.length ? `${pts.length} lieu${pts.length>1?'x':''}` : 'Aucun lieu';
 
-  // Slider
   const slid = document.getElementById('evol-slider');
   slid.value = anneeIdx;
   const pct = (anneeIdx / (ANNEES.length-1)) * 100;
@@ -997,16 +921,11 @@ function afficherEvolAnnee(anneeIdx) {
   document.getElementById('evol-year-display').textContent = annee;
 }
 
-// ── Charger toutes les années pour cette catégorie ───
 async function preloadAllYears() {
-  for (const p of PERIODS) {
-    await loadPeriod(p);
-  }
+  for (const p of PERIODS) await loadPeriod(p);
 }
 
-// ── Init du module Evolution ─────────────────────────
 async function initEvolution() {
-  // Remplir le select
   const sel = document.getElementById('evol-cat-select');
   sel.innerHTML = '';
   Object.keys(CAT_COLORS).forEach(cat => {
@@ -1018,17 +937,15 @@ async function initEvolution() {
 
   sel.addEventListener('change', () => {
     evol.categorie = sel.value;
-    evol.anneeIdx  = +document.getElementById('evol-slider').value;
+    evol.anneeIdx = +document.getElementById('evol-slider').value;
     afficherEvolAnnee(evol.anneeIdx);
   });
 
-  // Slider
   document.getElementById('evol-slider').addEventListener('input', e => {
     evol.anneeIdx = +e.target.value;
     afficherEvolAnnee(evol.anneeIdx);
   });
 
-  // Play / Pause
   const playBtn = document.getElementById('evol-play-btn');
   playBtn.addEventListener('click', () => {
     if (evol.playInterval) {
@@ -1037,7 +954,6 @@ async function initEvolution() {
       playBtn.textContent = '▶';
     } else {
       playBtn.textContent = '⏸';
-      // Rembobiner si on est à la fin
       if (evol.anneeIdx >= ANNEES.length - 1) evol.anneeIdx = 0;
       evol.playInterval = setInterval(() => {
         evol.anneeIdx++;
@@ -1052,11 +968,10 @@ async function initEvolution() {
   });
 }
 
-// ── Activer / désactiver le mode Evolution ───────────
 function activerModeEvolution() {
   evol.active = true;
   markersLayer.clearLayers();
-  document.getElementById('controls').style.display   = 'none';
+  document.getElementById('controls').style.display = 'none';
   document.getElementById('evol-panel').classList.add('visible');
   document.getElementById('evol-info').classList.add('visible');
   document.getElementById('heat-legend').classList.add('visible');
@@ -1069,9 +984,8 @@ function activerModeEvolution() {
 
 function desactiverModeEvolution() {
   evol.active = false;
-  // Nettoyer les couches évolution
-  if (evol.heatLayer)    map.removeLayer(evol.heatLayer);
-  if (evol.trajectoire)  map.removeLayer(evol.trajectoire);
+  if (evol.heatLayer) map.removeLayer(evol.heatLayer);
+  if (evol.trajectoire) map.removeLayer(evol.trajectoire);
   evol.centroideMarkers.forEach(m => map.removeLayer(m));
   evol.heatLayer = null; evol.trajectoire = null; evol.centroideMarkers = [];
   if (evol.playInterval) { clearInterval(evol.playInterval); evol.playInterval = null; }
@@ -1085,7 +999,6 @@ function desactiverModeEvolution() {
   renderMarkers();
 }
 
-// ── Onglets Carte / Évolution ─────────────────────────
 function initTabs() {
   document.querySelectorAll('.mode-tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -1097,9 +1010,6 @@ function initTabs() {
   });
 }
 
-// ═══════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════
 async function init() {
   initSlider();
   initCatFilters();
