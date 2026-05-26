@@ -531,22 +531,21 @@ function normaliserTexte(s) {
 }
 
 function estDomicilePrivé1951(props) {
-  // Si une organisation est renseignée → c'est un vrai établissement, on garde
   const org = (props.organisation || '').trim();
   if (org && org !== 'null' && org !== 'nan') return false;
 
-  // Si la profession est vide → probablement un établissement mal renseigné, on garde
   const prof = normaliserTexte(props.profession);
   if (!prof) return false;
 
-  const excluNorm = METIERS_SALARIES_1951.map(normaliserTexte);
-
-  // Correspondance exacte ou profession suivie d'une virgule/espace (ex: "cuisinier, av. du Rond-Point")
-  return excluNorm.some(m =>
-    prof === m ||
-    prof.startsWith(m + ',') ||
-    prof.startsWith(m + ' ')
-  );
+  return METIERS_SALARIES_1951.some(m => {
+    const mn = normaliserTexte(m);
+    return (
+      prof === mn              ||   // correspondance exacte
+      prof.startsWith(mn + ' ') ||  // suivi d'un espace
+      prof.startsWith(mn + ',') ||  // suivi d'une virgule (après norm → espace mais au cas où)
+      prof.startsWith(mn + '.')     // suivi d'un point (idem)
+    );
+  });
 }
 
 // ═══════════════════════════════════════════════════════
