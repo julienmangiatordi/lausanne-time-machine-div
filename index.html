@@ -549,6 +549,59 @@ function estDomicilePrivé1951(props) {
 }
 
 // ═══════════════════════════════════════════════════════
+//  FILTRE DOMICILES RESTAURANTS 1951
+//  Un point est un domicile de restaurateur si :
+//    - organisation est vide (pas de nom d'établissement)
+//    - ET la catégorie normalisée est Restaurant
+//  Les vrais restaurants/traiteurs ont toujours un nom d'établissement
+//  dans le champ organisation (ex: "Restaurant de la Navigation")
+// ═══════════════════════════════════════════════════════
+const METIERS_RESTAURATEURS_1951 = [
+  // Restaurateur / traiteur
+  'restaurateur', 'restauratrice',
+  'traiteur', 'traiteuse',
+  'aubergiste',
+  // Gérant de restaurant
+  'gerant de restaurant', 'gerante de restaurant',
+  'prop de restaurant', 'propr de restaurant',
+  'propriet restaurant', 'propriétaire restaurant',
+  // Cuisinier (domicile)
+  'cuisinier', 'cuisiniere',
+  'chef cuisinier', 'chef cuisiniere',
+  'patissier', 'patissiere',
+  'charcutier', 'charcutiere',
+  // Garçon / serveuse de restaurant
+  'garcon de restaurant', 'serveuse de restaurant',
+  // Cafetier
+  'cafetier', 'cafetiere',
+  'cafe', 'cafe-restaurant', 'cafe restaurant',
+];
+
+function estDomicileRestaurant1951(props) {
+  // Si organisation est renseignée -> vrai établissement, pas un domicile
+  const org = (props.organisation || '').trim();
+  if (org && org !== 'null' && org !== 'nan') return false;
+
+  // Vérifier si la catégorie est Restaurant
+  const t = (props.type_simplifie_1951 || props.typesimplifie1951 || '').trim();
+  if (t !== 'Restaurant / Traiteur') return false;
+
+  // Si organisation vide + catégorie Restaurant -> domicile privé d'un restaurateur
+  // SAUF si ligne_brute contient clairement un nom d'établissement
+  // (ex: "café - restaurant de la Navigation")
+  const ligne = normaliserTexte(props.ligne_brute || props.adresse || '');
+  const motsCles = [
+    'restaurant', 'cafe', 'traiteur', 'auberge', 'brasserie',
+    'buffet', 'taverne', 'buffet de la gare', 'pizzeria', 'rotisserie',
+    'grill', 'snack', 'tea-room', 'tearoom'
+  ];
+  const hasEtablissement = motsCles.some(m => ligne.includes(m));
+  if (hasEtablissement) return false; // ligne_brute mentionne un établissement -> garder
+
+  return true; // organisation vide + catégorie Restaurant + pas de nom d'établissement -> domicile
+}
+
+// ═══════════════════════════════════════════════════════
 //  MAPPING DES CATÉGORIES GEOJSON → CATÉGORIES DU SITE
 // ═══════════════════════════════════════════════════════
 function normaliserCategorie(properties, annee) {
@@ -780,7 +833,8 @@ async function loadPeriod(p) {
   // ── Filtrage 1951 : supprimer les domiciles privés ──
   if (p.year === 1951) {
     state.data[p.year] = state.data[p.year].filter(f => {
-      return !estDomicilePrivé1951(f.properties || {});
+      const props = f.properties || {};
+      return !estDomicilePrivé1951(props) && !estDomicileRestaurant1951(props);
     });
   }
 
@@ -844,7 +898,7 @@ function renderMarkers() {
     count++;
   });
 
-  document.getElementById('countNum').textContent = count.toLocaleString('fr-CH');
+  document.getElementById('countNum').textContent = String(count);
   document.getElementById('empty-state').style.display = count === 0 ? 'block' : 'none';
 }
 
