@@ -900,6 +900,19 @@ function renderMarkers() {
 
   document.getElementById('countNum').textContent = String(count);
   document.getElementById('empty-state').style.display = count === 0 ? 'block' : 'none';
+
+  // Mettre à jour le compteur en fonction des bounds visibles de la carte
+  function updateVisibleCount() {
+    const bounds = map.getBounds();
+    let visible = 0;
+    markersLayer.eachLayer(function(layer) {
+      if (bounds.contains(layer.getLatLng())) visible++;
+    });
+    document.getElementById('countNum').textContent = String(visible);
+  }
+  updateVisibleCount();
+  map.off('moveend', updateVisibleCount);
+  map.on('moveend', updateVisibleCount);
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1077,6 +1090,7 @@ function afficherEvolAnnee(anneeIdx) {
   document.getElementById('evol-info-year').textContent = annee;
   document.getElementById('evol-info-count').textContent =
     pts.length ? `${pts.length} lieu${pts.length>1?'x':''}` : 'Aucun lieu';
+  document.getElementById('countNum').textContent = String(pts.length);
 
   const slid = document.getElementById('evol-slider');
   slid.value = anneeIdx;
@@ -1135,6 +1149,7 @@ async function initEvolution() {
 function activerModeEvolution() {
   evol.active = true;
   markersLayer.clearLayers();
+  map.off('moveend');
   document.getElementById('controls').style.display   = 'none';
   document.getElementById('evol-panel').classList.add('visible');
   document.getElementById('evol-info').classList.add('visible');
