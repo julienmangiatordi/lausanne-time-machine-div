@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diagnostic complet Overlay</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: monospace; background: #222; color: #eee; padding: 20px; }
+    .container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .panel { background: #1a1a1a; border: 1px solid #444; border-radius: 5px; padding: 15px; }
+    h2 { color: #0f0; margin-bottom: 10px; font-size: 16px; }
+    .log { background: #0a0a0a; padding: 10px; margin: 5px 0; border-left: 3px solid #444; max-height: 300px; overflow-y: auto; font-size: 12px; }
+    .log.ok { border-left-color: #0f0; color: #0f0; }
+    .log.error { border-left-color: #f00; color: #f00; }
+    .log.info { border-left-color: #0ff; color: #0ff; }
+    #map { width: 100%; height: 500px; margin-top: 15px; border: 1px solid #444; }
+    .status { margin: 10px 0; padding: 10px; background: #2a2a2a; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <h1>🔍 Diagnostic Complet - Overlay Map</h1>
+  
+  <div class="container">
+    <div class="panel">
+      <h2>📊 Tests de chargement</h2>
+      <div id="tests-output"></div>
+    </div>
+    
+    <div class="panel">
+      <h2>🗺️ Logs de l'overlay</h2>
+      <div id="logs-output"></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top: 20px;">
+    <h2>🌐 Aperçu de la carte (avec overlay activé)</h2>
+    <div id="map"></div>
+  </div>
+
+  <script>
+    const logsDiv = document.getElementById('logs-output');
+    const testsDiv = document.getElementById('tests-output');
+    
+    function addLog(type, msg) {
+      const div = document.createElement('div');
+      div.className = `log ${type}`;
+      div.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      logsDiv.appendChild(div);
+      logsDiv.scrollTop = logsDiv.scrollHeight;
+      console.log(`[${type.toUpperCase()}] ${msg}`);
+    }
+    
+    function addTest(name, status, details) {
+      const div = document.createElement('div');
+      div.className = `status ${status}`;
+      div.innerHTML = `<strong>${name}:</strong> <span style="color: ${status === 'ok' ? '#0f0' : '#f00'}">${status.toUpperCase()}</span><br><small>${details}</small>`;
+      testsDiv.appendChild(div);
+    }
+
+    // Setup Leaflet map
+    const map = L.map('map').setView([46.521, 6.631], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap',
+      maxZoom: 19
+    }).addTo(map);
+
+    addLog('info', 'Initialisation...');
+
+    // Test functions
+    async function runAllTests() {
+      addLog('info', 'Démarrage des tests de chargement');
+      
+      try {
+        // Test PNG
+        addLog('info', 'Test 1: Chargement PNG...');
+        const pngResp = await fetch('./assets/images/1832.png');
+        if (pngResp.ok) {
+          const blob = await pngResp.blob();
+          addTest('PNG', 'ok', `Chargé: ${(blob.size / 1024 / 1024).toFixed(2)} MB`);
+          addLog('ok', 'PNG chargé avec succès');
+        } else {
+          addTest('PNG', 'error', `HTTP ${pngResp.status}`);
+          addLog('error', `PNG non trouvé: HTTP ${pngResp.status}`);
+        }
+      } catch (e) {
+        addTest('PNG', 'error', e.message);
+        addLog('error', `PNG erreur: ${e.message}`);
+      }
+
+      try {
+        // Test Worldfile
+        addLog('info', 'Test 2: Chargement worldfile...');
+        const wldResp = await fetch('./assets/images/1832.pgw');
+        if (wldResp.ok) {
+          const text = await wldResp.text();
+          addTest('Worldfile', 'ok', 'Chargé');
+          addLog('ok', `Worldfile: ${text.trim().split('\n').join(' | ')}`);
+        } else {
+          addTest('Worldfile', 'error', `HTTP ${wldResp.status}`);
+          addLog('error', `Worldfile non trouvé: HTTP ${wldResp.status}`);
+        }
+      } catch (e) {
+        addTest('Worldfile', 'error', e.message);
+        addLog('error', `Worldfile erreur: ${e.message}`);
+      }
+
+      try {
+        // Test conversion
+        addLog('info', 'Test 3: Conversion UTM → lat/lon...');
+        const wldResp = await fetch('./assets/images/1832.pgw');
+        const text = await wldResp.text();
+        const lines = text.trim().split('\n').map(l => parseFloat(l.trim()));
+        
+        if (lines.length === 6) {
+          const [pixelSizeX, rotX, rotY, pixelSizeY, originX, originY] = lines;
+          
+          // Test conversion function
+          function utm32ToLatLon(easting, northing) {
+            const a = 6378137.0;
+            const e2 = 0.00669438;
+            const k0 = 0.9996;
+            const lon0 = 9.0;
+            let x = easting;
+            let y = northing;
+            const m = y / k0;
+            const mu = m / (a * (1 - e2/4 - 3*e2*e2/64 - 5*e2*e2*e2/256));
+            const phi1Rad = mu + (3*e2/8 + 3*e2*e2/32 - 45*e2*e2*e2/1024) * Math.sin(2*mu)
+                               + (15*e2*e2/256 + 45*e2*e2*e2/1024) * Math.sin(4*mu)
+                               - (35*e2*e2*e2/3072) * Math.sin(6*mu);
+            const c1 = e2 / (1 - e2);
+            const t1 = Math.tan(phi1Rad);
+            const n1 = a / Math.sqrt(1 - e2 * Math.sin(phi1Rad) * Math.sin(phi1Rad));
+            const r1 = a * (1 - e2) / Math.sqrt(Math.pow(1 - e2 * Math.sin(phi1Rad), 3));
+            const d = x / (n1 * k0);
+            const lat = phi1Rad - (t1 / r1) * (d*d/2 - (d*d*d*d/24) * (5 + 3*t1*t1 + 10*c1 - 4*c1*c1 - 9*c1*e2) 
+                            + (d*d*d*d*d*d/720) * (61 + 90*t1*t1 + 28*t1*t1*t1*t1));
+            const lon = (d - (d*d*d/6) * (1 + 2*t1*t1 + c1) 
+                         + (d*d*d*d*d/120) * (5 - 2*c1 + 28*t1*t1 - 3*c1*c1 + 8*c1*e2 + 24*t1*t1*c1*c1)) / Math.cos(phi1Rad);
+            return [lat * 180 / Math.PI, lon0 + lon * 180 / Math.PI];
+          }
+          
+          const [lat, lon] = utm32ToLatLon(originX, originY);
+          addTest('Conversion', 'ok', `UTM (${originX.toFixed(0)}, ${originY.toFixed(0)}) → lat/lon (${lat.toFixed(4)}, ${lon.toFixed(4)})`);
+          addLog('ok', `Conversion réussie: ${lat.toFixed(6)}, ${lon.toFixed(6)}`);
+          
+          // Add marker on map
+          L.marker([lat, lon]).addTo(map).bindPopup(`Coin NW de l'overlay`);
+        }
+      } catch (e) {
+        addTest('Conversion', 'error', e.message);
+        addLog('error', `Conversion erreur: ${e.message}`);
+      }
+
+      try {
+        // Test overlay
+        addLog('info', 'Test 4: Création et ajout overlay...');
+        const imageUrl = './assets/images/1832.png';
+        const wldResp = await fetch('./assets/images/1832.pgw');
+        const text = await wldResp.text();
+        const lines = text.trim().split('\n').map(l => parseFloat(l.trim()));
+        const [pixelSizeX, rotX, rotY, pixelSizeY, originX, originY] = lines;
+        
+        const img = new Image();
+        img.src = imageUrl;
+        
+        await new Promise((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error('Image load error'));
+          setTimeout(() => reject(new Error('Image load timeout')), 5000);
+        });
+
+        function utm32ToLatLon(easting, northing) {
+          const a = 6378137.0;
+          const e2 = 0.00669438;
+          const k0 = 0.9996;
+          const lon0 = 9.0;
+          let x = easting;
+          let y = northing;
+          const m = y / k0;
+          const mu = m / (a * (1 - e2/4 - 3*e2*e2/64 - 5*e2*e2*e2/256));
+          const phi1Rad = mu + (3*e2/8 + 3*e2*e2/32 - 45*e2*e2*e2/1024) * Math.sin(2*mu)
+                             + (15*e2*e2/256 + 45*e2*e2*e2/1024) * Math.sin(4*mu)
+                             - (35*e2*e2*e2/3072) * Math.sin(6*mu);
+          const c1 = e2 / (1 - e2);
+          const t1 = Math.tan(phi1Rad);
+          const n1 = a / Math.sqrt(1 - e2 * Math.sin(phi1Rad) * Math.sin(phi1Rad));
+          const r1 = a * (1 - e2) / Math.sqrt(Math.pow(1 - e2 * Math.sin(phi1Rad), 3));
+          const d = x / (n1 * k0);
+          const lat = phi1Rad - (t1 / r1) * (d*d/2 - (d*d*d*d/24) * (5 + 3*t1*t1 + 10*c1 - 4*c1*c1 - 9*c1*e2) 
+                          + (d*d*d*d*d*d/720) * (61 + 90*t1*t1 + 28*t1*t1*t1*t1));
+          const lon = (d - (d*d*d/6) * (1 + 2*t1*t1 + c1) 
+                       + (d*d*d*d*d/120) * (5 - 2*c1 + 28*t1*t1 - 3*c1*c1 + 8*c1*e2 + 24*t1*t1*c1*c1)) / Math.cos(phi1Rad);
+          return [lat * 180 / Math.PI, lon0 + lon * 180 / Math.PI];
+        }
+
+        const imgWidth = img.width;
+        const imgHeight = img.height;
+        
+        const west_utm = originX;
+        const north_utm = originY;
+        const east_utm = originX + imgWidth * pixelSizeX;
+        const south_utm = originY + imgHeight * pixelSizeY;
+        
+        const [north_lat, west_lon] = utm32ToLatLon(west_utm, north_utm);
+        const [south_lat, east_lon] = utm32ToLatLon(east_utm, south_utm);
+        
+        const bounds = [[south_lat, west_lon], [north_lat, east_lon]];
+        
+        const overlay = L.imageOverlay(imageUrl, bounds, { opacity: 0.7 });
+        overlay.addTo(map);
+        map.fitBounds(bounds);
+        
+        addTest('Overlay', 'ok', `Ajouté avec bounds: ${JSON.stringify(bounds)}`);
+        addLog('ok', `Overlay créé et ajouté à la carte`);
+      } catch (e) {
+        addTest('Overlay', 'error', e.message);
+        addLog('error', `Overlay erreur: ${e.message}`);
+      }
+
+      addLog('info', '✓ Tous les tests terminés');
+    }
+
+    // Run tests after a short delay
+    setTimeout(() => {
+      runAllTests();
+    }, 500);
+  </script>
+</body>
+</html>

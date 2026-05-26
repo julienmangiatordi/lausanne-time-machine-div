@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GeoTIFF Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/geotiff@2.1.3/dist-browser/geotiff.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/georaster@2.1.0/dist/georaster.umd.min.js"></script>
+</head>
+<body>
+  <h1>GeoTIFF Loading Test</h1>
+  <div id="status">Loading...</div>
+  <div id="error" style="color: red;"></div>
+
+  <script>
+    async function testGeoTIFF() {
+      const status = document.getElementById('status');
+      const error = document.getElementById('error');
+      
+      try {
+        console.log('Fetching 1832.tif...');
+        status.textContent = 'Fetching 1832.tif...';
+        
+        const resp = await fetch('./assets/images/1832.tif');
+        console.log('Response status:', resp.status);
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
+        }
+        
+        console.log('Response headers:', {
+          'content-type': resp.headers.get('content-type'),
+          'content-length': resp.headers.get('content-length'),
+        });
+        
+        console.log('Reading arrayBuffer...');
+        status.textContent = 'Reading arrayBuffer...';
+        const arrayBuffer = await resp.arrayBuffer();
+        console.log('ArrayBuffer size:', arrayBuffer.byteLength);
+        
+        console.log('Parsing with window.georaster()...');
+        status.textContent = 'Parsing with window.georaster()...';
+        const georasterObj = await window.georaster(arrayBuffer);
+        
+        console.log('Success! GeoRaster object:', {
+          width: georasterObj.width,
+          height: georasterObj.height,
+          noDataValue: georasterObj.noDataValue,
+          projection: georasterObj.projection,
+        });
+        
+        status.textContent = '✓ GeoTIFF loaded successfully!';
+        status.style.color = 'green';
+      } catch (err) {
+        console.error('Error:', err);
+        error.textContent = `Error: ${err.message}`;
+        status.textContent = '✗ Failed to load GeoTIFF';
+        status.style.color = 'red';
+      }
+    }
+    
+    testGeoTIFF();
+  </script>
+</body>
+</html>

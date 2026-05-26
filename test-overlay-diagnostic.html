@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diagnostic Overlay</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #f0f0f0; }
+    .test { margin: 20px 0; padding: 15px; background: white; border: 1px solid #ccc; border-radius: 5px; }
+    .ok { color: green; }
+    .error { color: red; }
+    .info { color: blue; }
+    pre { background: #f5f5f5; padding: 10px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>Diagnostic des Overlays</h1>
+  
+  <div class="test">
+    <h2>1. Chargement du PNG</h2>
+    <div id="png-status">Vérification...</div>
+    <img id="png-preview" style="max-width: 200px; max-height: 200px; border: 1px solid #ccc; margin-top: 10px;">
+  </div>
+  
+  <div class="test">
+    <h2>2. Chargement du worldfile (.pgw)</h2>
+    <div id="pgw-status">Vérification...</div>
+    <pre id="pgw-content"></pre>
+  </div>
+  
+  <div class="test">
+    <h2>3. Parsing du worldfile</h2>
+    <div id="parse-status">Vérification...</div>
+    <pre id="parse-result"></pre>
+  </div>
+  
+  <div class="test">
+    <h2>4. Conversion UTM → lat/lon</h2>
+    <div id="conversion-status">Vérification...</div>
+    <pre id="conversion-result"></pre>
+  </div>
+
+  <script>
+    async function runTests() {
+      // Test 1: PNG
+      try {
+        const resp = await fetch('./assets/images/1832.png');
+        if (resp.ok) {
+          const blob = await resp.blob();
+          const url = URL.createObjectURL(blob);
+          document.getElementById('png-preview').src = url;
+          document.getElementById('png-status').innerHTML = 
+            `<span class="ok">✓ PNG loaded (${(blob.size / 1024 / 1024).toFixed(2)} MB)</span>`;
+        } else {
+          document.getElementById('png-status').innerHTML = 
+            `<span class="error">✗ HTTP ${resp.status} for PNG</span>`;
+        }
+      } catch (e) {
+        document.getElementById('png-status').innerHTML = 
+          `<span class="error">✗ Error: ${e.message}</span>`;
+      }
+      
+      // Test 2: Worldfile
+      try {
+        const resp = await fetch('./assets/images/1832.pgw');
+        if (resp.ok) {
+          const text = await resp.text();
+          document.getElementById('pgw-content').textContent = text;
+          document.getElementById('pgw-status').innerHTML = 
+            `<span class="ok">✓ Worldfile loaded</span>`;
+        } else {
+          document.getElementById('pgw-status').innerHTML = 
+            `<span class="error">✗ HTTP ${resp.status} for worldfile</span>`;
+        }
+      } catch (e) {
+        document.getElementById('pgw-status').innerHTML = 
+          `<span class="error">✗ Error: ${e.message}</span>`;
+      }
+      
+      // Test 3: Parse
+      try {
+        const resp = await fetch('./assets/images/1832.pgw');
+        const text = await resp.text();
+        const lines = text.trim().split('\n').map(l => parseFloat(l.trim()));
+        
+        if (lines.length === 6 && !lines.some(isNaN)) {
+          const [pixelSizeX, rotX, rotY, pixelSizeY, originX, originY] = lines;
+          document.getElementById('parse-result').textContent = 
+            `pixelSizeX: ${pixelSizeX}\n` +
+            `rotX: ${rotX}\n` +
+            `rotY: ${rotY}\n` +
+            `pixelSizeY: ${pixelSizeY}\n` +
+            `originX: ${originX}\n` +
+            `originY: ${originY}`;
+          document.getElementById('parse-status').innerHTML = `<span class="ok">✓ Parsed correctly</span>`;
+        } else {
+          document.getElementById('parse-status').innerHTML = 
+            `<span class="error">✗ Invalid format or NaN values</span>`;
+          document.getElementById('parse-result').textContent = `Lines: ${lines}`;
+        }
+      } catch (e) {
+        document.getElementById('parse-status').innerHTML = 
+          `<span class="error">✗ Error: ${e.message}</span>`;
+      }
+      
+      // Test 4: Conversion function (copy from index.html)
+      try {
+        function utm32ToLatLon(easting, northing) {
+          const a = 6378137.0;
+          const e2 = 0.00669438;
+          const k0 = 0.9996;
+          const lon0 = 9.0;
+          
+          let x = easting;
+          let y = northing;
+          
+          const m = y / k0;
+          const mu = m / (a * (1 - e2/4 - 3*e2*e2/64 - 5*e2*e2*e2/256));
+          const phi1Rad = mu + (3*e2/8 + 3*e2*e2/32 - 45*e2*e2*e2/1024) * Math.sin(2*mu)
+                             + (15*e2*e2/256 + 45*e2*e2*e2/1024) * Math.sin(4*mu)
+                             - (35*e2*e2*e2/3072) * Math.sin(6*mu);
+          
+          const c1 = e2 / (1 - e2);
+          const t1 = Math.tan(phi1Rad);
+          const n1 = a / Math.sqrt(1 - e2 * Math.sin(phi1Rad) * Math.sin(phi1Rad));
+          const r1 = a * (1 - e2) / Math.sqrt(Math.pow(1 - e2 * Math.sin(phi1Rad), 3));
+          
+          const d = x / (n1 * k0);
+          
+          const lat = phi1Rad - (t1 / r1) * (d*d/2 - (d*d*d*d/24) * (5 + 3*t1*t1 + 10*c1 - 4*c1*c1 - 9*c1*e2) 
+                          + (d*d*d*d*d*d/720) * (61 + 90*t1*t1 + 28*t1*t1*t1*t1));
+          
+          const lon = (d - (d*d*d/6) * (1 + 2*t1*t1 + c1) 
+                       + (d*d*d*d*d/120) * (5 - 2*c1 + 28*t1*t1 - 3*c1*c1 + 8*c1*e2 + 24*t1*t1*c1*c1)) / Math.cos(phi1Rad);
+          
+          return [
+            lat * 180 / Math.PI,
+            lon0 + lon * 180 / Math.PI
+          ];
+        }
+        
+        const resp = await fetch('./assets/images/1832.pgw');
+        const text = await resp.text();
+        const lines = text.trim().split('\n').map(l => parseFloat(l.trim()));
+        const [pixelSizeX, rotX, rotY, pixelSizeY, originX, originY] = lines;
+        
+        const [lat, lon] = utm32ToLatLon(originX, originY);
+        document.getElementById('conversion-result').textContent = 
+          `Input (UTM): ${originX}, ${originY}\n` +
+          `Output (lat/lon): ${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+        document.getElementById('conversion-status').innerHTML = `<span class="ok">✓ Converted</span>`;
+      } catch (e) {
+        document.getElementById('conversion-status').innerHTML = 
+          `<span class="error">✗ Error: ${e.message}</span>`;
+      }
+    }
+    
+    runTests();
+  </script>
+</body>
+</html>

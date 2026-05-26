@@ -464,6 +464,9 @@ const state = {
 // ═══════════════════════════════════════════════════════
 const map = L.map('map', { center:[46.521, 6.631], zoom:14 });
 let tileBase, tileLabels;
+// place to keep optional historic GeoTIFF overlays (year -> layer)
+const geoTiffOverlays = {};
+let overlaysControl = null;
 
 function setTiles() {
   const dark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -482,6 +485,81 @@ function setTiles() {
 setTiles();
 
 const markersLayer = L.layerGroup().addTo(map);
+
+// PNG overlay loader using pre-computed bounds from bounds.json
+// Expected files: assets/images/{year}.png + bounds in assets/images/bounds.json
+
+async function loadImageOverlays() {
+  const overlays = {};
+  
+  try {
+    // Load bounds from JSON file
+    const boundsResp = await fetch('./assets/images/bounds.json');
+    if (!boundsResp.ok) {
+      console.warn('[Overlay] bounds.json not found');
+      return;
+    }
+    
+    const boundsData = await boundsResp.json();
+    console.log('[Overlay] Loaded bounds:', boundsData);
+    
+    // For each period, try to load PNG with bounds from JSON
+    for (const p of PERIODS) {
+      const imageUrl = `./assets/images/${p.label}.png`;
+      const boundsKey = p.label;
+      
+      // Check if we have bounds for this year
+      if (!boundsData[boundsKey]) {
+        console.debug(`[Overlay] No bounds for ${p.label}`);
+        continue;
+      }
+      
+      const bounds = boundsData[boundsKey];
+      
+      try {
+        console.log(`[Overlay] Attempting to load ${p.label}...`);
+        
+        // Fetch the image
+        const imgResp = await fetch(imageUrl);
+        if (!imgResp.ok) {
+          console.warn(`[Overlay] PNG not found for ${p.label}: ${imgResp.status}`);
+          continue;
+        }
+        
+        // Create image overlay with bounds from JSON
+        const overlay = L.imageOverlay(imageUrl, bounds, {
+          opacity: 0.7,
+          interactive: false,
+          className: `overlay-${p.label}`
+        });
+        
+        overlays[`${p.label} (Carte historique)`] = overlay;
+        
+        console.log(`✓ [Overlay] Successfully loaded overlay for ${p.label}`, { bounds });
+        
+      } catch (err) {
+        console.error(`✗ [Overlay] Failed to load overlay for ${p.label}:`, err.message);
+      }
+    }
+    
+    // Add layers control if we loaded any overlays
+    if (Object.keys(overlays).length > 0) {
+      overlaysControl = L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+      console.log(`✓ [Overlay] Added ${Object.keys(overlays).length} overlay(s) to layers control`);
+    } else {
+      console.warn('[Overlay] No overlays were loaded');
+    }
+    
+  } catch (err) {
+    console.error('[Overlay] Error in loadImageOverlays:', err.message);
+  }
+}
+
+// Delay loading overlays to ensure map is ready
+setTimeout(() => {
+  console.log('[Overlay] Starting overlay loader...');
+  loadImageOverlays();
+}, 500);
 
 // ═══════════════════════════════════════════════════════
 //  CHARGEMENT GEOJSON
