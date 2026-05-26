@@ -325,34 +325,36 @@ function normaliserCategorie(properties, annee) {
 
   // ── 1888 ─────────────────────────────────────────────
   if (annee === 1888) {
-    const t = (properties.typesimplifie || '').trim();
-    // Catégories principales directes
-    if (t === 'Café' || t === 'Caf') return 'Bar / Café';
-    if (t === 'Pinte')               return 'Bar / Café';
-    if (t === 'Hôtel' || t === 'Htel') return 'Hôtel / Pension';
-    if (t === 'Brasserie')           return 'Brasserie';
-    if (t === 'Restaurant')          return 'Restaurant';
-    if (t === 'Cabaret')             return 'Bar / Café';
-    if (t === 'Théâtre' || t === 'Theatre') return 'Spectacle / Sociabilité';
-    if (t === 'Cercle')              return 'Club / Société';
+    const t = (properties.type_simplifie || '').trim();
+
+    // Catégories directes
+    if (t === 'Café')     return 'Bar / Café';
+    if (t === 'Pinte')    return 'Bar / Café';
+    if (t === 'Hôtel')    return 'Hôtel / Pension';
+    if (t === 'Brasserie') return 'Brasserie';
+
+    // Affinage des "Autre" via le champ 'use'
     if (t === 'Autre') {
-      // Affinage via le champ 'use'
       const use = (properties.use || '').toLowerCase();
-      if (use.includes('casino') || use.includes('théâtre') || use.includes('theatre')) return 'Spectacle / Sociabilité';
-      if (use.includes('billard'))              return 'Café-Billard';
-      if (use.includes('jeux de quille'))       return 'Spectacle / Sociabilité';
-      if (use.includes('brasserie'))            return 'Brasserie';
-      if (use.includes('salle manger') || use.includes('salle à manger')) return 'Restaurant';
-      if (use.includes('restaurant'))           return 'Restaurant';
-      if (use.includes('salle vitr'))           return 'Club / Société';
-      if (use.includes('entre de salle') || use.includes('entrée de salle')) return 'Club / Société';
-      if (use.includes('salle') && !use.includes('billard')) return 'Club / Société';
+
+      // Casino-Théâtre
+      if (use.includes('casino') || use.includes('théâtre')) return 'Spectacle / Sociabilité';
+      // Billard
+      if (use.includes('billard'))        return 'Café-Billard';
+      // Jeux de quilles
+      if (use.includes('jeux de quille')) return 'Spectacle / Sociabilité';
+      // Salle à manger
+      if (use.includes('salle à manger') || use.includes('salle manger')) return 'Restaurant';
+      // Salles de réunion / société (salle vitrée, magasins+salle, entrée de salle, salle seule)
+      if (use.includes('salle vitrée'))   return 'Club / Société';
+      if (use.includes('entrée de salle')) return 'Club / Société';
+      if (use.includes('salle'))          return 'Club / Société';
       // Balcons, hangars, forges, chaudières → vraiment Autre
       return 'Autre';
-    }
-    return t || 'Autre';
   }
 
+    return 'Autre';
+  }
   // ── 1923 ─────────────────────────────────────────────
   if (annee === 1923) {
     const t = (properties.type_simplifie || properties.typesimplifie || '').trim();
