@@ -1,0 +1,2029 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "nom": "Aubert",
+        "metier": "cabaretier",
+        "nomRue": "Halle de St. Laurent",
+        "numRue": 65.0,
+        "adresse_brute": "Aubert, cabaretier, Halle de St. Laurent, 65",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "65 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6297127,
+          46.5199211
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "nom": "Baldy",
+        "metier": "épicier",
+        "nomRue": "Grand-Chêne",
+        "numRue": 28.0,
+        "adresse_brute": "Baldy, épicier, Grand-Chêne, 28",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "28 Grand-Chêne, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "nom": "Bally",
+        "metier": "cordonnier",
+        "nomRue": "rue de la Mercerie",
+        "numRue": 14.0,
+        "adresse_brute": "Bally, cordonnier, rue de la Mercerie, 14",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6315557,
+          46.5216448
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "nom": "Bally",
+        "metier": "tourneur",
+        "nomRue": "Grand St. Jean 9’",
+        "numRue": null,
+        "adresse_brute": "Bally, tourneur, Grand St. Jean, 9’",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "Grand St. Jean 9’, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6321292,
+          46.5194472
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "nom": "Bally",
+        "metier": "voiturier",
+        "nomRue": "Petit-Chêne",
+        "numRue": 1.0,
+        "adresse_brute": "Bally, voiturier, Petit-Chêne, 1",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "1 Petit-Chêne, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6315616,
+          46.5213634
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "nom": "Ballenegger",
+        "metier": "serrurier",
+        "nomRue": "Grand St. Jean",
+        "numRue": 37.0,
+        "adresse_brute": "Ballenegger, serrurier, Grand St. Jean, 37",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "37 Grand St. Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6360319,
+          46.5186404
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "nom": "Ballenegger",
+        "metier": "cabaretier et menuisier",
+        "nomRue": "montée de St. François au fond de la cour",
+        "numRue": 23.0,
+        "adresse_brute": "Ballenegger, cabaretier et menuisier, montée de St. François,23, au fond de la cour",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "23 Avenue du Théâtre, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6314818,
+          46.522421
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "nom": "Barraud",
+        "metier": "traiteur",
+        "nomRue": "montée de St. Laurent",
+        "numRue": 14.0,
+        "adresse_brute": "Barraud, traiteur, montée de St. Laurent, 14",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "14 Rue Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 64,
+        "nom": "Becker ( Henri )",
+        "metier": "fabricant de ouates",
+        "nomRue": "rue de ia Madelaine 4. 6a Beck ( veuve ) traiteur et billard à la bras­ serie de bière rue de Chaucrau",
+        "numRue": 16.0,
+        "adresse_brute": "Becker ( Henri ),fabricant de ouates, rue de ia Madelaine, 4. 6a Beck ( veuve ), traiteur et billard, à la bras­ serie de bière, rue de Chaucrau, 16",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6373358,
+          46.51848
+        ]
+      },
+      "properties": {
+        "id": 69,
+        "nom": "Benoit",
+        "metier": "traiteur",
+        "nomRue": "montée de St. François",
+        "numRue": 1.0,
+        "adresse_brute": "Benoit, traiteur, montée de St. François, 1",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "1 Avenue du Théâtre, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6352987,
+          46.523581
+        ]
+      },
+      "properties": {
+        "id": 73,
+        "nom": "Bernard",
+        "metier": "café et billard",
+        "nomRue": "Cité-devant",
+        "numRue": 9.0,
+        "adresse_brute": "Bernard, café et billard, Cité-devant, 9",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "9 Cité-devant, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.632976,
+          46.5219156
+        ]
+      },
+      "properties": {
+        "id": 81,
+        "nom": "Besson",
+        "metier": "cabaretier",
+        "nomRue": "place de la Palud",
+        "numRue": 12.0,
+        "adresse_brute": "Besson, cabaretier, place de la Palud, 12",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "12 place de la Palud, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6872069,
+          46.5549755
+        ]
+      },
+      "properties": {
+        "id": 83,
+        "nom": "Billard",
+        "metier": "toileries, mo-ntée de St. François",
+        "nomRue": null,
+        "numRue": 11.0,
+        "adresse_brute": "Billard, toileries, mo-ntée de St. François, 11, au 1er étage",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "11, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6359459,
+          46.5249474
+        ]
+      },
+      "properties": {
+        "id": 87,
+        "nom": "Blanc ( Louis )",
+        "metier": "aubergiste au Guillaume Tell",
+        "nomRue": "faubourg de la Barre",
+        "numRue": 13.0,
+        "adresse_brute": "Blanc ( Louis ), aubergiste au Guillaume Tell, faubourg de la Barre, 13",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "13 Rue de la Barre, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6315616,
+          46.5213634
+        ]
+      },
+      "properties": {
+        "id": 127,
+        "nom": "Brélaz",
+        "metier": "traiteur",
+        "nomRue": "Grand St. Jean",
+        "numRue": 40.0,
+        "adresse_brute": "Brélaz, traiteur, Grand St. Jean, 40",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "40 Grand St. Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 134,
+        "nom": "Brun",
+        "metier": "traiteur",
+        "nomRue": "rue de la Madelaine",
+        "numRue": 11.0,
+        "adresse_brute": "Brun, traiteur, rue de la Madelaine, 11",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6039493,
+          46.582133
+        ]
+      },
+      "properties": {
+        "id": 142,
+        "nom": "Bugnion",
+        "metier": "cabaretier",
+        "nomRue": "rue du Pré",
+        "numRue": 14.0,
+        "adresse_brute": "Bugnion, cabaretier, rue du Pré, 14",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "14 rue du Pré, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6363592,
+          46.5204463
+        ]
+      },
+      "properties": {
+        "id": 143,
+        "nom": "Buhler",
+        "metier": "traiteur",
+        "nomRue": "Cheneau de Bourg",
+        "numRue": 49.0,
+        "adresse_brute": "Buhler, traiteur, Cheneau de Bourg, 49",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "49 Cheneau de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6115909,
+          46.5268907
+        ]
+      },
+      "properties": {
+        "id": 160,
+        "nom": "Cachemaille",
+        "metier": "cabaretier, Fetit St. Jean",
+        "nomRue": null,
+        "numRue": 6.0,
+        "adresse_brute": "Cachemaille, cabaretier, Fetit St. Jean, 6",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "6, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 165,
+        "nom": "Cavin",
+        "metier": "( L. ), cabaretier",
+        "nomRue": "rue d’Etraz",
+        "numRue": 1.0,
+        "adresse_brute": "Cavin, ( L. ), cabaretier, rue d’Etraz, 1",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6361232,
+          46.5232645
+        ]
+      },
+      "properties": {
+        "id": 182,
+        "nom": "Chapuis ( veuve )",
+        "metier": "traiteur",
+        "nomRue": "Cité-derrière",
+        "numRue": 12.0,
+        "adresse_brute": "Chapuis ( veuve ), traiteur, Cité-derrière, 12",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "12 Cité-derrière, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6310836,
+          46.5218464
+        ]
+      },
+      "properties": {
+        "id": 191,
+        "nom": "Chavan",
+        "metier": "cabaretier",
+        "nomRue": "Grand St. Jean",
+        "numRue": 23.0,
+        "adresse_brute": "Chavan, cabaretier, Grand St. Jean, 23",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "23 Grand St. Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6576732,
+          46.5422192
+        ]
+      },
+      "properties": {
+        "id": 196,
+        "nom": "Cheseaux",
+        "metier": "cabaretier, mont, de St. Laurent",
+        "nomRue": null,
+        "numRue": 16.0,
+        "adresse_brute": "Cheseaux, cabaretier, mont, de St. Laurent, 16",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "16, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 198,
+        "nom": "Chollet",
+        "metier": "cabaretier",
+        "nomRue": "Halle de St. Laurent",
+        "numRue": 56.0,
+        "adresse_brute": "Chollet, cabaretier, Halle de St. Laurent, 56",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "56 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6341022,
+          46.5196421
+        ]
+      },
+      "properties": {
+        "id": 201,
+        "nom": "Christin",
+        "metier": "traiteur",
+        "nomRue": "place St. François",
+        "numRue": 11.0,
+        "adresse_brute": "Christin, traiteur, place St. François, 11",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "11 place St. François, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6356141,
+          46.5199749
+        ]
+      },
+      "properties": {
+        "id": 209,
+        "nom": "Cœytaux ( Ch. )",
+        "metier": "cabaretier",
+        "nomRue": "rue de Bourg",
+        "numRue": 22.0,
+        "adresse_brute": "Cœytaux ( Ch. ), cabaretier, rue de Bourg, 22",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "22 rue de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6366336,
+          46.5205532
+        ]
+      },
+      "properties": {
+        "id": 210,
+        "nom": "Cœytaux",
+        "metier": "cabaretier",
+        "nomRue": "Cheneau de Bourg",
+        "numRue": 9.0,
+        "adresse_brute": "Cœytaux, cabaretier, Cheneau de Bourg, 9",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "9 Cheneau de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6322981,
+          46.5220467
+        ]
+      },
+      "properties": {
+        "id": 211,
+        "nom": "Cœytaux",
+        "metier": "traiteur et billard, au Coq",
+        "nomRue": "place de la Palud",
+        "numRue": 8.0,
+        "adresse_brute": "Cœytaux, traiteur et billard, au Coq, place de la Palud,8",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "8 place de la Palud, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 235,
+        "nom": "Cottier",
+        "metier": "cabaretier",
+        "nomRue": "pl. St Laurent",
+        "numRue": 2.0,
+        "adresse_brute": "Cottier, cabaretier, pl. St Laurent, 2",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "2 pl. St Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 253,
+        "nom": "Curtet",
+        "metier": "jardinier",
+        "nomRue": "à la brasserie de bière rue Cliaucrau",
+        "numRue": 16.0,
+        "adresse_brute": "Curtet, jardinier, à la brasserie de bière, rue Cliaucrau, 16",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Brasserie",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6370325,
+          46.5195954
+        ]
+      },
+      "properties": {
+        "id": 267,
+        "nom": "Décombaz",
+        "metier": "cabaretier",
+        "nomRue": "rue St. Pierre 19»",
+        "numRue": null,
+        "adresse_brute": "Décombaz, cabaretier, rue St. Pierre, 19»",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "rue St. Pierre 19», Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327534,
+          46.5214501
+        ]
+      },
+      "properties": {
+        "id": 268,
+        "nom": "Décombaz",
+        "metier": "aubergiste au Bras de Fer",
+        "nomRue": "Petit St. Jean",
+        "numRue": 1.0,
+        "adresse_brute": "Décombaz, aubergiste au Bras de Fer, Petit St. Jean, 1",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "1 Petit St. Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 209,
+        "nom": "Decoppet",
+        "metier": "aubergiste à l’Hôtel de France",
+        "nomRue": "place St. Laurent",
+        "numRue": 16.0,
+        "adresse_brute": "Decoppet, aubergiste à l’Hôtel de France, place St. Laurent, 16",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "16 place St. Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6385998,
+          46.5193358
+        ]
+      },
+      "properties": {
+        "id": 284,
+        "nom": "Delavaux",
+        "metier": "cabaretier",
+        "nomRue": "Etraz",
+        "numRue": 42.0,
+        "adresse_brute": "Delavaux, cabaretier, Etraz, 42",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "42 Etraz, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6332268,
+          46.5220821
+        ]
+      },
+      "properties": {
+        "id": 295,
+        "nom": "Delisle",
+        "metier": "aubergiste au Raisin",
+        "nomRue": "pl. de la Palud",
+        "numRue": 19.0,
+        "adresse_brute": "Delisle, aubergiste au Raisin, pl. de la Palud, 19",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "19 pl. de la Palud, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 302,
+        "nom": "Deprez",
+        "metier": "traiteur",
+        "nomRue": "rue de la Mprcerie",
+        "numRue": 13.0,
+        "adresse_brute": "Deprez, traiteur, rue de la Mprcerie, 13",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.596024,
+          46.5822996
+        ]
+      },
+      "properties": {
+        "id": 312,
+        "nom": "Desvignes",
+        "metier": "aubergiste aux Trois-Pigeons",
+        "nomRue": "rue de Martheray",
+        "numRue": 12.0,
+        "adresse_brute": "Desvignes, aubergiste aux Trois-Pigeons, rue de Martheray, 12",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "12 rue de Martheray, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6388483,
+          46.5193579
+        ]
+      },
+      "properties": {
+        "id": 332,
+        "nom": "Dubrez",
+        "metier": "cabaretier",
+        "nomRue": "Etraz",
+        "numRue": 5.0,
+        "adresse_brute": "Dubrez, cabaretier, Etraz, 5",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "5 Etraz, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 335,
+        "nom": "Ducommun",
+        "metier": "traiteur",
+        "nomRue": "rue de la Mercerie",
+        "numRue": 4.0,
+        "adresse_brute": "Ducommun, traiteur, rue de la Mercerie, 4",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6975428,
+          46.5521587
+        ]
+      },
+      "properties": {
+        "id": 367,
+        "nom": "Ernst",
+        "metier": "traiteur } Grand-Chêne",
+        "nomRue": null,
+        "numRue": 24.0,
+        "adresse_brute": "Ernst, traiteur } Grand-Chêne, 24",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "24, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 384,
+        "nom": "Favre",
+        "metier": "aubergiste aux Trois-Suisses",
+        "nomRue": "Halle de St. Laurent",
+        "numRue": 4.0,
+        "adresse_brute": "Favre, aubergiste aux Trois-Suisses, Halle de St. Laurent, 4",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "4 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6346873,
+          46.519927
+        ]
+      },
+      "properties": {
+        "id": 390,
+        "nom": "Fievet",
+        "metier": "aubergiste à la Couronne",
+        "nomRue": "r. de Bourg",
+        "numRue": 10.0,
+        "adresse_brute": "Fievet, aubergiste à la Couronne, r. de Bourg, 10",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "10 r. de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6351596,
+          46.5199939
+        ]
+      },
+      "properties": {
+        "id": 436,
+        "nom": "Gonvers (Philippe)",
+        "metier": "Hôtel du Lion-d’Or. ( Il y a des bains dans l’hôtel )",
+        "nomRue": "rue de Bourg",
+        "numRue": 16.0,
+        "adresse_brute": "Gonvers (Philippe), Hôtel du Lion-d’Or. ( Il y a des bains dans l’hôtel ), rue de Bourg, 16",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "16 rue de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6319427,
+          46.5197574
+        ]
+      },
+      "properties": {
+        "id": 446,
+        "nom": "Gorgerat",
+        "metier": "café et billard",
+        "nomRue": "place St. François",
+        "numRue": 17.0,
+        "adresse_brute": "Gorgerat, café et billard, place St. François, 17",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "17 place St. François, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 449,
+        "nom": "Grand",
+        "metier": "cabaret.ier",
+        "nomRue": "rue de St. Etienne",
+        "numRue": 3.0,
+        "adresse_brute": "Grand, cabaret.ier, rue de St. Etienne, 3",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6341084,
+          46.5201939
+        ]
+      },
+      "properties": {
+        "id": 450,
+        "nom": "Grandchamp",
+        "metier": "traiteur",
+        "nomRue": "rue de Bourg",
+        "numRue": 3.0,
+        "adresse_brute": "Grandchamp, traiteur, rue de Bourg, 3",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "3 rue de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 461,
+        "nom": "Grobety (D.-B. )",
+        "metier": "traiteur",
+        "nomRue": "Halle St. Laurent",
+        "numRue": 40.0,
+        "adresse_brute": "Grobety (D.-B. ), traiteur, Halle St. Laurent, 40",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "40 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6356948,
+          46.5239833
+        ]
+      },
+      "properties": {
+        "id": 475,
+        "nom": "Guignard",
+        "metier": "cabaretier",
+        "nomRue": "Cité-devant",
+        "numRue": 14.0,
+        "adresse_brute": "Guignard, cabaretier, Cité-devant, 14",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "14 Cité-devant, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 483,
+        "nom": "Hansjacob",
+        "metier": "aubergiste au Mouton, derrière les boucheries",
+        "nomRue": null,
+        "numRue": null,
+        "adresse_brute": "Hansjacob, aubergiste au Mouton, derrière les boucheries",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6297127,
+          46.5199211
+        ]
+      },
+      "properties": {
+        "id": 498,
+        "nom": "Henny",
+        "metier": "cabaretier",
+        "nomRue": "Grand-Chêne",
+        "numRue": 26.0,
+        "adresse_brute": "Henny, cabaretier, Grand-Chêne, 26",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "26 Grand-Chêne, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6306039,
+          46.5224635
+        ]
+      },
+      "properties": {
+        "id": 524,
+        "nom": "Horrisperguer",
+        "metier": "aubergiste à la Cicogne",
+        "nomRue": "montée de St. Laurent",
+        "numRue": 20.0,
+        "adresse_brute": "Horrisperguer, aubergiste à la Cicogne, montée de St. Laurent, 20",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "20 Rue Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 561,
+        "nom": "Juge de paix (bureau du )",
+        "metier": "pour le visa des passeports, est ouvert de 9 à midi",
+        "nomRue": "et de 3 à",
+        "numRue": 6.0,
+        "adresse_brute": "Juge de paix (bureau du ), pour le visa des passeports, est ouvert de 9 à midi, et de 3 à 6, derrière l’hôtel de France, St. Laurent",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6815232,
+          46.5395839
+        ]
+      },
+      "properties": {
+        "id": 566,
+        "nom": "Kam",
+        "metier": "aubergiste à l’Etoile d’Or, Grand- Chêne",
+        "nomRue": null,
+        "numRue": 26.0,
+        "adresse_brute": "Kam, aubergiste à l’Etoile d’Or, Grand- Chêne, 26",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "26, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 610,
+        "nom": "Lavanchv",
+        "metier": "cabaretier",
+        "nomRue": "pl. de St. Laurent",
+        "numRue": 26.0,
+        "adresse_brute": "Lavanchv, cabaretier, pl. de St. Laurent, 26",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "26 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 619,
+        "nom": "Léger",
+        "metier": "cabaretier",
+        "nomRue": "rue de la Mercerie",
+        "numRue": 8.0,
+        "adresse_brute": "Léger, cabaretier, rue de la Mercerie, 8",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6346831,
+          46.520191
+        ]
+      },
+      "properties": {
+        "id": 637,
+        "nom": "Longchamp",
+        "metier": "traiteur",
+        "nomRue": "rue de Bourg",
+        "numRue": 15.0,
+        "adresse_brute": "Longchamp, traiteur, rue de Bourg, 15",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "15 rue de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 641,
+        "nom": "Luard",
+        "metier": "traiteur, à Tivoli",
+        "nomRue": null,
+        "numRue": null,
+        "adresse_brute": "Luard, traiteur, à Tivoli",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 645,
+        "nom": "Lugeon",
+        "metier": "café et cabaret",
+        "nomRue": "place S(. François",
+        "numRue": 18.0,
+        "adresse_brute": "Lugeon, café et cabaret, place S(. François, 18",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6313544,
+          46.5204679
+        ]
+      },
+      "properties": {
+        "id": 649,
+        "nom": "Maget",
+        "metier": "aubergiste à VEcusson Vaudois",
+        "nomRue": "place du Pont.",
+        "numRue": 3.0,
+        "adresse_brute": "Maget, aubergiste à VEcusson Vaudois, place du Pont. 3",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "3 place du Pont., Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 661,
+        "nom": "Marguerat",
+        "metier": "café et billard",
+        "nomRue": "montée de la Pa-* lud 1er étage",
+        "numRue": 21.0,
+        "adresse_brute": "Marguerat, café et billard, montée de la Pa-* lud, 21, 1er étage",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6309156,
+          46.5228394
+        ]
+      },
+      "properties": {
+        "id": 708,
+        "nom": "Meylan",
+        "metier": "traiteur",
+        "nomRue": "rue Chaucrau",
+        "numRue": 23.0,
+        "adresse_brute": "Meylan, traiteur, rue Chaucrau, 23",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "23 rue Chaucrau, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6343018,
+          46.5199476
+        ]
+      },
+      "properties": {
+        "id": 727,
+        "nom": "Morand",
+        "metier": "café et billard",
+        "nomRue": "rue de Bourg",
+        "numRue": 6.0,
+        "adresse_brute": "Morand, café et billard, rue de Bourg, 6",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "6 rue de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 777,
+        "nom": "Pahud",
+        "metier": "aubergiste à l'Union",
+        "nomRue": "Halle de St. Laurent",
+        "numRue": 54.0,
+        "adresse_brute": "Pahud, aubergiste à l'Union, Halle de St. Laurent, 54",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "54 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6331764,
+          46.5190456
+        ]
+      },
+      "properties": {
+        "id": 778,
+        "nom": "Pahud ( G. )",
+        "metier": "café et billard",
+        "nomRue": "pl. St. Franç.",
+        "numRue": 15.0,
+        "adresse_brute": "Pahud ( G. ), café et billard, pl. St. Franç. 15",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "15 Place Saint-François, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6370325,
+          46.5195954
+        ]
+      },
+      "properties": {
+        "id": 790,
+        "nom": "Paschoud ( Mme. veuve. )",
+        "metier": "aubergiste à l’hôtel du Faucon",
+        "nomRue": "rue St Pierre",
+        "numRue": 13.0,
+        "adresse_brute": "Paschoud ( Mme. veuve. ), aubergiste à l’hôtel du Faucon, rue St Pierre,13",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "13 rue St Pierre, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 792,
+        "nom": "Paschoud",
+        "metier": "traiteur",
+        "nomRue": "montée de la Palud",
+        "numRue": 1.0,
+        "adresse_brute": "Paschoud, traiteur, montée de la Palud, 1",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 835,
+        "nom": "Police ( bureau de )",
+        "metier": "pour les permis de sé­ jour, hôtel de ville, au 2e étage",
+        "nomRue": "est ouvert de heures à midi",
+        "numRue": 9.0,
+        "adresse_brute": "Police ( bureau de ), pour les permis de sé­ jour, hôtel de ville, au 2e étage, est ouvert de 9 heures à midi",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6352987,
+          46.523581
+        ]
+      },
+      "properties": {
+        "id": 836,
+        "nom": "Ponnaz",
+        "metier": "cabaretier",
+        "nomRue": "Cité-devant",
+        "numRue": 9.0,
+        "adresse_brute": "Ponnaz, cabaretier, Cité-devant, 9",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "9 Cité-devant, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6335886,
+          46.5220393
+        ]
+      },
+      "properties": {
+        "id": 838,
+        "nom": "Porchet",
+        "metier": "veuve, traiteur",
+        "nomRue": "Esc. du marché",
+        "numRue": 5.0,
+        "adresse_brute": "Porchet, veuve, traiteur, Esc. du marché, 5",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "5 Esc. du marché, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6338263,
+          46.5199251
+        ]
+      },
+      "properties": {
+        "id": 841,
+        "nom": "Pouly",
+        "metier": "traiteur",
+        "nomRue": "place St. François",
+        "numRue": 10.0,
+        "adresse_brute": "Pouly, traiteur, place St. François, 10",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "10 place St. François, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6967053,
+          46.5505984
+        ]
+      },
+      "properties": {
+        "id": 848,
+        "nom": "Ramel",
+        "metier": "traiteur, Martlieray",
+        "nomRue": null,
+        "numRue": 13.0,
+        "adresse_brute": "Ramel, traiteur, Martlieray, 13",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "13, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 852,
+        "nom": "Rapaz",
+        "metier": "cabaretier",
+        "nomRue": "rue de Martheray",
+        "numRue": 53.0,
+        "adresse_brute": "Rapaz, cabaretier, rue de Martheray, 53",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6346443,
+          46.521573
+        ]
+      },
+      "properties": {
+        "id": 855,
+        "nom": "Rebillet ( 1311e. )",
+        "metier": "traiteur",
+        "nomRue": "rue Mercerie",
+        "numRue": 6.0,
+        "adresse_brute": "Rebillet ( 1311e. ), traiteur, rue Mercerie, 6",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "6 rue Mercerie, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 858,
+        "nom": "Regamey",
+        "metier": "cabaretier",
+        "nomRue": "rue de la Madelaine",
+        "numRue": 17.0,
+        "adresse_brute": "Regamey, cabaretier, rue de la Madelaine, 17",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 869,
+        "nom": "* Renaud (Ch.)",
+        "metier": "cadet, ferblantier et lampiste, magasin d'objets en tôle vernie, huile épu­ rée, éclaire les salles de bals",
+        "nomRue": "montée de la Palud",
+        "numRue": 21.0,
+        "adresse_brute": "* Renaud (Ch.), cadet, ferblantier et lampiste, magasin d'objets en tôle vernie, huile épu­ rée, éclaire les salles de bals, montée de la Palud, 21",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6318768,
+          46.5224333
+        ]
+      },
+      "properties": {
+        "id": 878,
+        "nom": "Heymond",
+        "metier": "hôtel d'Angleterre, St. Pierre, 24. S78 Reymond, instituteur",
+        "nomRue": "montée de St. Laurent",
+        "numRue": 8.0,
+        "adresse_brute": "Heymond, hôtel d'Angleterre, St. Pierre, 24. S78 Reymond, instituteur, montée de St. Laurent, 8",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "8 Rue Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 926,
+        "nom": "Rouge",
+        "metier": "père, notaire et greffier du Tribunal de District; son bureau est au rez.de-chaussée de l’hôtel de ville",
+        "nomRue": null,
+        "numRue": null,
+        "adresse_brute": "Rouge, père, notaire et greffier du Tribunal de District; son bureau est au rez.de-chaussée de l’hôtel de ville",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6325513,
+          46.5219602
+        ]
+      },
+      "properties": {
+        "id": 929,
+        "nom": "Rouge",
+        "metier": "cabaretier",
+        "nomRue": "Place de la Palud",
+        "numRue": 5.0,
+        "adresse_brute": "Rouge, cabaretier, Place de la Palud, 5",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "5 Place de la Palud, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.629318,
+          46.5255253
+        ]
+      },
+      "properties": {
+        "id": 933,
+        "nom": "Roussi",
+        "metier": "cabaretier",
+        "nomRue": "rue du Pré",
+        "numRue": 18.0,
+        "adresse_brute": "Roussi, cabaretier, rue du Pré, 18",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Débit de boisson",
+        "adresse_geocodage": "18 rue du Pré, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6348149,
+          46.5201839
+        ]
+      },
+      "properties": {
+        "id": 962,
+        "nom": "Schnell",
+        "metier": "aubergiste aux Balances",
+        "nomRue": "rue de Bourg",
+        "numRue": 17.0,
+        "adresse_brute": "Schnell, aubergiste aux Balances, rue de Bourg, 17",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "17 rue de Bourg, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327768,
+          46.521762
+        ]
+      },
+      "properties": {
+        "id": 982,
+        "nom": "Simond (Albert )",
+        "metier": "épicerie, drogueries, ta- tacs, baleines, crin frisé, etc., en gros et en détail",
+        "nomRue": "place de la Palud",
+        "numRue": 2.0,
+        "adresse_brute": "Simond (Albert ), épicerie, drogueries, ta- tacs, baleines, crin frisé, etc., en gros et en détail, place de la Palud, 2",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Spectacle / Sociabilité",
+        "adresse_geocodage": "2 place de la Palud, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6370325,
+          46.5195954
+        ]
+      },
+      "properties": {
+        "id": 986,
+        "nom": "Solier",
+        "metier": "traiteur",
+        "nomRue": "rue St. Pierre",
+        "numRue": 23.0,
+        "adresse_brute": "Solier, traiteur, rue St. Pierre, 23",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "23 rue St. Pierre, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6315616,
+          46.5213634
+        ]
+      },
+      "properties": {
+        "id": 998,
+        "nom": "Stockly",
+        "metier": "traiteur",
+        "nomRue": "rue du Grand St. Jean G",
+        "numRue": null,
+        "adresse_brute": "Stockly, traiteur, rue du Grand St. Jean, G",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Rue Saint-Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6307825,
+          46.5223443
+        ]
+      },
+      "properties": {
+        "id": 1005,
+        "nom": "Tavernier ( Mme. )",
+        "metier": "traiteur",
+        "nomRue": "place de St. Laurent",
+        "numRue": 13.0,
+        "adresse_brute": "Tavernier ( Mme. ), traiteur, place de St. Laurent, 13",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "13 Place Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6050444,
+          46.5262831
+        ]
+      },
+      "properties": {
+        "id": 1010,
+        "nom": "Throst",
+        "metier": "traiteur",
+        "nomRue": "rue du Pré",
+        "numRue": 4.0,
+        "adresse_brute": "Throst, traiteur, rue du Pré, 4",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "4 rue du Pré, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1023,
+        "nom": "Truschel",
+        "metier": "brasseur de bière",
+        "nomRue": "rue Chauorau",
+        "numRue": 16.0,
+        "adresse_brute": "Truschel, brasseur de bière, rue Chauorau, 16",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Brasserie",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6310052,
+          46.5219154
+        ]
+      },
+      "properties": {
+        "id": 1030,
+        "nom": "Valet",
+        "metier": "café et billard",
+        "nomRue": "Grand St. Jean",
+        "numRue": 1.0,
+        "adresse_brute": "Valet, café et billard, Grand St. Jean, 1",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Café-billard",
+        "adresse_geocodage": "1 Grand St. Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6975428,
+          46.5521587
+        ]
+      },
+      "properties": {
+        "id": 1035,
+        "nom": "Vannod",
+        "metier": "aubergiste à tauberge du Pont",
+        "nomRue": null,
+        "numRue": 24.0,
+        "adresse_brute": "Vannod, aubergiste à tauberge du Pont, 24",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "24, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1037,
+        "nom": "Vanney",
+        "metier": "traiteur",
+        "nomRue": "rue de la Madelaine",
+        "numRue": 10.0,
+        "adresse_brute": "Vanney, traiteur, rue de la Madelaine, 10",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
+        "geocodage_precision": "ville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6299758,
+          46.5228777
+        ]
+      },
+      "properties": {
+        "id": 1049,
+        "nom": "Vcz",
+        "metier": "traiteur",
+        "nomRue": "montée de St. Laurent",
+        "numRue": null,
+        "adresse_brute": "Vcz, traiteur, montée de St. Laurent,",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Traiteur / Restaurant",
+        "adresse_geocodage": "Rue Saint-Laurent, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6352987,
+          46.523581
+        ]
+      },
+      "properties": {
+        "id": 1074,
+        "nom": "Wasser",
+        "metier": "aubergiste au Petit. Maure",
+        "nomRue": "Cité- devant",
+        "numRue": 24.0,
+        "adresse_brute": "Wasser, aubergiste au Petit. Maure, Cité- devant, 24",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "24 Cité- devant, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6315616,
+          46.5213634
+        ]
+      },
+      "properties": {
+        "id": 1104,
+        "nom": "* Zwahlen ( Jean.-P. )",
+        "metier": "lithographe",
+        "nomRue": "rue du Grand St. Jean 36. Péages. Vinet commis maison des postes. Béchet sous-commis Petit St. Jean 10. Ciliax douanier. v Ouchy. Carey commis. Monnard sOus-commis. Recordon douanier. Panchaud facteur des sels et commissionnaii'e. Ronget hôtel de l’Ancre. Gorbaz veuve auberge du Léman * Préfet. — M. Clavel ancien Conseiller d'Etat 104- Juge de paix. — M. Bertholet 227- Foires. — Mars 14. Avril 18. Octobre 31. Décembre 19. — Il y a marché tous les samedis",
+        "numRue": null,
+        "adresse_brute": "* Zwahlen ( Jean.-P. ), lithographe, rue du Grand St. Jean, 36. Péages. Vinet, commis, maison des postes. Béchet, sous-commis, Petit St. Jean, 10. Ciliax, douanier. v Ouchy. Carey, commis. Monnard, sOus-commis. Recordon, douanier. Panchaud, facteur des sels et commissionnaii'e. Ronget, hôtel de l’Ancre. Gorbaz, veuve, auberge du Léman * Préfet. — M. Clavel, ancien Conseiller d'Etat, 104- Juge de paix. — M. Bertholet, 227- Foires. — Mars, 14. Avril, 18. Octobre, 31. Décembre, 19. — Il y a marché tous les samedis",
+        "ville": "Lausanne",
+        "type_simplifie_1832": "Hôtel / Auberge",
+        "adresse_geocodage": "Rue Saint-Jean, Lausanne, Switzerland",
+        "geocodage_precision": "adresse"
+      }
+    }
+  ]
+}
