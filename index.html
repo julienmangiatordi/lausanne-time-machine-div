@@ -455,9 +455,13 @@ const METIERS_SALARIES_1951 = [
   'sous-dir. hotel','gerant','gerante','empi, d\'hôtel','emp. hotel',
   'hôtelier professeur Ecole Hôtelière', 'Vve pension etmag. de charcut','veuve',
   'Vve pension', 'control, d’hôtel', 'empi, hôtel. Carlton','employéd’hôtel',
+  'maitre d\'hotel', 'mait. d\'hotel', 'm. d\'hotel', 'maitred\'hotel', 'mattre d\'hotel', 'maitre hotel',
   // Personnel hôtel
   'employe d\'hotel','emp. d\'hotel','empi, hotel',
   'argentier','portier','concierge','liftier',
+  'empi, d\'hotel', 'emp. d\'hotel', 
+  'emp. hotel', 'employe d\'hotel', 'employed\'hotel', 'emol. d\'hotel', 
+  'empi. hotel', 'empi, hotel', 'empi dhotel', 'emn. d\'hotel', 'enip. d\'hotel',
   // Linge & ménage
   'lingere','gouvernante','femme de chambre','valet de chambre',
   // Service en salle
@@ -473,6 +477,9 @@ const METIERS_SALARIES_1951 = [
   // Emplois hôteliers génériques
   'employe','employee','empl.',
   // 👇 Ajoute ici d'autres titres de métiers à exclure
+  'hotelier', 'hoteliere', 'secret. d\'hotel', 'secretaire',
+   'chef de bar', 'casserolier', 'sommeliere', 'cafetiere', 'dem. de compagnie', 
+   'garde-malade', 'tournante', 'chasseur', 'telephoniste', 'control. d\'hotel', 'g. d\'office', 'f. de ch' 
 ];
 
 function normaliserTexte(s) {
@@ -480,6 +487,7 @@ function normaliserTexte(s) {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[''`]/g, "'")   // ← AJOUTER cette ligne
     .trim();
 }
 
