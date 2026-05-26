@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 
 <style>
 /* ── TOKENS ─────────────────────────────────────────── */
@@ -201,6 +202,110 @@ header{
 @keyframes spin{to{transform:rotate(360deg);}}
 #loading p{font-size:var(--text-sm);color:var(--text-muted);}
 
+
+/* ── MODE TABS ───────────────────────────────────────── */
+#mode-tabs {
+  flex-shrink:0;
+  display:flex;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  z-index:850;
+}
+.mode-tab {
+  flex:1;padding:var(--space-2) var(--space-4);
+  font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;
+  color:var(--text-muted);border-bottom:2px solid transparent;
+  transition:all var(--transition);text-align:center;
+}
+.mode-tab.active {
+  color:var(--accent);border-bottom-color:var(--accent);
+}
+.mode-tab:hover:not(.active){color:var(--text);}
+
+/* ── PANNEAU EVOLUTION ───────────────────────────────── */
+#evol-panel {
+  display:none;
+  flex-shrink:0;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:var(--space-4) var(--space-6);
+  gap:var(--space-5);
+  flex-wrap:wrap;
+  align-items:center;
+  z-index:900;
+}
+#evol-panel.visible { display:flex; }
+
+.evol-section { display:flex;flex-direction:column;gap:var(--space-2); }
+.evol-label {
+  font-size:var(--text-xs);color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.06em;
+}
+#evol-cat-select {
+  background:var(--surface-2);border:1.5px solid var(--border);
+  color:var(--text);border-radius:var(--radius-md);
+  padding:var(--space-2) var(--space-3);font-size:var(--text-sm);
+  font-family:var(--font-body);cursor:pointer;
+  transition:border-color var(--transition);
+}
+#evol-cat-select:focus { border-color:var(--accent);outline:none; }
+
+.evol-timeline {
+  display:flex;align-items:center;gap:var(--space-3);flex:1;min-width:260px;
+}
+#evol-slider {
+  flex:1;-webkit-appearance:none;appearance:none;height:4px;
+  background:linear-gradient(to right,var(--accent) var(--pct,0%),var(--surface-3) var(--pct,0%));
+  border-radius:var(--radius-full);outline:none;cursor:pointer;
+}
+#evol-slider::-webkit-slider-thumb {
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--accent);border:3px solid var(--bg);box-shadow:var(--shadow-sm);
+}
+.evol-year-badge {
+  font-family:var(--font-display);font-style:italic;
+  font-size:var(--text-xl);color:var(--accent);min-width:3.5ch;text-align:right;
+}
+#evol-play-btn {
+  width:36px;height:36px;border-radius:50%;
+  background:var(--accent);color:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;transition:transform var(--transition),background var(--transition);
+  flex-shrink:0;
+}
+#evol-play-btn:hover{background:var(--accent-h);transform:scale(1.08);}
+
+/* ── OVERLAY ÉVOLUTION ───────────────────────────────── */
+#evol-info {
+  position:absolute;top:var(--space-4);left:var(--space-4);z-index:800;
+  background:oklch(from var(--surface) l c h/.92);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-3) var(--space-4);backdrop-filter:blur(8px);
+  box-shadow:var(--shadow-md);font-size:var(--text-xs);
+  display:none;min-width:180px;
+}
+#evol-info.visible{display:block;}
+.evol-info-title{color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:var(--space-2);}
+.evol-info-year{font-family:var(--font-display);font-style:italic;font-size:var(--text-lg);color:var(--accent);}
+.evol-info-count{color:var(--text-muted);margin-top:var(--space-1);}
+.evol-info-divider{border:none;border-top:1px solid var(--divider);margin:var(--space-2) 0;}
+.evol-traj-legend{display:flex;align-items:center;gap:var(--space-2);color:var(--text-muted);}
+.evol-traj-line{width:24px;height:2px;background:var(--accent);display:inline-block;border-top:2px dashed var(--accent);}
+
+/* ── HEATMAP GRADIENT LEGEND ─────────────────────────── */
+#heat-legend {
+  position:absolute;bottom:var(--space-6);left:var(--space-4);z-index:800;
+  background:oklch(from var(--surface) l c h/.92);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-3) var(--space-4);backdrop-filter:blur(8px);
+  font-size:var(--text-xs);display:none;
+}
+#heat-legend.visible{display:block;}
+.heat-grad{
+  height:8px;width:140px;border-radius:var(--radius-full);margin:var(--space-2) 0;
+  background:linear-gradient(to right,#3b82f6,#a855f7,#f97316,#ef4444);
+}
+.heat-grad-labels{display:flex;justify-content:space-between;color:var(--text-faint);}
+
 /* ── RESPONSIVE ──────────────────────────────────────── */
 @media(max-width:640px){
   header{padding:var(--space-2) var(--space-4);}
@@ -242,6 +347,27 @@ header{
   </div>
 </header>
 
+
+<div id="mode-tabs">
+  <button class="mode-tab active" data-mode="carte">🗺 Carte</button>
+  <button class="mode-tab" data-mode="evolution">📈 Évolution</button>
+</div>
+
+<div id="evol-panel">
+  <div class="evol-section">
+    <div class="evol-label">Catégorie</div>
+    <select id="evol-cat-select"></select>
+  </div>
+  <div class="evol-section" style="flex:1;min-width:280px;">
+    <div class="evol-label">Période</div>
+    <div class="evol-timeline">
+      <button id="evol-play-btn" aria-label="Lecture automatique">▶</button>
+      <input type="range" id="evol-slider" min="0" max="4" step="1" value="0">
+      <div class="evol-year-badge" id="evol-year-display">1832</div>
+    </div>
+  </div>
+</div>
+
 <div id="controls">
   <div class="slider-section">
     <div class="slider-label">
@@ -268,6 +394,22 @@ header{
     <p>Aucun lieu ne correspond<br>aux filtres sélectionnés.</p>
   </div>
 
+
+  <div id="evol-info">
+    <div class="evol-info-title">Centre de densité</div>
+    <div class="evol-info-year" id="evol-info-year">—</div>
+    <div class="evol-info-count" id="evol-info-count"></div>
+    <hr class="evol-info-divider">
+    <div class="evol-traj-legend">
+      <div class="evol-traj-line"></div>
+      Trajectoire
+    </div>
+  </div>
+  <div id="heat-legend">
+    <div class="evol-info-title">Densité</div>
+    <div class="heat-grad"></div>
+    <div class="heat-grad-labels"><span>Faible</span><span>Forte</span></div>
+  </div>
   <div id="legend">
     <div class="legend-title">Précision</div>
     <div class="legend-item"><div class="legend-dot" style="background:#6daa45"></div>Adresse exacte</div>
@@ -306,55 +448,55 @@ function normaliserCategorie(properties, annee) {
 
   // ── 1832 ─────────────────────────────────────────────
   if (annee === 1832) {
-    const t = (
-      properties.type_simplifie_1832 ||   // ← nom réel du champ
-      properties.typesimplifie1832   ||   // fallback ancienne version
-      ''
-    ).trim();
-
-  const map = {
-    'Débit de boisson':       'Bar / Café',
-    'Traiteur / Restaurant':  'Restaurant',
-    'Hôtel / Auberge':        'Hôtel / Pension',
-    'Café-billard':           'Café-Billard',
-    'Spectacle / Sociabilité':'Spectacle / Sociabilité',
-    'Brasserie':              'Brasserie',
+    const t = (properties.typesimplifie1832 || '').trim();
+    const map = {
+      // Avec accents
+      'Hôtel Auberge':          'Hôtel / Pension',
+      'Débit de boisson':       'Bar / Café',
+      'Café-billard':           'Café-Billard',
+      'Spectacle Sociabilité':  'Spectacle / Sociabilité',
+      // Sans accents (encodage source)
+      'Htel Auberge':           'Hôtel / Pension',
+      'Dbit de boisson':        'Bar / Café',
+      'Caf-billard':            'Café-Billard',
+      'Spectacle Sociabilit':   'Spectacle / Sociabilité',
+      // Commun
+      'Traiteur Restaurant':    'Restaurant',
+      'Brasserie':              'Brasserie',
     };
     return map[t] || 'Autre';
-   }
+  }
 
   // ── 1888 ─────────────────────────────────────────────
   if (annee === 1888) {
-    const t = (properties.type_simplifie || '').trim();
-
-    // Catégories directes
-    if (t === 'Café')     return 'Bar / Café';
-    if (t === 'Pinte')    return 'Bar / Café';
-    if (t === 'Hôtel')    return 'Hôtel / Pension';
-    if (t === 'Brasserie') return 'Brasserie';
-
-    // Affinage des "Autre" via le champ 'use'
+    const t = (properties.typesimplifie || '').trim();
+    // Catégories principales directes
+    if (t === 'Café' || t === 'Caf') return 'Bar / Café';
+    if (t === 'Pinte')               return 'Bar / Café';
+    if (t === 'Hôtel' || t === 'Htel') return 'Hôtel / Pension';
+    if (t === 'Brasserie')           return 'Brasserie';
+    if (t === 'Restaurant')          return 'Restaurant';
+    if (t === 'Cabaret')             return 'Bar / Café';
+    if (t === 'Théâtre' || t === 'Theatre') return 'Spectacle / Sociabilité';
+    if (t === 'Cercle')              return 'Club / Société';
     if (t === 'Autre') {
+      // Affinage via le champ 'use'
       const use = (properties.use || '').toLowerCase();
-
-      // Casino-Théâtre
-      if (use.includes('casino') || use.includes('théâtre')) return 'Spectacle / Sociabilité';
-      // Billard
-      if (use.includes('billard'))        return 'Café-Billard';
-      // Jeux de quilles
-      if (use.includes('jeux de quille')) return 'Spectacle / Sociabilité';
-      // Salle à manger
-      if (use.includes('salle à manger') || use.includes('salle manger')) return 'Restaurant';
-      // Salles de réunion / société (salle vitrée, magasins+salle, entrée de salle, salle seule)
-      if (use.includes('salle vitrée'))   return 'Club / Société';
-      if (use.includes('entrée de salle')) return 'Club / Société';
-      if (use.includes('salle'))          return 'Club / Société';
+      if (use.includes('casino') || use.includes('théâtre') || use.includes('theatre')) return 'Spectacle / Sociabilité';
+      if (use.includes('billard'))              return 'Café-Billard';
+      if (use.includes('jeux de quille'))       return 'Spectacle / Sociabilité';
+      if (use.includes('brasserie'))            return 'Brasserie';
+      if (use.includes('salle manger') || use.includes('salle à manger')) return 'Restaurant';
+      if (use.includes('restaurant'))           return 'Restaurant';
+      if (use.includes('salle vitr'))           return 'Club / Société';
+      if (use.includes('entre de salle') || use.includes('entrée de salle')) return 'Club / Société';
+      if (use.includes('salle') && !use.includes('billard')) return 'Club / Société';
       // Balcons, hangars, forges, chaudières → vraiment Autre
       return 'Autre';
+    }
+    return t || 'Autre';
   }
 
-    return 'Autre';
-  }
   // ── 1923 ─────────────────────────────────────────────
   if (annee === 1923) {
     const t = (properties.type_simplifie || properties.typesimplifie || '').trim();
@@ -386,25 +528,27 @@ function normaliserCategorie(properties, annee) {
   }
 
   // ── 1951 ─────────────────────────────────────────────
-  if (annee === 1951) { 
-    const t = (
-      properties.type_simplifie_1951 ||  // ← nom réel du champ
-      properties.typesimplifie1951   ||  // fallback ancienne version
-      ''
-    ).trim();
-
+  if (annee === 1951) {
+    const t = (properties.typesimplifie1951 || '').trim();
     const map = {
-      'Hôtel / Auberge':           'Hôtel / Pension',
-      'Restaurant / Traiteur':     'Restaurant',
-      'Café / Bar':                'Bar / Café',
-      'Théâtre / Spectacle':       'Spectacle / Sociabilité',
-      'Cercle / Club / Société':   'Club / Société',
-      'Brasserie':                 'Brasserie',
-      'Café-Billard':              'Café-Billard',
-      'Cabaret / Dancing / Boîte': 'Club / Discothèque',
+      // Sans accents (encodage source dominant)
+      'Htel Auberge':         'Hôtel / Pension',
+      'Caf Bar':              'Bar / Café',
+      'Restaurant Traiteur':  'Restaurant',
+      'Thtre Spectacle':      'Spectacle / Sociabilité',
+      'Cercle Club Socit':    'Club / Société',
+      'Caf-Billard':          'Café-Billard',
+      // Avec accents (au cas où)
+      'Hôtel Auberge':        'Hôtel / Pension',
+      'Café Bar':             'Bar / Café',
+      'Théâtre Spectacle':    'Spectacle / Sociabilité',
+      'Cercle Club Société':  'Club / Société',
+      'Café-Billard':         'Café-Billard',
+      // Variante avec slash
+      'Brasserie':            'Brasserie',
     };
     return map[t] || 'Autre';
-}
+  }
 
   // ── 2026 (OpenStreetMap) ──────────────────────────────
   if (annee === 2026) {
@@ -661,12 +805,230 @@ function refreshCatButtons() {
   }
 })();
 
+
+// ═══════════════════════════════════════════════════════
+//  MODULE ÉVOLUTION — HEATMAP + TRAJECTOIRE CENTROÏDE
+// ═══════════════════════════════════════════════════════
+const ANNEES = [1832, 1888, 1923, 1951, 2026];
+
+const evol = {
+  categorie: null,
+  anneeIdx: 0,
+  heatLayer: null,
+  centroideMarkers: [],
+  trajectoire: null,
+  playInterval: null,
+  active: false,
+};
+
+// ── Calcul du centroïde ──────────────────────────────
+function calculerCentroide(points) {
+  if (!points.length) return null;
+  const lat = points.reduce((s,p) => s + p[0], 0) / points.length;
+  const lon = points.reduce((s,p) => s + p[1], 0) / points.length;
+  return [lat, lon];
+}
+
+// ── Récupérer les points filtrés par année+catégorie ─
+function getPointsEvol(annee, categorie) {
+  const features = state.data[annee] || [];
+  return features
+    .filter(f => {
+      if (!f.geometry?.coordinates) return false;
+      const [lng, lat] = f.geometry.coordinates;
+      if (!lat || !lng || isNaN(lat) || isNaN(lng)) return false;
+      const cat = normaliserCategorie(f.properties || {}, annee);
+      return cat === categorie;
+    })
+    .map(f => {
+      const [lng, lat] = f.geometry.coordinates;
+      return [lat, lng, 1];
+    });
+}
+
+// ── Afficher la heatmap + centroïde pour une année ───
+function afficherEvolAnnee(anneeIdx) {
+  const annee = ANNEES[anneeIdx];
+  const cat   = evol.categorie;
+  const pts   = getPointsEvol(annee, cat);
+
+  // Heatmap
+  if (evol.heatLayer) map.removeLayer(evol.heatLayer);
+  evol.heatLayer = null;
+  if (pts.length) {
+    evol.heatLayer = L.heatLayer(pts, {
+      radius: 40, blur: 30, maxZoom: 17,
+      gradient: { 0.2:'#3b82f6', 0.5:'#a855f7', 0.75:'#f97316', 1.0:'#ef4444' }
+    }).addTo(map);
+  }
+
+  // Centroïde de l'année courante
+  evol.centroideMarkers.forEach(m => map.removeLayer(m));
+  evol.centroideMarkers = [];
+  const centre = calculerCentroide(pts.map(p => [p[0], p[1]]));
+  if (centre) {
+    const pulse = L.circleMarker(centre, {
+      radius:12, color:'#fff', weight:3,
+      fillColor: CAT_COLORS[cat] || '#c4954a',
+      fillOpacity:0.95, pane:'markerPane'
+    }).addTo(map)
+      .bindTooltip(`<strong>${annee}</strong><br>${pts.length} lieu${pts.length>1?'x':''}`, {
+        permanent:false, direction:'top', className:'leaflet-tooltip'
+      });
+    evol.centroideMarkers.push(pulse);
+  }
+
+  // Trajectoire de tous les centroïdes jusqu'à cette année
+  if (evol.trajectoire) map.removeLayer(evol.trajectoire);
+  evol.trajectoire = null;
+
+  const trailPoints = [];
+  for (let i = 0; i <= anneeIdx; i++) {
+    const p = getPointsEvol(ANNEES[i], cat);
+    const c = calculerCentroide(p.map(x => [x[0], x[1]]));
+    if (c) trailPoints.push({ latlng: c, annee: ANNEES[i], count: p.length });
+  }
+
+  if (trailPoints.length >= 2) {
+    evol.trajectoire = L.polyline(trailPoints.map(p => p.latlng), {
+      color: CAT_COLORS[cat] || '#c4954a',
+      weight:3, opacity:0.7, dashArray:'7 6'
+    }).addTo(map);
+
+    // Petits marqueurs historiques sur la trajectoire
+    trailPoints.slice(0, -1).forEach(tp => {
+      const ghost = L.circleMarker(tp.latlng, {
+        radius:6, color:CAT_COLORS[cat] || '#c4954a', weight:2,
+        fillColor:'var(--bg)', fillOpacity:0.6, opacity:0.6,
+      }).addTo(map)
+        .bindTooltip(`${tp.annee} — ${tp.count} lieu${tp.count>1?'x':''}`, {
+          direction:'top', className:'leaflet-tooltip'
+        });
+      evol.centroideMarkers.push(ghost);
+    });
+  }
+
+  // Mise à jour de l'overlay info
+  document.getElementById('evol-info-year').textContent = annee;
+  document.getElementById('evol-info-count').textContent =
+    pts.length ? `${pts.length} lieu${pts.length>1?'x':''}` : 'Aucun lieu';
+
+  // Slider
+  const slid = document.getElementById('evol-slider');
+  slid.value = anneeIdx;
+  const pct = (anneeIdx / (ANNEES.length-1)) * 100;
+  slid.style.setProperty('--pct', pct + '%');
+  document.getElementById('evol-year-display').textContent = annee;
+}
+
+// ── Charger toutes les années pour cette catégorie ───
+async function preloadAllYears() {
+  for (const p of PERIODS) {
+    await loadPeriod(p);
+  }
+}
+
+// ── Init du module Evolution ─────────────────────────
+async function initEvolution() {
+  // Remplir le select
+  const sel = document.getElementById('evol-cat-select');
+  sel.innerHTML = '';
+  Object.keys(CAT_COLORS).forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat; opt.textContent = cat;
+    sel.appendChild(opt);
+  });
+  evol.categorie = sel.value;
+
+  sel.addEventListener('change', () => {
+    evol.categorie = sel.value;
+    evol.anneeIdx  = +document.getElementById('evol-slider').value;
+    afficherEvolAnnee(evol.anneeIdx);
+  });
+
+  // Slider
+  document.getElementById('evol-slider').addEventListener('input', e => {
+    evol.anneeIdx = +e.target.value;
+    afficherEvolAnnee(evol.anneeIdx);
+  });
+
+  // Play / Pause
+  const playBtn = document.getElementById('evol-play-btn');
+  playBtn.addEventListener('click', () => {
+    if (evol.playInterval) {
+      clearInterval(evol.playInterval);
+      evol.playInterval = null;
+      playBtn.textContent = '▶';
+    } else {
+      playBtn.textContent = '⏸';
+      // Rembobiner si on est à la fin
+      if (evol.anneeIdx >= ANNEES.length - 1) evol.anneeIdx = 0;
+      evol.playInterval = setInterval(() => {
+        evol.anneeIdx++;
+        afficherEvolAnnee(evol.anneeIdx);
+        if (evol.anneeIdx >= ANNEES.length - 1) {
+          clearInterval(evol.playInterval);
+          evol.playInterval = null;
+          playBtn.textContent = '▶';
+        }
+      }, 1800);
+    }
+  });
+}
+
+// ── Activer / désactiver le mode Evolution ───────────
+function activerModeEvolution() {
+  evol.active = true;
+  markersLayer.clearLayers();
+  document.getElementById('controls').style.display   = 'none';
+  document.getElementById('evol-panel').classList.add('visible');
+  document.getElementById('evol-info').classList.add('visible');
+  document.getElementById('heat-legend').classList.add('visible');
+  document.getElementById('legend').style.display = 'none';
+
+  preloadAllYears().then(() => {
+    afficherEvolAnnee(evol.anneeIdx);
+  });
+}
+
+function desactiverModeEvolution() {
+  evol.active = false;
+  // Nettoyer les couches évolution
+  if (evol.heatLayer)    map.removeLayer(evol.heatLayer);
+  if (evol.trajectoire)  map.removeLayer(evol.trajectoire);
+  evol.centroideMarkers.forEach(m => map.removeLayer(m));
+  evol.heatLayer = null; evol.trajectoire = null; evol.centroideMarkers = [];
+  if (evol.playInterval) { clearInterval(evol.playInterval); evol.playInterval = null; }
+  document.getElementById('evol-play-btn').textContent = '▶';
+
+  document.getElementById('evol-panel').classList.remove('visible');
+  document.getElementById('evol-info').classList.remove('visible');
+  document.getElementById('heat-legend').classList.remove('visible');
+  document.getElementById('controls').style.display = '';
+  document.getElementById('legend').style.display = '';
+  renderMarkers();
+}
+
+// ── Onglets Carte / Évolution ─────────────────────────
+function initTabs() {
+  document.querySelectorAll('.mode-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      if (tab.dataset.mode === 'evolution') activerModeEvolution();
+      else desactiverModeEvolution();
+    });
+  });
+}
+
 // ═══════════════════════════════════════════════════════
 //  INIT
 // ═══════════════════════════════════════════════════════
 async function init() {
   initSlider();
   initCatFilters();
+  await initEvolution();
+  initTabs();
   await loadPeriod(PERIODS[0]);
   renderMarkers();
   refreshCatButtons();
