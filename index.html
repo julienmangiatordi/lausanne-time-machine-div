@@ -386,27 +386,25 @@ function normaliserCategorie(properties, annee) {
   }
 
   // ── 1951 ─────────────────────────────────────────────
-  if (annee === 1951) {
-    const t = (properties.typesimplifie1951 || '').trim();
+  if (annee === 1951) { 
+    const t = (
+      properties.type_simplifie_1951 ||  // ← nom réel du champ
+      properties.typesimplifie1951   ||  // fallback ancienne version
+      ''
+    ).trim();
+
     const map = {
-      // Sans accents (encodage source dominant)
-      'Htel Auberge':         'Hôtel / Pension',
-      'Caf Bar':              'Bar / Café',
-      'Restaurant Traiteur':  'Restaurant',
-      'Thtre Spectacle':      'Spectacle / Sociabilité',
-      'Cercle Club Socit':    'Club / Société',
-      'Caf-Billard':          'Café-Billard',
-      // Avec accents (au cas où)
-      'Hôtel Auberge':        'Hôtel / Pension',
-      'Café Bar':             'Bar / Café',
-      'Théâtre Spectacle':    'Spectacle / Sociabilité',
-      'Cercle Club Société':  'Club / Société',
-      'Café-Billard':         'Café-Billard',
-      // Variante avec slash
-      'Brasserie':            'Brasserie',
+      'Hôtel / Auberge':           'Hôtel / Pension',
+      'Restaurant / Traiteur':     'Restaurant',
+      'Café / Bar':                'Bar / Café',
+      'Théâtre / Spectacle':       'Spectacle / Sociabilité',
+      'Cercle / Club / Société':   'Club / Société',
+      'Brasserie':                 'Brasserie',
+      'Café-Billard':              'Café-Billard',
+      'Cabaret / Dancing / Boîte': 'Club / Discothèque',
     };
     return map[t] || 'Autre';
-  }
+}
 
   // ── 2026 (OpenStreetMap) ──────────────────────────────
   if (annee === 2026) {
