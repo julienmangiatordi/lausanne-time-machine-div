@@ -1,11 +1,838 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Lausanne Night Life – Time Machine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lausanne Nocturne — 1832–2026</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..600&display=swap" rel="stylesheet">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+/* ── TOKENS ────────────────────────────────────────── */
+:root {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+
+  --space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
+  --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+  --space-12:3rem;--space-16:4rem;
+
+  --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;
+  --radius-xl:1rem;--radius-full:9999px;
+  --transition: 180ms cubic-bezier(0.16,1,0.3,1);
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+  --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.45);
+}
+
+/* ── DARK PALETTE (défaut) ─────────────────────────── */
+:root, [data-theme="dark"] {
+  --bg:        #0f0e0d;
+  --surface:   #181714;
+  --surface-2: #201e1b;
+  --surface-3: #2a2825;
+  --border:    #353230;
+  --divider:   #2c2a27;
+  --text:      #e8e4de;
+  --text-muted:#8c8780;
+  --text-faint:#55524e;
+  --accent:    #c4954a;
+  --accent-h:  #e0ac5e;
+  --accent-bg: oklch(from #c4954a l c h / 0.12);
+}
+
+/* ── LIGHT PALETTE ─────────────────────────────────── */
+[data-theme="light"] {
+  --bg:        #f7f5f0;
+  --surface:   #faf9f6;
+  --surface-2: #f0ede6;
+  --surface-3: #e8e4da;
+  --border:    #d4d0c8;
+  --divider:   #dedad2;
+  --text:      #1a1814;
+  --text-muted:#5a5750;
+  --text-faint:#9a9790;
+  --accent:    #8b5e1a;
+  --accent-h:  #a06d20;
+  --accent-bg: oklch(from #8b5e1a l c h / 0.1);
+}
+
+/* ── RESET & BASE ──────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{
+  font-family:var(--font-body);font-size:var(--text-base);
+  color:var(--text);background:var(--bg);
+  min-height:100dvh;display:flex;flex-direction:column;overflow:hidden;
+}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{color:var(--accent-h);}
+::selection{background:var(--accent-bg);color:var(--text);}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius-sm);}
+
+/* ── HEADER ────────────────────────────────────────── */
+header{
+  position:relative;z-index:1000;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  padding:var(--space-3) var(--space-6);
+  display:flex;align-items:center;gap:var(--space-4);
+  flex-shrink:0;
+  box-shadow:var(--shadow-sm);
+}
+.logo{
+  display:flex;align-items:center;gap:var(--space-2);
+  text-decoration:none;
+}
+.logo svg{width:28px;height:28px;color:var(--accent);}
+.logo-text{
+  font-family:var(--font-display);
+  font-size:var(--text-lg);
+  color:var(--text);
+  font-style:italic;
+  white-space:nowrap;
+}
+.logo-sub{
+  font-size:var(--text-xs);
+  color:var(--text-muted);
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:var(--space-3);}
+.stat-chip{
+  font-size:var(--text-xs);color:var(--text-muted);
+  background:var(--surface-2);
+  padding:var(--space-1) var(--space-3);
+  border-radius:var(--radius-full);
+  border:1px solid var(--border);
+  transition:color var(--transition),background var(--transition);
+}
+.stat-chip span{color:var(--accent);font-weight:600;}
+
+.theme-toggle{
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:var(--radius-md);
+  color:var(--text-muted);
+  transition:color var(--transition),background var(--transition);
+}
+.theme-toggle:hover{color:var(--text);background:var(--surface-2);}
+
+/* ── CONTROLS BAR ──────────────────────────────────── */
+#controls{
+  position:relative;z-index:900;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  padding:var(--space-4) var(--space-6);
+  display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-5);
+  flex-shrink:0;
+}
+
+/* Slider section */
+.slider-section{display:flex;flex-direction:column;gap:var(--space-2);flex:1;min-width:220px;}
+.slider-label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:var(--text-xs);color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:0.06em;
+}
+.year-display{
+  font-family:var(--font-display);font-style:italic;
+  font-size:var(--text-xl);color:var(--accent);
+  line-height:1;
+}
+.slider-track-wrap{position:relative;height:24px;display:flex;align-items:center;}
+#yearSlider{
+  width:100%;
+  -webkit-appearance:none;appearance:none;
+  height:4px;
+  background:linear-gradient(to right, var(--accent) var(--pct,0%), var(--surface-3) var(--pct,0%));
+  border-radius:var(--radius-full);
+  outline:none;cursor:pointer;
+}
+#yearSlider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:var(--accent);
+  border:3px solid var(--bg);
+  box-shadow:var(--shadow-sm);
+  transition:transform var(--transition),background var(--transition);
+}
+#yearSlider:hover::-webkit-slider-thumb{transform:scale(1.2);background:var(--accent-h);}
+#yearSlider::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;
+  background:var(--accent);border:3px solid var(--bg);
+  box-shadow:var(--shadow-sm);cursor:pointer;
+}
+.year-ticks{
+  display:flex;justify-content:space-between;
+  font-size:var(--text-xs);color:var(--text-faint);
+  margin-top:var(--space-1);
+}
+
+/* Category filters */
+.filters-section{display:flex;flex-direction:column;gap:var(--space-2);}
+.filters-label{
+  font-size:var(--text-xs);color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:0.06em;
+}
+.filters-row{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+.cat-btn{
+  display:flex;align-items:center;gap:var(--space-2);
+  padding:var(--space-1) var(--space-3);
+  border-radius:var(--radius-full);
+  border:1.5px solid var(--border);
+  background:var(--surface-2);
+  font-size:var(--text-xs);
+  color:var(--text-muted);
+  transition:all var(--transition);
+  user-select:none;
+  white-space:nowrap;
+}
+.cat-btn .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--cat-color,var(--text-faint));
+  flex-shrink:0;
+  transition:transform var(--transition);
+}
+.cat-btn.active{
+  border-color:var(--cat-color,var(--accent));
+  background:oklch(from var(--cat-color,var(--accent)) l c h / 0.15);
+  color:var(--text);
+}
+.cat-btn.active .dot{transform:scale(1.3);}
+.cat-btn:hover{border-color:var(--cat-color,var(--accent));color:var(--text);}
+
+/* ── MAP CONTAINER ─────────────────────────────────── */
+#map-wrap{flex:1;position:relative;overflow:hidden;}
+#map{width:100%;height:100%;}
+
+/* Leaflet overrides */
+.leaflet-container{background:var(--bg);}
+.leaflet-popup-content-wrapper{
+  background:var(--surface-2);
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+  padding:0;
+}
+.leaflet-popup-content{margin:0;padding:var(--space-4);min-width:200px;}
+.leaflet-popup-tip{background:var(--surface-2);}
+.leaflet-popup-close-button{
+  color:var(--text-muted)!important;
+  font-size:18px!important;
+  top:var(--space-2)!important;right:var(--space-3)!important;
+}
+.leaflet-popup-close-button:hover{color:var(--text)!important;}
+.leaflet-control-zoom a{
+  background:var(--surface-2)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.leaflet-control-zoom a:hover{background:var(--surface-3)!important;}
+.leaflet-control-attribution{
+  background:oklch(from var(--bg) l c h / 0.85)!important;
+  color:var(--text-faint)!important;
+  font-size:10px!important;
+}
+.leaflet-control-attribution a{color:var(--text-muted)!important;}
+
+/* Popup content styles */
+.popup-header{border-bottom:1px solid var(--divider);padding-bottom:var(--space-3);margin-bottom:var(--space-3);}
+.popup-name{font-family:var(--font-display);font-style:italic;font-size:var(--text-lg);color:var(--text);line-height:1.2;}
+.popup-cat{
+  display:inline-flex;align-items:center;gap:var(--space-1);
+  margin-top:var(--space-1);
+  font-size:var(--text-xs);padding:2px 8px;border-radius:var(--radius-full);
+  font-weight:500;
+}
+.popup-row{display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-1);}
+.popup-row strong{color:var(--text);font-weight:500;flex-shrink:0;}
+.popup-precision{
+  margin-top:var(--space-3);
+  font-size:var(--text-xs);color:var(--text-faint);
+  display:flex;align-items:center;gap:var(--space-1);
+}
+.precision-dot{
+  width:6px;height:6px;border-radius:50%;display:inline-block;
+}
+.prec-adresse{background:#6daa45;}
+.prec-ville{background:#da7101;}
+.prec-null{background:var(--text-faint);}
+
+/* Cluster custom */
+.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{
+  background:oklch(from var(--accent) l c h / 0.2)!important;
+}
+.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{
+  background:oklch(from var(--accent) l c h / 0.5)!important;
+  color:var(--text)!important;font-weight:600;
+}
+
+/* ── EMPTY STATE ───────────────────────────────────── */
+#empty-state{
+  display:none;position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;color:var(--text-muted);
+  pointer-events:none;z-index:500;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-xl);padding:var(--space-8);
+  box-shadow:var(--shadow-md);
+}
+#empty-state svg{margin:0 auto var(--space-4);color:var(--text-faint);}
+#empty-state h3{font-family:var(--font-display);font-style:italic;font-size:var(--text-lg);color:var(--text);margin-bottom:var(--space-2);}
+
+/* ── LEGEND ────────────────────────────────────────── */
+#legend{
+  position:absolute;bottom:var(--space-6);right:var(--space-4);z-index:800;
+  background:oklch(from var(--surface) l c h / 0.92);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:var(--space-3) var(--space-4);
+  backdrop-filter:blur(8px);
+  box-shadow:var(--shadow-md);
+  font-size:var(--text-xs);
+}
+.legend-title{color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:var(--space-2);}
+.legend-item{display:flex;align-items:center;gap:var(--space-2);color:var(--text-muted);margin-bottom:var(--space-1);}
+.legend-item:last-child{margin-bottom:0;}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+/* ── LOADING ───────────────────────────────────────── */
+#loading{
+  display:flex;position:absolute;inset:0;z-index:2000;
+  background:var(--bg);align-items:center;justify-content:center;
+  flex-direction:column;gap:var(--space-4);
+  transition:opacity 0.5s ease;
+}
+#loading.fade-out{opacity:0;pointer-events:none;}
+.spinner{
+  width:40px;height:40px;
+  border:3px solid var(--surface-3);
+  border-top-color:var(--accent);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+#loading p{font-size:var(--text-sm);color:var(--text-muted);}
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media(max-width:640px){
+  header{padding:var(--space-2) var(--space-4);}
+  .logo-sub{display:none;}
+  #controls{padding:var(--space-3) var(--space-4);gap:var(--space-3);}
+  .slider-section{min-width:100%;}
+  .filters-section{min-width:100%;}
+  #legend{bottom:var(--space-4);right:var(--space-2);}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}
+}
+</style>
 </head>
 <body>
-  <h1>🗺️ Lausanne Nightlife – Time Machine</h1>
-  <p>Site en construction — carte interactive 1832–2026</p>
+
+<!-- LOADING -->
+<div id="loading">
+  <div class="spinner"></div>
+  <p>Chargement des données historiques…</p>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo" aria-label="Lausanne Nocturne">
+    <!-- Logo SVG -->
+    <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M14 6 C14 6 10 10 10 14 C10 18 14 20 14 20 C14 20 18 18 18 14 C18 10 14 6 14 6Z"
+            fill="currentColor" opacity="0.25"/>
+      <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+      <path d="M6.5 14 H21.5 M14 6.5 V21.5" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+    </svg>
+    <div>
+      <div class="logo-text">Lausanne Nocturne</div>
+      <div class="logo-sub">1832 — 2026</div>
+    </div>
+  </a>
+
+  <div class="header-right">
+    <div class="stat-chip" id="pointsCounter">
+      <span id="countNum">—</span> lieux affichés
+    </div>
+    <button class="theme-toggle" data-theme-toggle aria-label="Basculer le thème">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- CONTROLS -->
+<div id="controls">
+  <!-- Slider temporel -->
+  <div class="slider-section">
+    <div class="slider-label">
+      <span>Période historique</span>
+      <div class="year-display" id="yearDisplay">1832</div>
+    </div>
+    <div class="slider-track-wrap">
+      <input type="range" id="yearSlider" min="0" max="5" step="1" value="0"
+             aria-label="Sélectionner la période">
+    </div>
+    <div class="year-ticks" id="yearTicks"></div>
+  </div>
+
+  <!-- Filtres catégories -->
+  <div class="filters-section">
+    <div class="filters-label">Catégories</div>
+    <div class="filters-row" id="catFilters"></div>
+  </div>
+</div>
+
+<!-- MAP -->
+<div id="map-wrap">
+  <div id="map"></div>
+
+  <!-- Empty state -->
+  <div id="empty-state">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      <path d="M8 11h6M11 8v6"/>
+    </svg>
+    <h3>Aucun résultat</h3>
+    <p>Aucun lieu ne correspond<br>aux filtres sélectionnés.</p>
+  </div>
+
+  <!-- Legend -->
+  <div id="legend">
+    <div class="legend-title">Précision</div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#6daa45"></div>Adresse exacte
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#da7101"></div>Ville (approx.)
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  CONFIGURATION
+// ═══════════════════════════════════════════════════════
+
+const PERIODS = [
+  { year: 1832, label: '1832', file: '1832.geojson' },
+  { year: 1888, label: '1888', file: '1888.geojson' },
+  { year: 1923, label: '1923', file: '1923.geojson' },
+  { year: 1951, label: '1951', file: '1951.geojson' },
+  { year: 2026, label: '2026', file: '2026.geojson' },
+];
+
+// Couleurs par catégorie normalisée
+const CAT_COLORS = {
+  // Débits de boisson / Cafés / Bars
+  'café / bar / débit':       '#c4954a',
+  // Restaurants / Traiteurs
+  'restaurant / traiteur':    '#6daa45',
+  // Hôtels / Auberges / Pensions
+  'hôtel / pension':          '#5591c7',
+  // Spectacle / Sociabilité / Théâtre / Cinéma
+  'spectacle / sociabilité':  '#a86fdf',
+  // Brasserie
+  'brasserie':                '#da7101',
+  // Cercles / Clubs
+  'cercle / club':            '#d19900',
+  // Boîte de nuit / Nightclub
+  'boîte de nuit':            '#dd6974',
+  // Autre
+  'autre':                    '#7a7974',
+};
+
+// Normalisation des catégories brutes → catégorie unifiée
+function normalizeCategory(rawCat) {
+  if (!rawCat) return 'autre';
+  const c = rawCat.toLowerCase();
+
+  // 2026 OSM amenity values
+  if (c === 'nightclub') return 'boîte de nuit';
+  if (c === 'bar' || c === 'pub') return 'café / bar / débit';
+  if (c === 'cafe') return 'café / bar / débit';
+  if (c === 'restaurant') return 'restaurant / traiteur';
+  if (c === 'hotel' || c === 'tourism') return 'hôtel / pension';
+  if (c === 'theatre' || c === 'cinema') return 'spectacle / sociabilité';
+
+  // Historical
+  if (c.includes('débit') || c.includes('debit') || c.includes('café') || c.includes('cafe') ||
+      c.includes('caf-billard') || c.includes('pinte') || c.includes('cabaret') || c.includes('sommelier'))
+    return 'café / bar / débit';
+  if (c.includes('restaurant') || c.includes('traiteur') || c.includes('restaur') ||
+      c.includes('cuisinier') || c.includes('cuisinière') || c.includes('sommelier'))
+    return 'restaurant / traiteur';
+  if (c.includes('hôtel') || c.includes('hotel') || c.includes('auberge') || c.includes('pension') ||
+      c.includes('pensionnat') || c.includes('hôtelier') || c.includes('htel'))
+    return 'hôtel / pension';
+  if (c.includes('spectacle') || c.includes('théâtre') || c.includes('theatre') || c.includes('cinéma') ||
+      c.includes('cinema') || c.includes('artiste') || c.includes('musicien') ||
+      c.includes('confiseur') || c.includes('pâtissier') || c.includes('sociabil'))
+    return 'spectacle / sociabilité';
+  if (c.includes('brasserie') || c.includes('brasseur'))
+    return 'brasserie';
+  if (c.includes('cercle') || c.includes('club') || c.includes('société') || c.includes('societe'))
+    return 'cercle / club';
+  if (c.includes('nightclub') || c.includes('boîte') || c.includes('boite') || c.includes('night'))
+    return 'boîte de nuit';
+
+  return 'autre';
+}
+
+// Extraction des propriétés selon le schéma de chaque période
+function extractProps(props, periodYear) {
+  let nom, metier, adresse, cat, precision;
+
+  if (periodYear === 1832) {
+    nom = props.nom || props.name || '—';
+    metier = props.metier || '';
+    adresse = props.adressebrute || props['adresse_brute'] || '';
+    cat = props.typesimplifie1832 || props['typesimplifie1832'] || '';
+    precision = props.geocodageprecision || props['geocodage_precision'] || null;
+  } else if (periodYear === 1888) {
+    nom = props.owner || '—';
+    metier = props.use || '';
+    adresse = props.adressecomplete || props['adressecomplete'] || '';
+    cat = props.typesimplifie || props['typesimplifie'] || '';
+    precision = null; // 1888 n'a pas de précision
+  } else if (periodYear === 1923) {
+    nom = props.nom || '—';
+    metier = props.metier || '';
+    adresse = props['adresse_brute'] || props.adressebrute || '';
+    cat = props['type_simplifie'] || props.type_simplifie || '';
+    precision = props['geocodage_precision'] || props.geocodage_precision || null;
+  } else if (periodYear === 1951) {
+    nom = props.nom || '—';
+    metier = props.profession || '';
+    adresse = props.adresse || '';
+    cat = props.typesimplifie1951 || props['typesimplifie1951'] || '';
+    precision = props.geocodageprecision || null;
+    // Reconstruire une adresse lisible depuis lignebrute si dispo
+    if (props.lignebrute) adresse = props.lignebrute;
+  } else if (periodYear === 2026) {
+    nom = props.name || '—';
+    metier = props.amenity || '';
+    const num = props['addr:housenumber'] || props.addrhousenumber || '';
+    const rue = props['addr:street'] || props.addrstreet || '';
+    adresse = [num, rue].filter(Boolean).join(' ') || props.name || '';
+    cat = props.amenity || '';
+    precision = 'adresse';
+  }
+
+  return { nom, metier, adresse, cat, precision, catNorm: normalizeCategory(cat) };
+}
+
+// ═══════════════════════════════════════════════════════
+//  ÉTAT & DONNÉES
+// ═══════════════════════════════════════════════════════
+const state = {
+  periodIdx: 0,
+  activeCats: new Set(Object.keys(CAT_COLORS)),
+  data: {},          // { periodYear: geojsonFeatures[] }
+  loadedPeriods: new Set(),
+};
+
+// ═══════════════════════════════════════════════════════
+//  CARTE LEAFLET
+// ═══════════════════════════════════════════════════════
+const map = L.map('map', {
+  center: [46.521, 6.631],
+  zoom: 14,
+  zoomControl: true,
+  attributionControl: true,
+});
+
+// Fond de carte sobre (CartoDB dark / light selon thème)
+let tileLayer;
+
+function setTiles() {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (tileLayer) map.removeLayer(tileLayer);
+  if (dark) {
+    tileLayer = L.tileLayer(
+      'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+      { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>', subdomains:'abcd', maxZoom:19 }
+    );
+  } else {
+    tileLayer = L.tileLayer(
+      'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+      { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>', subdomains:'abcd', maxZoom:19 }
+    );
+  }
+  tileLayer.addTo(map);
+}
+setTiles();
+
+// Labels séparés (toujours visibles)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+  attribution:'', subdomains:'abcd', maxZoom:19, pane:'shadowPane'
+}).addTo(map);
+
+// Couche des marqueurs
+const markersLayer = L.layerGroup().addTo(map);
+
+// ═══════════════════════════════════════════════════════
+//  CHARGEMENT DES DONNÉES
+// ═══════════════════════════════════════════════════════
+async function loadPeriod(period) {
+  if (state.loadedPeriods.has(period.year)) return;
+  const url = `./assets/data/${period.file}`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const geojson = await res.json();
+    state.data[period.year] = geojson.features || [];
+    state.loadedPeriods.add(period.year);
+  } catch (e) {
+    console.warn(`Impossible de charger ${url}:`, e.message);
+    state.data[period.year] = [];
+    state.loadedPeriods.add(period.year);
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDU DES MARQUEURS
+// ═══════════════════════════════════════════════════════
+function buildPopup(p, periodYear, coordPrecision) {
+  const { nom, metier, adresse, catNorm, precision } = extractProps(p, periodYear);
+  const color = CAT_COLORS[catNorm] || '#7a7974';
+  const precClass = precision === 'adresse' ? 'prec-adresse' : precision === 'ville' ? 'prec-ville' : 'prec-null';
+  const precLabel = precision === 'adresse' ? 'Adresse exacte' : precision === 'ville' ? 'Position approchée' : 'Précision inconnue';
+
+  return `
+    <div class="popup-header">
+      <div class="popup-name">${escapeHtml(nom)}</div>
+      ${metier ? `<span class="popup-cat" style="background:${color}22;color:${color};border:1px solid ${color}55;">${escapeHtml(metier)}</span>` : ''}
+    </div>
+    ${adresse ? `<div class="popup-row"><strong>Adresse</strong> ${escapeHtml(adresse)}</div>` : ''}
+    <div class="popup-row"><strong>Catégorie</strong> ${escapeHtml(catNorm)}</div>
+    <div class="popup-row"><strong>Période</strong> ${periodYear}</div>
+    ${precision !== null ? `
+    <div class="popup-precision">
+      <div class="precision-dot ${precClass}"></div>
+      ${precLabel}
+    </div>` : ''}
+  `;
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+function renderMarkers() {
+  markersLayer.clearLayers();
+  const period = PERIODS[state.periodIdx];
+  const features = state.data[period.year] || [];
+  let count = 0;
+
+  features.forEach(f => {
+    if (!f.geometry || !f.geometry.coordinates) return;
+    const [lng, lat] = f.geometry.coordinates;
+    if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
+
+    const props = f.properties || {};
+    const { catNorm, precision } = extractProps(props, period.year);
+    if (!state.activeCats.has(catNorm)) return;
+
+    const color = CAT_COLORS[catNorm] || '#7a7974';
+    const isFallback = precision === 'ville';
+    const radius = isFallback ? 6 : 7;
+    const opacity = isFallback ? 0.55 : 0.9;
+    const fillOpacity = isFallback ? 0.35 : 0.75;
+    const dashArray = isFallback ? '4 3' : null;
+
+    const marker = L.circleMarker([lat, lng], {
+      radius,
+      color,
+      weight: isFallback ? 1.5 : 2,
+      opacity,
+      fillColor: color,
+      fillOpacity,
+      dashArray,
+    });
+
+    marker.bindPopup(buildPopup(props, period.year, precision), {
+      maxWidth: 280,
+      className: 'custom-popup',
+    });
+
+    // Hover effect
+    marker.on('mouseover', function() {
+      this.setStyle({ radius: radius + 2, fillOpacity: 0.95, opacity: 1 });
+      this.openPopup();
+    });
+    marker.on('mouseout', function() {
+      this.setStyle({ radius, fillOpacity, opacity });
+    });
+
+    markersLayer.addLayer(marker);
+    count++;
+  });
+
+  // Mise à jour compteur
+  document.getElementById('countNum').textContent = count.toLocaleString('fr-CH');
+  // Empty state
+  document.getElementById('empty-state').style.display = count === 0 ? 'block' : 'none';
+}
+
+// ═══════════════════════════════════════════════════════
+//  UI — SLIDER
+// ═══════════════════════════════════════════════════════
+function initSlider() {
+  const slider = document.getElementById('yearSlider');
+  const display = document.getElementById('yearDisplay');
+  const ticks = document.getElementById('yearTicks');
+  slider.max = PERIODS.length - 1;
+
+  // Ticks
+  ticks.innerHTML = PERIODS.map(p => `<span>${p.label}</span>`).join('');
+
+  slider.addEventListener('input', async () => {
+    const idx = parseInt(slider.value);
+    state.periodIdx = idx;
+    display.textContent = PERIODS[idx].label;
+    updateSliderGradient();
+    // Charger si besoin
+    await loadPeriod(PERIODS[idx]);
+    renderMarkers();
+    // Mettre à jour les boutons catégories (nouvelles catégories possibles)
+    refreshCatButtons();
+  });
+}
+
+function updateSliderGradient() {
+  const slider = document.getElementById('yearSlider');
+  const pct = (slider.value / slider.max) * 100;
+  slider.style.setProperty('--pct', pct + '%');
+}
+
+// ═══════════════════════════════════════════════════════
+//  UI — FILTRES CATÉGORIES
+// ═══════════════════════════════════════════════════════
+function getCategoriesForPeriod(periodYear) {
+  const features = state.data[periodYear] || [];
+  const found = new Set();
+  features.forEach(f => {
+    const props = f.properties || {};
+    const { catNorm } = extractProps(props, periodYear);
+    found.add(catNorm);
+  });
+  return found;
+}
+
+function refreshCatButtons() {
+  const period = PERIODS[state.periodIdx];
+  const presentCats = getCategoriesForPeriod(period.year);
+  const container = document.getElementById('catFilters');
+  container.querySelectorAll('.cat-btn').forEach(btn => {
+    const cat = btn.dataset.cat;
+    const available = presentCats.has(cat);
+    btn.style.opacity = available ? '1' : '0.3';
+    btn.style.pointerEvents = available ? 'auto' : 'none';
+  });
+}
+
+function initCatFilters() {
+  const container = document.getElementById('catFilters');
+  Object.entries(CAT_COLORS).forEach(([cat, color]) => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn active';
+    btn.dataset.cat = cat;
+    btn.style.setProperty('--cat-color', color);
+    btn.innerHTML = `<div class="dot"></div>${cat}`;
+    btn.addEventListener('click', () => {
+      if (state.activeCats.has(cat)) {
+        state.activeCats.delete(cat);
+        btn.classList.remove('active');
+      } else {
+        state.activeCats.add(cat);
+        btn.classList.add('active');
+      }
+      renderMarkers();
+    });
+    container.appendChild(btn);
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  THÈME
+// ═══════════════════════════════════════════════════════
+(function() {
+  const btn = document.querySelector('[data-theme-toggle]');
+  const html = document.documentElement;
+  let theme = 'dark';
+  html.setAttribute('data-theme', theme);
+  updateToggleIcon(theme);
+
+  btn.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', theme);
+    updateToggleIcon(theme);
+    // Mettre à jour labels de carte
+    map.eachLayer(l => { if (l._url && l._url.includes('only_labels')) {
+      map.removeLayer(l);
+      const labUrl = theme === 'dark'
+        ? 'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'
+        : 'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png';
+      L.tileLayer(labUrl, { attribution:'', subdomains:'abcd', maxZoom:19, pane:'shadowPane' }).addTo(map);
+    }});
+    setTiles();
+  });
+
+  function updateToggleIcon(t) {
+    btn.innerHTML = t === 'dark'
+      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  }
+})();
+
+// ═══════════════════════════════════════════════════════
+//  INITIALISATION
+// ═══════════════════════════════════════════════════════
+async function init() {
+  // Charger la première période
+  await loadPeriod(PERIODS[0]);
+  initSlider();
+  updateSliderGradient();
+  initCatFilters();
+  renderMarkers();
+  refreshCatButtons();
+
+  // Masquer le loading
+  const loading = document.getElementById('loading');
+  loading.classList.add('fade-out');
+  setTimeout(() => { loading.style.display = 'none'; }, 600);
+}
+
+init();
+</script>
 </body>
 </html>
