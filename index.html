@@ -447,33 +447,35 @@ const CAT_COLORS = {
 // ═══════════════════════════════════════════════════════
 const METIERS_SALARIES_1951 = [
   // Cuisine
-  'cuisinier', 'cuisiniere', 'cuisin',
+  'cuisinier', 'cuisiniere', 'cuisin', 'cuis',
   'chef de cuisine', 'g de cuisine', 'sous-chef',
   'patissier', 'patissiere', 'confiseur',
+  'preparateur', 'charcutier',
 
   // Maître d'hôtel (toutes variantes OCR)
   'maitre dhotel', 'mait dhotel', 'm dhotel',
   'maitredhotel', 'mattre dhotel', 'maitre hotel',
-  'malt dhotel', 'malt de pension',
+  'malt dhotel',
 
   // Direction hôtel
   'sous-dir', 'sous-directeur', 'directeur', 'directrice',
-  'dir dhotel', 'direct dhotel', 'direct hotel',
-  'directr hotel', 'direct, dhotel',
+  'dir dhotel', 'dir hotel', 'direct dhotel', 'direct hotel',
+  'directr hotel', 'direct dhotel',
   'gerant', 'gerante',
   'hotelier', 'hoteliere',
 
   // Employé(e) d'hôtel (toutes variantes OCR)
   'employe dhotel', 'employee dhotel', 'employedhotel',
   'emp dhotel', 'emp hotel',
-  'empi dhotel', 'empi hotel', 'empi, dhotel',
+  'empi dhotel', 'empi hotel',
   'emol dhotel', 'emn dhotel', 'enip dhotel',
   'emnl dhotel', 'empl dhotel',
+  'empi bur',          // empi, bur.. Hôtel de Lausanne
 
   // Pension / maîtresse de pension
   'pension',
   'pension-famille', 'pension-fam', 'pension famille',
-  'vve pension', 'veuve pension', 'vve',
+  'vve pension', 'veuve pension', 'vve', 'veuve',
   'vve m de pension', 'vve pension-famille',
   'mait de pension', 'm de pension', 'm pension',
   'maitresse de pension', 'maitr de pension',
@@ -481,11 +483,11 @@ const METIERS_SALARIES_1951 = [
 
   // Personnel hôtel — linge & ménage
   'argentier', 'portier', 'concierge', 'liftier',
-  'lingere', 'gouvernante',
+  'lingere', 'gouvernante', 'gouvern',
   'femme de chambre', 'f de ch',
   'valet de chambre',
   'domest', 'domestique', 'femme de menage',
-  'nett',   // nettoyage
+  'nett',
 
   // Service en salle
   'sommelier', 'sommel', 'sommeliere',
@@ -497,7 +499,8 @@ const METIERS_SALARIES_1951 = [
   'caissiere', 'veuve caissiere',
 
   // Secrétariat & contrôle hôtel
-  'secret dhotel', 'control dhotel',
+  'secret dhotel', 'secret hotel',
+  'control dhotel',
   'secretaire',
 
   // Autres métiers hôteliers
@@ -505,22 +508,25 @@ const METIERS_SALARIES_1951 = [
   'dem de compagnie', 'garde-malade',
   'tournante', 'chasseur', 'telephoniste',
   'g doffice',
-  'tapissier',
-  'chauffeur',
-  'mecanicien',
+  'tapissier', 'chauffeur', 'mecanicien',
 
   // Divers salariés
   'religieuse', 'representant',
   'vendeur', 'vendeuse',
   'employe', 'employee', 'empl',
+
+  // Profession = juste "hôtel" → domicile chez l'habitant
+  'hotel',
 ];
 
 function normaliserTexte(s) {
   return (s || '')
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')  // supprime accents
-    .replace(/[''`']/g, '')           // supprime apostrophes
+    .replace(/[\u0300-\u036f]/g, '')  // accents
+    .replace(/[''`']/g, '')           // apostrophes
+    .replace(/[.,]/g, ' ')            // points et virgules → espace
+    .replace(/\s+/g, ' ')             // espaces multiples → 1 espace
     .trim();
 }
 
