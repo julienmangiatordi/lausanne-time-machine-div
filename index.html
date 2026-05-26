@@ -306,24 +306,22 @@ function normaliserCategorie(properties, annee) {
 
   // ── 1832 ─────────────────────────────────────────────
   if (annee === 1832) {
-    const t = (properties.typesimplifie1832 || '').trim();
-    const map = {
-      // Avec accents
-      'Hôtel Auberge':          'Hôtel / Pension',
-      'Débit de boisson':       'Bar / Café',
-      'Café-billard':           'Café-Billard',
-      'Spectacle Sociabilité':  'Spectacle / Sociabilité',
-      // Sans accents (encodage source)
-      'Htel Auberge':           'Hôtel / Pension',
-      'Dbit de boisson':        'Bar / Café',
-      'Caf-billard':            'Café-Billard',
-      'Spectacle Sociabilit':   'Spectacle / Sociabilité',
-      // Commun
-      'Traiteur Restaurant':    'Restaurant',
-      'Brasserie':              'Brasserie',
+    const t = (
+      properties.type_simplifie_1832 ||   // ← nom réel du champ
+      properties.typesimplifie1832   ||   // fallback ancienne version
+      ''
+    ).trim();
+
+  const map = {
+    'Débit de boisson':       'Bar / Café',
+    'Traiteur / Restaurant':  'Restaurant',
+    'Hôtel / Auberge':        'Hôtel / Pension',
+    'Café-billard':           'Café-Billard',
+    'Spectacle / Sociabilité':'Spectacle / Sociabilité',
+    'Brasserie':              'Brasserie',
     };
     return map[t] || 'Autre';
-  }
+   }
 
   // ── 1888 ─────────────────────────────────────────────
   if (annee === 1888) {
