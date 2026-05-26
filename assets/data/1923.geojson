@@ -6,21 +6,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6327025,
-          46.5218269
+          6.6271014,
+          46.5241229
         ]
       },
       "properties": {
-        "id": 34,
-        "nom": "Bovy-Mouillct Eugène",
-        "metier": "confiseur",
-        "nomRue": "av.W. Fraisse",
-        "numRue": 10.0,
-        "adresse_brute": "Bovy-Mouillct Eugène, confiseur, av.W. Fraisse, 10",
+        "id": 731,
+        "nom": "Atibry-Gigon Elise",
+        "metier": "café sans alcool",
+        "nomRue": "Maupas",
+        "numRue": 6.0,
+        "adresse_brute": "Atibry-Gigon Elise, café sans alcool, Maupas, 6",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "6 Maupas, Lausanne, Switzerland"
       }
     },
     {
@@ -28,395 +28,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6304492,
-          46.5154441
+          6.6325139,
+          46.5225918
         ]
       },
       "properties": {
-        "id": 137,
-        "nom": "Barbey-Altermanii Edouard",
-        "metier": "cuisin",
-        "nomRue": "Grancy",
-        "numRue": 10.0,
-        "adresse_brute": "Barbey-Altermanii Edouard, cuisin, Grancy, 10",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "10 Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6255825,
-          46.5164811
-        ]
-      },
-      "properties": {
-        "id": 143,
-        "nom": "Beauverd Dav",
-        "metier": "g. de rest",
-        "nomRue": "Grancy",
-        "numRue": 18.0,
-        "adresse_brute": "Beauverd Dav, g. de rest, Grancy, 18",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "18 Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6289465,
-          46.5157784
-        ]
-      },
-      "properties": {
-        "id": 169,
-        "nom": "Borgeaud-Felcina Adrien",
-        "metier": "sommelier",
-        "nomRue": "Grancy",
-        "numRue": 24.0,
-        "adresse_brute": "Borgeaud-Felcina Adrien, sommelier, Grancy, 24",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "24 Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 229,
-        "nom": "Demont-Fontolliet Auguste",
-        "metier": "confiseur",
-        "nomRue": "M. Grancy",
-        "numRue": 4.0,
-        "adresse_brute": "Demont-Fontolliet Auguste, confiseur, M. Grancy, 4",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6304726,
-          46.5149904
-        ]
-      },
-      "properties": {
-        "id": 241,
-        "nom": "Durci",
-        "metier": "artiste",
-        "nomRue": "Bdde Grancy",
-        "numRue": 7.0,
-        "adresse_brute": "Durci, artiste, Bdde Grancy, 7",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Spectacle_Sociabilite",
-        "adresse_geocodage": "7 Boulevard Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6304726,
-          46.5149904
-        ]
-      },
-      "properties": {
-        "id": 283,
-        "nom": "Gray Louise-Mary",
-        "metier": "pension",
-        "nomRue": "Grancy",
-        "numRue": 7.0,
-        "adresse_brute": "Gray Louise-Mary, pension, Grancy, 7",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "7 Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6284207,
-          46.5155007
-        ]
-      },
-      "properties": {
-        "id": 305,
-        "nom": "Jaccaud-Bonnct Henri",
-        "metier": "anc. cafetier",
-        "nomRue": "Grancy",
-        "numRue": 21.0,
-        "adresse_brute": "Jaccaud-Bonnct Henri, anc. cafetier, Grancy, 21",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "21 Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6251263,
-          46.5163269
-        ]
-      },
-      "properties": {
-        "id": 352,
-        "nom": "Miauton-Gilliéron Daniel",
-        "metier": "cafetier",
-        "nomRue": "Bdde Grancy",
-        "numRue": 51.0,
-        "adresse_brute": "Miauton-Gilliéron Daniel, cafetier, Bdde Grancy, 51",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "51 Boulevard Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6316788,
-          46.5152191
-        ]
-      },
-      "properties": {
-        "id": 430,
-        "nom": "Senn-Hohmami Ernest",
-        "metier": "cuisinier",
-        "nomRue": "Bdde Grancy",
-        "numRue": 4.0,
-        "adresse_brute": "Senn-Hohmami Ernest, cuisinier, Bdde Grancy, 4",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "4 Boulevard Grancy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 442,
-        "nom": "Thiault-Rossicr Lucio",
-        "metier": "dir. de pensionnat",
-        "nomRue": "Graucy",
-        "numRue": 19.0,
-        "adresse_brute": "Thiault-Rossicr Lucio, dir. de pensionnat, Graucy, 19",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 484,
-        "nom": "Baumann-Frölicli Albert",
-        "metier": "contr. wa-gons-restaur",
-        "nomRue": "a. de la Harpe",
-        "numRue": 7.0,
-        "adresse_brute": "Baumann-Frölicli Albert, contr. wa-gons-restaur, a. de la Harpe, 7",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6259508,
-          46.5088007
-        ]
-      },
-      "properties": {
-        "id": 498,
-        "nom": "Bertrand Mlles",
-        "metier": "pension d’étrangers.la Printanière,",
-        "nomRue": "av. de la Harpe.",
-        "numRue": null,
-        "adresse_brute": "Bertrand Mlles, pension d’étrangers.la Printanière,, av. de la Harpe.",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Avenue de la Harpe., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 550,
-        "nom": "Chiesa Antonio",
-        "metier": "musicien",
-        "nomRue": "av. de laHarpe",
-        "numRue": 62.0,
-        "adresse_brute": "Chiesa Antonio, musicien, av. de laHarpe, 62",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Spectacle_Sociabilite",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 665,
-        "nom": "Kricsi-Buelier Karl",
-        "metier": "cuisin",
-        "nomRue": "av. de laHarpe",
-        "numRue": 11.0,
-        "adresse_brute": "Kricsi-Buelier Karl, cuisin, av. de laHarpe, 11",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6252151,
-          46.5127227
-        ]
-      },
-      "properties": {
-        "id": 716,
-        "nom": "Noeth-Kohm Georges",
-        "metier": "brasseur",
-        "nomRue": "av.de la Harpe",
-        "numRue": 10.0,
-        "adresse_brute": "Noeth-Kohm Georges, brasseur, av.de la Harpe, 10",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Brasserie",
-        "adresse_geocodage": "10 av.de la Harpe, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6259508,
-          46.5088007
-        ]
-      },
-      "properties": {
-        "id": 722,
-        "nom": "Ostorèro-Juiiod Joseph",
-        "metier": "restaurateur",
-        "nomRue": "av. de la Harpe",
-        "numRue": 59.0,
-        "adresse_brute": "Ostorèro-Juiiod Joseph, restaurateur, av. de la Harpe, 59",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "59 Avenue de la Harpe, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6259508,
-          46.5088007
-        ]
-      },
-      "properties": {
-        "id": 760,
-        "nom": "Rappaz-Blanc Louis",
-        "metier": "café de la Navigation",
-        "nomRue": "av. de la Harpe",
-        "numRue": 61.0,
-        "adresse_brute": "Rappaz-Blanc Louis, café de la Navigation, av. de la Harpe, 61",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "61 Avenue de la Harpe, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 805,
-        "nom": "Streit-Rohrer Charles",
+        "id": 1264,
+        "nom": "Barman Marie",
         "metier": "café",
-        "nomRue": "av. de laHarpe",
-        "numRue": 18.0,
-        "adresse_brute": "Streit-Rohrer Charles, café, av. de laHarpe, 18",
+        "nomRue": "Riponne",
+        "numRue": 4.0,
+        "adresse_brute": "Barman Marie, café, Riponne, 4",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Riponne, Lausanne, Switzerland"
       }
     },
     {
@@ -424,21 +50,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6212076,
-          46.5168913
+          6.6315616,
+          46.5213634
         ]
       },
       "properties": {
-        "id": 1028,
-        "nom": "Junod Rose",
-        "metier": "cuisinière",
-        "nomRue": "Fleurettes",
-        "numRue": 31.0,
-        "adresse_brute": "Junod Rose, cuisinière, Fleurettes, 31",
+        "id": 1434,
+        "nom": "Büttig-Pcroulaz Marguerite",
+        "metier": "café",
+        "nomRue": "GdSt-Jean",
+        "numRue": 14.0,
+        "adresse_brute": "Büttig-Pcroulaz Marguerite, café, GdSt-Jean, 14",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "31 Fleurettes, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "14 Gd St-Jean, Lausanne, Switzerland"
       }
     },
     {
@@ -446,21 +72,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.636333,
-          46.521592
+          6.6362534,
+          46.5192738
         ]
       },
       "properties": {
-        "id": 1110,
-        "nom": "Adam Blanche",
-        "metier": "sommelière",
-        "nomRue": "Pont",
+        "id": 1513,
+        "nom": "Baudenbacher-Roth Hri",
+        "metier": "hôtel-rest",
+        "nomRue": "r.de la Paix",
         "numRue": 3.0,
-        "adresse_brute": "Adam Blanche, sommelière, Pont, 3",
+        "adresse_brute": "Baudenbacher-Roth Hri, hôtel-rest, r.de la Paix, 3",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "3 Pont, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Rue de la Paix, Lausanne, Switzerland"
       }
     },
     {
@@ -468,21 +94,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6289755,
-          46.5074408
+          6.6327025,
+          46.5218269
         ]
       },
       "properties": {
-        "id": 1112,
-        "nom": "Auckenthaler-Petitmaître Max",
-        "metier": "pension",
-        "nomRue": "pl. du Port",
-        "numRue": 15.0,
-        "adresse_brute": "Auckenthaler-Petitmaître Max, pension, pl. du Port, 15",
+        "id": 2290,
+        "nom": "Bertotti-Balma Henri",
+        "metier": "café",
+        "nomRue": "Clicneau-de-Bourg",
+        "numRue": 29.0,
+        "adresse_brute": "Bertotti-Balma Henri, café, Clicneau-de-Bourg, 29",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "15 Place du Port, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -490,21 +116,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6330974,
-          46.52157
+          6.629399,
+          46.529908
         ]
       },
       "properties": {
-        "id": 1115,
-        "nom": "Basler-Herb Karl",
-        "metier": "maître de pension",
-        "nomRue": "rue du Pont",
-        "numRue": 2.0,
-        "adresse_brute": "Basler-Herb Karl, maître de pension, rue du Pont, 2",
+        "id": 2336,
+        "nom": "Bessaud-Stocker Henri",
+        "metier": "gare, de café",
+        "nomRue": "Pontaise",
+        "numRue": 23.0,
+        "adresse_brute": "Bessaud-Stocker Henri, gare, de café, Pontaise, 23",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "2 rue du Pont, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "23 Pontaise, Lausanne, Switzerland"
       }
     },
     {
@@ -512,65 +138,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6365048,
-          46.5211355
+          6.6327025,
+          46.5218269
         ]
       },
       "properties": {
-        "id": 1125,
-        "nom": "Bodenmann Ulrich",
-        "metier": "pâtiss",
-        "nomRue": "Pont",
-        "numRue": 7.0,
-        "adresse_brute": "Bodenmann Ulrich, pâtiss, Pont, 7",
+        "id": 2558,
+        "nom": "Bigler Marguer",
+        "metier": "café",
+        "nomRue": "Industr., La Sallaz",
+        "numRue": null,
+        "adresse_brute": "Bigler Marguer, café, Industr., La Sallaz",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "7 Pont, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6203777,
-          46.5297854
-        ]
-      },
-      "properties": {
-        "id": 1180,
-        "nom": "Chatelan Marcel",
-        "metier": "artiste",
-        "nomRue": "Bergières",
-        "numRue": 30.0,
-        "adresse_brute": "Chatelan Marcel, artiste, Bergières, 30",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Spectacle_Sociabilite",
-        "adresse_geocodage": "30 Bergières, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6212092,
-          46.5290603
-        ]
-      },
-      "properties": {
-        "id": 1212,
-        "nom": "Grivel-Vcluzat Sopliie-Elise",
-        "metier": "m. depension",
-        "nomRue": "av. Bergières",
-        "numRue": 31.0,
-        "adresse_brute": "Grivel-Vcluzat Sopliie-Elise, m. depension, av. Bergières, 31",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "31 Avenue Bergières, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -583,16 +165,16 @@
         ]
       },
       "properties": {
-        "id": 1308,
+        "id": 3230,
         "nom": "Boldrini-Paolo Luigi",
         "metier": "café",
         "nomRue": "Tour",
         "numRue": 17.0,
         "adresse_brute": "Boldrini-Paolo Luigi, café, Tour, 17",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "17 Tour, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "17 Tour, Lausanne, Switzerland"
       }
     },
     {
@@ -600,21 +182,153 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.628834,
-          46.5237573
+          6.6385195,
+          46.5218971
         ]
       },
       "properties": {
-        "id": 1335,
-        "nom": "Chuard Yvonne",
-        "metier": "sommelière",
-        "nomRue": "Tour",
-        "numRue": 14.0,
-        "adresse_brute": "Chuard Yvonne, sommelière, Tour, 14",
+        "id": 3280,
+        "nom": "Bolomey-Defrancesco Jeanne",
+        "metier": "café",
+        "nomRue": "Solitude",
+        "numRue": 5.0,
+        "adresse_brute": "Bolomey-Defrancesco Jeanne, café, Solitude, 5",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "14 Tour, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "5 Solitude, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 3339,
+        "nom": "Bondaz-Engesser Henri",
+        "metier": "café",
+        "nomRue": "rue Fahre",
+        "numRue": 10.0,
+        "adresse_brute": "Bondaz-Engesser Henri, café, rue Fahre, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4033,
+        "nom": "Bovey-Bovat Ernest",
+        "metier": "café dos Alliés",
+        "nomRue": "Pont aise",
+        "numRue": 48.0,
+        "adresse_brute": "Bovey-Bovat Ernest, café dos Alliés, Pont aise, 48",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6313685,
+          46.522554
+        ]
+      },
+      "properties": {
+        "id": 4825,
+        "nom": "Burky-Rudolf Ulysse",
+        "metier": "restaurateur",
+        "nomRue": "Haldimand",
+        "numRue": 9.0,
+        "adresse_brute": "Burky-Rudolf Ulysse, restaurateur, Haldimand, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "9 Haldimand, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4953,
+        "nom": "Buser-Hartol Charles",
+        "metier": "gare, d'hôtel",
+        "nomRue": "rue Richard",
+        "numRue": 2.0,
+        "adresse_brute": "Buser-Hartol Charles, gare, d'hôtel, rue Richard, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6486216,
+          46.516663
+        ]
+      },
+      "properties": {
+        "id": 5530,
+        "nom": "Chablais-Wagner Marius",
+        "metier": "m. d’hôtel",
+        "nomRue": "Mousquines",
+        "numRue": 8.0,
+        "adresse_brute": "Chablais-Wagner Marius, m. d’hôtel, Mousquines, 8",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Mousquines, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 5722,
+        "nom": "Chapallaz-Auberson Auguste",
+        "metier": "concierge Casino-Théâtre",
+        "nomRue": "r. Ch. Mon-nard",
+        "numRue": 4.0,
+        "adresse_brute": "Chapallaz-Auberson Auguste, concierge Casino-Théâtre, r. Ch. Mon-nard, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Spectacle / Sociabilité",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -627,16 +341,16 @@
         ]
       },
       "properties": {
-        "id": 1337,
+        "id": 6483,
         "nom": "Chuard-Savarv A.",
         "metier": "café",
         "nomRue": "Tour",
         "numRue": 14.0,
         "adresse_brute": "Chuard-Savarv A., café, Tour, 14",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "14 Tour, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "14 Tour, Lausanne, Switzerland"
       }
     },
     {
@@ -644,241 +358,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6336209,
-          46.5164762
+          6.635616,
+          46.5207161
         ]
       },
       "properties": {
-        "id": 1645,
-        "nom": "Benz Otto",
-        "metier": "confiseur",
-        "nomRue": "av. d’Ouchy",
-        "numRue": 3.0,
-        "adresse_brute": "Benz Otto, confiseur, av. d’Ouchy, 3",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "3 Avenue d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6271735,
-          46.5078743
-        ]
-      },
-      "properties": {
-        "id": 1650,
-        "nom": "Bcsson-Diserens Auguste",
-        "metier": "cafetier",
-        "nomRue": "av. d'Ouchy",
-        "numRue": 66.0,
-        "adresse_brute": "Bcsson-Diserens Auguste, cafetier, av. d'Ouchy, 66",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "66 Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6311373,
-          46.5143987
-        ]
-      },
-      "properties": {
-        "id": 1678,
-        "nom": "Chastellain Rose-Marie",
-        "metier": "pension",
-        "nomRue": "av. Ouchy",
-        "numRue": 10.0,
-        "adresse_brute": "Chastellain Rose-Marie, pension, av. Ouchy, 10",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "10 Avenue Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6271952,
-          46.5073732
-        ]
-      },
-      "properties": {
-        "id": 1692,
-        "nom": "Cnénoud-Tschopp Ch",
-        "metier": "anc. hôtelier",
-        "nomRue": "av. d’Ouchy",
-        "numRue": 76.0,
-        "adresse_brute": "Cnénoud-Tschopp Ch, anc. hôtelier, av. d’Ouchy, 76",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "76 Avenue d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6293581,
-          46.5120934
-        ]
-      },
-      "properties": {
-        "id": 1699,
-        "nom": "Devaud-Berberat Emile",
-        "metier": "cafetier",
-        "nomRue": "av.d’Ouchy",
-        "numRue": 34.0,
-        "adresse_brute": "Devaud-Berberat Emile, cafetier, av.d’Ouchy, 34",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "34 av.d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6336209,
-          46.5164762
-        ]
-      },
-      "properties": {
-        "id": 1721,
-        "nom": "Ehingcr Marcel",
-        "metier": "pâtiss",
-        "nomRue": "av. d'Ouchy",
-        "numRue": 3.0,
-        "adresse_brute": "Ehingcr Marcel, pâtiss, av. d'Ouchy, 3",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "3 Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6336209,
-          46.5164762
-        ]
-      },
-      "properties": {
-        "id": 1743,
-        "nom": "Geiser Karl",
-        "metier": "pâtissier",
-        "nomRue": "av. d'Ouchy",
-        "numRue": 3.0,
-        "adresse_brute": "Geiser Karl, pâtissier, av. d'Ouchy, 3",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "3 Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6297382,
-          46.511691
-        ]
-      },
-      "properties": {
-        "id": 1749,
-        "nom": "Girardet-Sclinecberger Alfred",
-        "metier": "cuisin",
-        "nomRue": "av. d’Ouchy",
-        "numRue": 43.0,
-        "adresse_brute": "Girardet-Sclinecberger Alfred, cuisin, av. d’Ouchy, 43",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "43 Avenue d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6319813,
-          46.5144242
-        ]
-      },
-      "properties": {
-        "id": 1753,
-        "nom": "Grosjean-Deiss Albert",
-        "metier": "confiseur",
-        "nomRue": "av.d'Ouchy",
-        "numRue": 23.0,
-        "adresse_brute": "Grosjean-Deiss Albert, confiseur, av.d'Ouchy, 23",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "23 av.d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6336209,
-          46.5164762
-        ]
-      },
-      "properties": {
-        "id": 1790,
-        "nom": "Marbach Ernest",
-        "metier": "confis",
-        "nomRue": "av. Ouchy",
-        "numRue": 3.0,
-        "adresse_brute": "Marbach Ernest, confis, av. Ouchy, 3",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "3 Avenue Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6334481,
-          46.5165078
-        ]
-      },
-      "properties": {
-        "id": 1796,
-        "nom": "Mayor-Jaccoud Ferdinand",
-        "metier": "pension",
-        "nomRue": "av. d’Ouchy",
+        "id": 6603,
+        "nom": "Clerici-Borgaica Jean",
+        "metier": "café",
+        "nomRue": "Flon",
         "numRue": 12.0,
-        "adresse_brute": "Mayor-Jaccoud Ferdinand, pension, av. d’Ouchy, 12",
+        "adresse_brute": "Clerici-Borgaica Jean, café, Flon, 12",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "12 Avenue d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "12 Flon, Lausanne, Switzerland"
       }
     },
     {
@@ -886,21 +380,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6271952,
-          46.5073732
+          6.6303402,
+          46.5232203
         ]
       },
       "properties": {
-        "id": 1839,
-        "nom": "Perrln-Mayor Alfred",
-        "metier": "pâtissier",
-        "nomRue": "Ou-chy",
-        "numRue": 76.0,
-        "adresse_brute": "Perrln-Mayor Alfred, pâtissier, Ou-chy, 76",
+        "id": 6737,
+        "nom": "Collonnaz-Jecker Théophile",
+        "metier": "Café desSapeurs-Pompiers",
+        "nomRue": "r. Neuve",
+        "numRue": 9.0,
+        "adresse_brute": "Collonnaz-Jecker Théophile, Café desSapeurs-Pompiers, r. Neuve, 9",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "76 Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "9 Rue Neuve, Lausanne, Switzerland"
       }
     },
     {
@@ -908,65 +402,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6324145,
-          46.5143788
+          6.6307825,
+          46.5223443
         ]
       },
       "properties": {
-        "id": 1847,
-        "nom": "Probst-Monachon Fernand",
-        "metier": "restaurateur",
-        "nomRue": "av. d’Ouchy",
-        "numRue": 19.0,
-        "adresse_brute": "Probst-Monachon Fernand, restaurateur, av. d’Ouchy, 19",
+        "id": 8484,
+        "nom": "Delfantc-Pesce Santé",
+        "metier": "café",
+        "nomRue": "St-Laurent",
+        "numRue": 15.0,
+        "adresse_brute": "Delfantc-Pesce Santé, café, St-Laurent, 15",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "19 Avenue d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6271768,
-          46.5075945
-        ]
-      },
-      "properties": {
-        "id": 1910,
-        "nom": "Steiner Jacob",
-        "metier": "pâtissier",
-        "nomRue": "av. Ouchy",
-        "numRue": 70.0,
-        "adresse_brute": "Steiner Jacob, pâtissier, av. Ouchy, 70",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "70 Avenue Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6297382,
-          46.511691
-        ]
-      },
-      "properties": {
-        "id": 1920,
-        "nom": "Voirol-Siegenthaler Edouard",
-        "metier": "cafet",
-        "nomRue": "av. d’Ouchy",
-        "numRue": 43.0,
-        "adresse_brute": "Voirol-Siegenthaler Edouard, cafet, av. d’Ouchy, 43",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "43 Avenue d’Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "15 St-Laurent, Lausanne, Switzerland"
       }
     },
     {
@@ -979,434 +429,16 @@
         ]
       },
       "properties": {
-        "id": 1965,
-        "nom": "Borel-Duc Charles",
-        "metier": "sommel",
-        "nomRue": "av. RondPoint",
-        "numRue": 1.0,
-        "adresse_brute": "Borel-Duc Charles, sommel, av. RondPoint, 1",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6037365,
-          46.5164568
-        ]
-      },
-      "properties": {
-        "id": 2028,
-        "nom": "Gilliéron-Bochatay Georges",
-        "metier": "sommelier",
-        "nomRue": "Rond-Point",
-        "numRue": 11.0,
-        "adresse_brute": "Gilliéron-Bochatay Georges, sommelier, Rond-Point, 11",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "11 Rond-Point, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6260113,
-          46.5154134
-        ]
-      },
-      "properties": {
-        "id": 2038,
-        "nom": "Gros",
-        "metier": "musicien",
-        "nomRue": "a.du Rond-Point",
-        "numRue": 18.0,
-        "adresse_brute": "Gros, musicien, a.du Rond-Point, 18",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Spectacle_Sociabilite",
-        "adresse_geocodage": "18 Avenue du Rond-Point, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6282373,
-          46.5152808
-        ]
-      },
-      "properties": {
-        "id": 2044,
-        "nom": "Hcinzclmann Herbert",
-        "metier": "cuisin",
-        "nomRue": "Rond-Point",
-        "numRue": 3.0,
-        "adresse_brute": "Hcinzclmann Herbert, cuisin, Rond-Point, 3",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "3 Rond-Point, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.628248,
-          46.5151052
-        ]
-      },
-      "properties": {
-        "id": 2122,
-        "nom": "Roux - Cretler Laurent",
-        "metier": "sommelier",
-        "nomRue": "av. Rond-Point",
-        "numRue": 5.0,
-        "adresse_brute": "Roux - Cretler Laurent, sommelier, av. Rond-Point, 5",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "5 Avenue Rond-Point, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6365048,
-          46.5211355
-        ]
-      },
-      "properties": {
-        "id": 2157,
-        "nom": "Yersin Fanny",
-        "metier": "pension",
-        "nomRue": "Gd-Pont",
-        "numRue": 16.0,
-        "adresse_brute": "Yersin Fanny, pension, Gd-Pont, 16",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "16 Gd-Pont, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6281269,
-          46.5142409
-        ]
-      },
-      "properties": {
-        "id": 2160,
-        "nom": "Ambresin Marthe",
-        "metier": "sommelière",
-        "nomRue": "av. Dapples",
-        "numRue": 13.0,
-        "adresse_brute": "Ambresin Marthe, sommelière, av. Dapples, 13",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "13 Avenue Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6306555,
-          46.5137965
-        ]
-      },
-      "properties": {
-        "id": 2233,
-        "nom": "Colgny-Epltaux Aline",
-        "metier": "pension",
-        "nomRue": "av.Dapples",
-        "numRue": 7.0,
-        "adresse_brute": "Colgny-Epltaux Aline, pension, av.Dapples, 7",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "7 av.Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6306555,
-          46.5137965
-        ]
-      },
-      "properties": {
-        "id": 2280,
-        "nom": "Garcin-Bellot Victor",
-        "metier": "cuisin",
-        "nomRue": "av. Dapples",
-        "numRue": 27.0,
-        "adresse_brute": "Garcin-Bellot Victor, cuisin, av. Dapples, 27",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "27 Avenue Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 2285,
-        "nom": "Gclirig-Mils I-lermann",
-        "metier": "hôtelier",
-        "nomRue": "aven.Dapples",
-        "numRue": 3.0,
-        "adresse_brute": "Gclirig-Mils I-lermann, hôtelier, aven.Dapples, 3",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6306555,
-          46.5137965
-        ]
-      },
-      "properties": {
-        "id": 2356,
-        "nom": "Marguerat-Masson Anna",
-        "metier": "pension",
-        "nomRue": "av.Dapples",
-        "numRue": 5.0,
-        "adresse_brute": "Marguerat-Masson Anna, pension, av.Dapples, 5",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "5 av.Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6257465,
-          46.5148751
-        ]
-      },
-      "properties": {
-        "id": 2361,
-        "nom": "Menzi-Krainer Paul",
-        "metier": "cuisin",
-        "nomRue": "av. Dapples",
-        "numRue": 23.0,
-        "adresse_brute": "Menzi-Krainer Paul, cuisin, av. Dapples, 23",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "23 Avenue Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6236137,
-          46.5157022
-        ]
-      },
-      "properties": {
-        "id": 2428,
-        "nom": "Schwitzguébel Marguerite",
-        "metier": "pension",
-        "nomRue": "av. Dapples",
-        "numRue": 35.0,
-        "adresse_brute": "Schwitzguébel Marguerite, pension, av. Dapples, 35",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "35 Avenue Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.627057,
-          46.5150531
-        ]
-      },
-      "properties": {
-        "id": 2445,
-        "nom": "Tinsky Titus",
-        "metier": "pâtiss",
-        "nomRue": "Dapples",
-        "numRue": 42.0,
-        "adresse_brute": "Tinsky Titus, pâtiss, Dapples, 42",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "42 Dapples, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6270465,
-          46.5141393
-        ]
-      },
-      "properties": {
-        "id": 2650,
-        "nom": "Mouth er- Granger Jaques-Joseph",
-        "metier": "m.d’hôtel",
-        "nomRue": "av. Floréal",
-        "numRue": 4.0,
-        "adresse_brute": "Mouth er- Granger Jaques-Joseph, m.d’hôtel, av. Floréal, 4",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "4 Avenue Floréal, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6270847,
-          46.5143476
-        ]
-      },
-      "properties": {
-        "id": 2653,
-        "nom": "Niggly-Matter Georges",
-        "metier": "musicien",
-        "nomRue": "av.Floréal",
-        "numRue": 2.0,
-        "adresse_brute": "Niggly-Matter Georges, musicien, av.Floréal, 2",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Spectacle_Sociabilite",
-        "adresse_geocodage": "2 av.Floréal, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 2722,
-        "nom": "Berger-Picco Charles",
-        "metier": "cuisin",
-        "nomRue": "Beau-regard",
-        "numRue": 1.0,
-        "adresse_brute": "Berger-Picco Charles, cuisin, Beau-regard, 1",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 2802,
-        "nom": "Riesen-Payot Marcel",
-        "metier": "sommel",
-        "nomRue": "Beau-regard",
-        "numRue": 7.0,
-        "adresse_brute": "Riesen-Payot Marcel, sommel, Beau-regard, 7",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 2822,
-        "nom": "Wlrz-Chevalley Henri",
-        "metier": "sommelier",
-        "nomRue": "av.Beau-Regard",
-        "numRue": 7.0,
-        "adresse_brute": "Wlrz-Chevalley Henri, sommelier, av.Beau-Regard, 7",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6274159,
-          46.5083664
-        ]
-      },
-      "properties": {
-        "id": 2829,
-        "nom": "Baumann Hans",
-        "metier": "cuisinier",
-        "nomRue": "Beau-Rivage.",
+        "id": 8613,
+        "nom": "Demiéville-Bron Ulysse",
+        "metier": "gér. de brasserie",
+        "nomRue": "camp du Pavement",
         "numRue": null,
-        "adresse_brute": "Baumann Hans, cuisinier, Beau-Rivage.",
+        "adresse_brute": "Demiéville-Bron Ulysse, gér. de brasserie, camp du Pavement",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Beau-Rivage., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -1414,21 +446,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6274159,
-          46.5083664
+          6.6207401,
+          46.5296059
         ]
       },
       "properties": {
-        "id": 2830,
-        "nom": "Baumann Victor",
-        "metier": "cuisinier",
-        "nomRue": "Beau-Rivage.",
-        "numRue": null,
-        "adresse_brute": "Baumann Victor, cuisinier, Beau-Rivage.",
+        "id": 8657,
+        "nom": "Denervaud Louis",
+        "metier": "empi, d’hôtel",
+        "nomRue": "av.Bergières",
+        "numRue": 26.0,
+        "adresse_brute": "Denervaud Louis, empi, d’hôtel, av.Bergières, 26",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Beau-Rivage., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "26 Avenue Bergières, Lausanne, Switzerland"
       }
     },
     {
@@ -1436,175 +468,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6304031,
-          46.5079299
+          6.6311712,
+          46.5226715
         ]
       },
       "properties": {
-        "id": 2832,
-        "nom": "Borel-Mabille Madeleine",
-        "metier": null,
-        "nomRue": "Hôtel Beau-Rivage.",
-        "numRue": null,
-        "adresse_brute": "Borel-Mabille Madeleine, Hôtel Beau-Rivage.",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Hôtel Beau-Rivage., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6274159,
-          46.5083664
-        ]
-      },
-      "properties": {
-        "id": 2835,
-        "nom": "Bûcher Johannes",
-        "metier": "pâtissier",
-        "nomRue": "Beau-Rivage.",
-        "numRue": null,
-        "adresse_brute": "Bûcher Johannes, pâtissier, Beau-Rivage.",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "Beau-Rivage., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 2836,
-        "nom": "Bûcher Marie-Anna",
-        "metier": "gouvern",
-        "nomRue": "Hôtel BeauRivage.",
-        "numRue": null,
-        "adresse_brute": "Bûcher Marie-Anna, gouvern, Hôtel BeauRivage.",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6332436,
-          46.5160203
-        ]
-      },
-      "properties": {
-        "id": 2837,
-        "nom": "Busslinger Eugène",
-        "metier": "sommcl",
-        "nomRue": "HôtelBeau-Rivage",
-        "numRue": null,
-        "adresse_brute": "Busslinger Eugène, sommcl, HôtelBeau-Rivage",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "id": 2840,
-        "nom": "Egli-Kuprecht Otto",
-        "metier": "directeur",
-        "nomRue": "BeauRivage Palace",
-        "numRue": null,
-        "adresse_brute": "Egli-Kuprecht Otto, directeur, BeauRivage Palace",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6304031,
-          46.5079299
-        ]
-      },
-      "properties": {
-        "id": 2847,
-        "nom": "Hermann-Bachmann Rosine",
-        "metier": "f. dechambre",
-        "nomRue": "Hôtel Beau-Rivage.",
-        "numRue": null,
-        "adresse_brute": "Hermann-Bachmann Rosine, f. dechambre, Hôtel Beau-Rivage.",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Hôtel Beau-Rivage., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6280692,
-          46.5081042
-        ]
-      },
-      "properties": {
-        "id": 2872,
-        "nom": "Wallimann F",
-        "metier": "sommel",
-        "nomRue": "H. Beau-Rivage.",
-        "numRue": null,
-        "adresse_brute": "Wallimann F, sommel, H. Beau-Rivage.",
-        "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "H. Beau-Rivage., Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.6340835,
-          46.5152621
-        ]
-      },
-      "properties": {
-        "id": 2887,
-        "nom": "Fazio Luigi",
-        "metier": "musicien",
-        "nomRue": "av. Dickens",
+        "id": 9033,
+        "nom": "Devolz-Reymond Adrien",
+        "metier": "café Gam-brinus",
+        "nomRue": "Haldimand",
         "numRue": 8.0,
-        "adresse_brute": "Fazio Luigi, musicien, av. Dickens, 8",
+        "adresse_brute": "Devolz-Reymond Adrien, café Gam-brinus, Haldimand, 8",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Spectacle_Sociabilite",
-        "adresse_geocodage": "8 Avenue Dickens, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Haldimand, Lausanne, Switzerland"
       }
     },
     {
@@ -1612,21 +490,65 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6335827,
-          46.5154898
+          6.596024,
+          46.5822996
         ]
       },
       "properties": {
-        "id": 2912,
-        "nom": "Vigna Louise",
-        "metier": "sommel",
-        "nomRue": "av. Dickens",
-        "numRue": 4.0,
-        "adresse_brute": "Vigna Louise, sommel, av. Dickens, 4",
+        "id": 9148,
+        "nom": "Diserens-Grigoriera Edouard",
+        "metier": "restaurateur",
+        "nomRue": "Martheray 4bis",
+        "numRue": null,
+        "adresse_brute": "Diserens-Grigoriera Edouard, restaurateur, Martheray 4bis",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "4 Avenue Dickens, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Martheray 4bis, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.637011,
+          46.5159963
+        ]
+      },
+      "properties": {
+        "id": 9201,
+        "nom": "Dcebeli-Decoppet Gustave",
+        "metier": "m. d’hôtel",
+        "nomRue": "av. Juste Olivier",
+        "numRue": 6.0,
+        "adresse_brute": "Dcebeli-Decoppet Gustave, m. d’hôtel, av. Juste Olivier, 6",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "6 Avenue Juste Olivier, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6202212,
+          46.5256662
+        ]
+      },
+      "properties": {
+        "id": 9340,
+        "nom": "Dubach-Walk Louis",
+        "metier": "restaurateur",
+        "nomRue": "av.d’Echallens",
+        "numRue": 24.0,
+        "adresse_brute": "Dubach-Walk Louis, restaurateur, av.d’Echallens, 24",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "24 Avenue d’Echallens, Lausanne, Switzerland"
       }
     },
     {
@@ -1639,16 +561,16 @@
         ]
       },
       "properties": {
-        "id": 2962,
-        "nom": "Peliehet Hélène",
-        "metier": "pensionnat",
-        "nomRue": "av. du Montd’Or",
-        "numRue": 43.0,
-        "adresse_brute": "Peliehet Hélène, pensionnat, av. du Montd’Or, 43",
+        "id": 9509,
+        "nom": "Duchêne Marguerite",
+        "metier": "café",
+        "nomRue": "St-Laurent16",
+        "numRue": null,
+        "adresse_brute": "Duchêne Marguerite, café, St-Laurent16",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -1656,21 +578,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.616869,
-          46.5163516
+          6.6327025,
+          46.5218269
         ]
       },
       "properties": {
-        "id": 2967,
-        "nom": "Salvisberg-Fréderic Alfred",
-        "metier": "sommel",
-        "nomRue": "Mont d’Or",
-        "numRue": 47.0,
-        "adresse_brute": "Salvisberg-Fréderic Alfred, sommel, Mont d’Or, 47",
+        "id": 9760,
+        "nom": "Dumuld-Slebenmann Louis",
+        "metier": "maîtred’hôtel",
+        "nomRue": "Montngibert",
+        "numRue": 6.0,
+        "adresse_brute": "Dumuld-Slebenmann Louis, maîtred’hôtel, Montngibert, 6",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Traiteur_Restaurant",
-        "adresse_geocodage": "47 Mont d’Or, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -1678,21 +600,285 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6278426,
-          46.5126403
+          6.6327025,
+          46.5218269
         ]
       },
       "properties": {
-        "id": 2987,
-        "nom": "Béguin Marthe",
-        "metier": "pension",
-        "nomRue": "av. Grammont",
+        "id": 10849,
+        "nom": "Fav Albertino",
+        "metier": "restaurant",
+        "nomRue": "Aie",
+        "numRue": 20.0,
+        "adresse_brute": "Fav Albertino, restaurant, Aie, 20",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 11032,
+        "nom": "Félix Elisa",
+        "metier": "café",
+        "nomRue": "Cité Perrière R.",
+        "numRue": null,
+        "adresse_brute": "Félix Elisa, café, Cité Perrière R.",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 11501,
+        "nom": "Foumier Adèle",
+        "metier": "café",
+        "nomRue": "Chauderon 12.RT4184",
+        "numRue": null,
+        "adresse_brute": "Foumier Adèle, café, Chauderon 12.RT4184",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5944965,
+          46.5242519
+        ]
+      },
+      "properties": {
+        "id": 12651,
+        "nom": "Gilliéron-Chambaz Ch",
+        "metier": "restaurateur",
+        "nomRue": "r. du Lac",
+        "numRue": 16.0,
+        "adresse_brute": "Gilliéron-Chambaz Ch, restaurateur, r. du Lac, 16",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "16 Rue du Lac, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6318981,
+          46.5192667
+        ]
+      },
+      "properties": {
+        "id": 12684,
+        "nom": "Gilliéron-Rey Louis",
+        "metier": "g. de café",
+        "nomRue": "Petit-Chêne",
+        "numRue": 10.0,
+        "adresse_brute": "Gilliéron-Rey Louis, g. de café, Petit-Chêne, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "10 Petit-Chêne, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6304369,
+          46.5235178
+        ]
+      },
+      "properties": {
+        "id": 12905,
+        "nom": "Gleyre Albert",
+        "metier": "g. de café",
+        "nomRue": "r. Pré-du-Marché",
         "numRue": 3.0,
-        "adresse_brute": "Béguin Marthe, pension, av. Grammont, 3",
+        "adresse_brute": "Gleyre Albert, g. de café, r. Pré-du-Marché, 3",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "3 Avenue Grammont, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Rue Pré-du-Marché, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 13323,
+        "nom": "Granil-Balmat-Boiston Claude-Irénée,-",
+        "metier": "café",
+        "nomRue": "m. Dumoulin, Bellevaux. R.",
+        "numRue": null,
+        "adresse_brute": "Granil-Balmat-Boiston Claude-Irénée,-, café, m. Dumoulin, Bellevaux. R.",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6273681,
+          46.5297854
+        ]
+      },
+      "properties": {
+        "id": 14118,
+        "nom": "Gutzwiller - WIrz Ami",
+        "metier": "empi, d’hôtel",
+        "nomRue": "av. Druey",
+        "numRue": 19.0,
+        "adresse_brute": "Gutzwiller - WIrz Ami, empi, d’hôtel, av. Druey, 19",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "19 Avenue Druey, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6268328,
+          46.5299975
+        ]
+      },
+      "properties": {
+        "id": 15174,
+        "nom": "Hfissy-Roulet Ernest",
+        "metier": "café",
+        "nomRue": "av. Mont-Blanc",
+        "numRue": 11.0,
+        "adresse_brute": "Hfissy-Roulet Ernest, café, av. Mont-Blanc, 11",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "11 Avenue Mont-Blanc, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 16215,
+        "nom": "Jnnod Irénée",
+        "metier": "g. de café",
+        "nomRue": "r. St-Lau-rent",
+        "numRue": 32.0,
+        "adresse_brute": "Jnnod Irénée, g. de café, r. St-Lau-rent, 32",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 16234,
+        "nom": "Kacch-Zosso Fernand",
+        "metier": "café",
+        "nomRue": "Chen.-de-Rourg",
+        "numRue": 10.0,
+        "adresse_brute": "Kacch-Zosso Fernand, café, Chen.-de-Rourg, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6208817,
+          46.5211333
+        ]
+      },
+      "properties": {
+        "id": 17159,
+        "nom": "Lauper Albert",
+        "metier": "café",
+        "nomRue": "av. Tivoli",
+        "numRue": 10.0,
+        "adresse_brute": "Lauper Albert, café, av. Tivoli, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "10 Avenue Tivoli, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6325656,
+          46.5222698
+        ]
+      },
+      "properties": {
+        "id": 17261,
+        "nom": "Lavanchy-Blane C",
+        "metier": "café",
+        "nomRue": "Palud",
+        "numRue": 16.0,
+        "adresse_brute": "Lavanchy-Blane C, café, Palud, 16",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "16 Palud, Lausanne, Switzerland"
       }
     },
     {
@@ -1705,16 +891,60 @@
         ]
       },
       "properties": {
-        "id": 3029,
+        "id": 18808,
         "nom": "Marlin-Meylan Edouard",
         "metier": "café",
         "nomRue": "GrandPont",
         "numRue": 12.0,
         "adresse_brute": "Marlin-Meylan Edouard, café, GrandPont, 12",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "12 Rue du Grand-Pont, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "12 Grand Pont, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6288628,
+          46.5231574
+        ]
+      },
+      "properties": {
+        "id": 19012,
+        "nom": "Matthcy-Evans Roger",
+        "metier": "emp. d'hôtel",
+        "nomRue": "r.de l'Ale",
+        "numRue": 9.0,
+        "adresse_brute": "Matthcy-Evans Roger, emp. d'hôtel, r.de l'Ale, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "9 Rue de l'Ale, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6320041,
+          46.5193709
+        ]
+      },
+      "properties": {
+        "id": 19135,
+        "nom": "Maye-Carrupt Camille",
+        "metier": "café",
+        "nomRue": "r. Petit-Chêne",
+        "numRue": 8.0,
+        "adresse_brute": "Maye-Carrupt Camille, café, r. Petit-Chêne, 8",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Rue Petit-Chêne, Lausanne, Switzerland"
       }
     },
     {
@@ -1727,16 +957,16 @@
         ]
       },
       "properties": {
-        "id": 3125,
-        "nom": "Schmidt-Mortz Robert",
-        "metier": "pension",
-        "nomRue": "BellesRoches",
-        "numRue": 6.0,
-        "adresse_brute": "Schmidt-Mortz Robert, pension, BellesRoches, 6",
+        "id": 19223,
+        "nom": "Mayor-Savary Marius",
+        "metier": "café",
+        "nomRue": "Marthe-ray",
+        "numRue": 36.0,
+        "adresse_brute": "Mayor-Savary Marius, café, Marthe-ray, 36",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Lausanne, Switzerland (fallback)",
-        "geocodage_precision": "ville"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -1744,21 +974,219 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6332436,
-          46.5160203
+          6.6327025,
+          46.5218269
         ]
       },
       "properties": {
-        "id": 3134,
-        "nom": "Ecuyer Marguerite",
-        "metier": "pensionnat",
-        "nomRue": "v.Roseneck, Ouchy",
+        "id": 20366,
+        "nom": "Monnier-Burger Alcide",
+        "metier": "g. de café",
+        "nomRue": "Chauerau",
+        "numRue": 15.0,
+        "adresse_brute": "Monnier-Burger Alcide, g. de café, Chauerau, 15",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6306907,
+          46.5234479
+        ]
+      },
+      "properties": {
+        "id": 20796,
+        "nom": "Mouret-Fontaine Clément",
+        "metier": "café",
+        "nomRue": "Pré-du-Marché",
+        "numRue": 1.0,
+        "adresse_brute": "Mouret-Fontaine Clément, café, Pré-du-Marché, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Pré-du-Marché, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6270465,
+          46.5141393
+        ]
+      },
+      "properties": {
+        "id": 20810,
+        "nom": "Mouth er- Granger Jaques-Joseph",
+        "metier": "m.d’hôtel",
+        "nomRue": "av. Floréal",
+        "numRue": 4.0,
+        "adresse_brute": "Mouth er- Granger Jaques-Joseph, m.d’hôtel, av. Floréal, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Avenue Floréal, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6328671,
+          46.5211232
+        ]
+      },
+      "properties": {
+        "id": 21055,
+        "nom": "Navone-Raphaïn Achille",
+        "metier": "Hôtel duCerf",
+        "nomRue": "Petit St-Jean",
+        "numRue": 10.0,
+        "adresse_brute": "Navone-Raphaïn Achille, Hôtel duCerf, Petit St-Jean, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "10 Petit St-Jean, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6259508,
+          46.5088007
+        ]
+      },
+      "properties": {
+        "id": 21557,
+        "nom": "Ostorèro-Juiiod Joseph",
+        "metier": "restaurateur",
+        "nomRue": "av. de la Harpe",
+        "numRue": 59.0,
+        "adresse_brute": "Ostorèro-Juiiod Joseph, restaurateur, av. de la Harpe, 59",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "59 Avenue de la Harpe, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 21619,
+        "nom": "Ovillc-Vionnct Rosa",
+        "metier": "café",
+        "nomRue": "St-Lau-rent",
+        "numRue": 30.0,
+        "adresse_brute": "Ovillc-Vionnct Rosa, café, St-Lau-rent, 30",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6376787,
+          46.5200556
+        ]
+      },
+      "properties": {
+        "id": 21979,
+        "nom": "Panchaud-Rouiller Louise",
+        "metier": "café-chocolat",
+        "nomRue": "Enning",
+        "numRue": 10.0,
+        "adresse_brute": "Panchaud-Rouiller Louise, café-chocolat, Enning, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "10 Enning, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6324145,
+          46.5143788
+        ]
+      },
+      "properties": {
+        "id": 23797,
+        "nom": "Probst-Monachon Fernand",
+        "metier": "restaurateur",
+        "nomRue": "av. d’Ouchy",
+        "numRue": 19.0,
+        "adresse_brute": "Probst-Monachon Fernand, restaurateur, av. d’Ouchy, 19",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "19 Avenue d’Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 23841,
+        "nom": "Puricelli-Chabod Ch",
+        "metier": "café",
+        "nomRue": "Chenean-de-Bourg",
+        "numRue": 41.0,
+        "adresse_brute": "Puricelli-Chabod Ch, café, Chenean-de-Bourg, 41",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6254584,
+          46.5146227
+        ]
+      },
+      "properties": {
+        "id": 24069,
+        "nom": "Rappaz-Blanc Louis",
+        "metier": "café de la Navigation",
+        "nomRue": "av. de la Harpe 61.RT8968",
         "numRue": null,
-        "adresse_brute": "Ecuyer Marguerite, pensionnat, v.Roseneck, Ouchy",
+        "adresse_brute": "Rappaz-Blanc Louis, café de la Navigation, av. de la Harpe 61.RT8968",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Hotel_Auberge",
-        "adresse_geocodage": "Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Avenue de la Harpe, Lausanne, Switzerland"
       }
     },
     {
@@ -1766,21 +1194,417 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6323193,
-          46.5151014
+          6.6050444,
+          46.5262831
         ]
       },
       "properties": {
-        "id": 3163,
-        "nom": "Oberholz-Mollard Philippe",
-        "metier": "cafetier",
-        "nomRue": "Navigation 8, Ouchy",
-        "numRue": 8.0,
-        "adresse_brute": "Oberholz-Mollard Philippe, cafetier, Navigation 8, Ouchy, 8",
+        "id": 24081,
+        "nom": "Rastcllo-Biderbost Marguerite",
+        "metier": "Vve,café,",
+        "nomRue": "r. du Pré",
+        "numRue": 4.0,
+        "adresse_brute": "Rastcllo-Biderbost Marguerite, Vve,café,, r. du Pré, 4",
         "ville": "Lausanne",
-        "type_simplifie_1923": "Debit_boisson",
-        "adresse_geocodage": "8 Avenue d'Ouchy, Lausanne, Switzerland",
-        "geocodage_precision": "adresse"
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Rue du Pré, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6295068,
+          46.5230359
+        ]
+      },
+      "properties": {
+        "id": 24233,
+        "nom": "Regamey Armand",
+        "metier": "hôtel",
+        "nomRue": "Mauborget",
+        "numRue": 1.0,
+        "adresse_brute": "Regamey Armand, hôtel, Mauborget, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Mauborget, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6331206,
+          46.5220904
+        ]
+      },
+      "properties": {
+        "id": 24444,
+        "nom": "Reist Hans",
+        "metier": "g. de café",
+        "nomRue": "Madeleine",
+        "numRue": 2.0,
+        "adresse_brute": "Reist Hans, g. de café, Madeleine, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 Madeleine, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 24754,
+        "nom": "Richner-Rosselet Jacob",
+        "metier": "restaurateur",
+        "nomRue": "av. de Merges",
+        "numRue": 147.0,
+        "adresse_brute": "Richner-Rosselet Jacob, restaurateur, av. de Merges, 147",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 25002,
+        "nom": "Rochat Arthur",
+        "metier": "secrét. d'hôtel",
+        "nomRue": "avenue deM orges",
+        "numRue": 15.0,
+        "adresse_brute": "Rochat Arthur, secrét. d'hôtel, avenue deM orges, 15",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6298203,
+          46.5231245
+        ]
+      },
+      "properties": {
+        "id": 25652,
+        "nom": "Rougemont-Regamcy Henri",
+        "metier": "café National",
+        "nomRue": "r. Neuve",
+        "numRue": 13.0,
+        "adresse_brute": "Rougemont-Regamcy Henri, café National, r. Neuve, 13",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "13 Rue Neuve, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6331206,
+          46.5220904
+        ]
+      },
+      "properties": {
+        "id": 26959,
+        "nom": "Secretan-Fnchs Ferdinand",
+        "metier": "café sanealcool,",
+        "nomRue": "Madeleine",
+        "numRue": 2.0,
+        "adresse_brute": "Secretan-Fnchs Ferdinand, café sanealcool,, Madeleine, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 Madeleine, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 27411,
+        "nom": "Stähelin-Buache Alfr",
+        "metier": "café",
+        "nomRue": "Aie",
+        "numRue": 5.0,
+        "adresse_brute": "Stähelin-Buache Alfr, café, Aie, 5",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6256619,
+          46.5115801
+        ]
+      },
+      "properties": {
+        "id": 27685,
+        "nom": "Streit-Rohrer Charles",
+        "metier": "café",
+        "nomRue": "av. de laHarpe",
+        "numRue": 18.0,
+        "adresse_brute": "Streit-Rohrer Charles, café, av. de laHarpe, 18",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "18 Avenue de la Harpe, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6316723,
+          46.5186672
+        ]
+      },
+      "properties": {
+        "id": 27960,
+        "nom": "Tarin-Schwitzgäbcl Louisa",
+        "metier": "café-restaurant",
+        "nomRue": "Midi",
+        "numRue": 2.0,
+        "adresse_brute": "Tarin-Schwitzgäbcl Louisa, café-restaurant, Midi, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Traiteur / Restaurant",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 Midi, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 28065,
+        "nom": "Testuz-Bibolet Eugène",
+        "metier": "café",
+        "nomRue": "Maupas2.",
+        "numRue": null,
+        "adresse_brute": "Testuz-Bibolet Eugène, café, Maupas2.",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6298353,
+          46.5230375
+        ]
+      },
+      "properties": {
+        "id": 28302,
+        "nom": "Tissot-Domcnjoz Elise",
+        "metier": "café",
+        "nomRue": "St-Laurent",
+        "numRue": 38.0,
+        "adresse_brute": "Tissot-Domcnjoz Elise, café, St-Laurent, 38",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "38 St-Laurent, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 28777,
+        "nom": "Vallotton-Perrottet Henri",
+        "metier": "café",
+        "nomRue": "Cité-Dev. 19, pl. du Château",
+        "numRue": null,
+        "adresse_brute": "Vallotton-Perrottet Henri, café, Cité-Dev. 19, pl. du Château",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6376566,
+          46.5233999
+        ]
+      },
+      "properties": {
+        "id": 28796,
+        "nom": "Vanetti Pietro",
+        "metier": "café",
+        "nomRue": "ch. Renou",
+        "numRue": 4.0,
+        "adresse_brute": "Vanetti Pietro, café, ch. Renou, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Chemin Renou, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 29417,
+        "nom": "Voney-Peter Georgine",
+        "metier": "café",
+        "nomRue": "Ch. deBourg",
+        "numRue": 23.0,
+        "adresse_brute": "Voney-Peter Georgine, café, Ch. deBourg, 23",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6331237,
+          46.5214681
+        ]
+      },
+      "properties": {
+        "id": 29709,
+        "nom": "Walther-Winandy Jean",
+        "metier": "café",
+        "nomRue": "rue duPont",
+        "numRue": 4.0,
+        "adresse_brute": "Walther-Winandy Jean, café, rue duPont, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 rue du Pont, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6255825,
+          46.5164811
+        ]
+      },
+      "properties": {
+        "id": 29783,
+        "nom": "Weber Gustave",
+        "metier": "dir. du Théâtre",
+        "nomRue": "Boul. deGrancy",
+        "numRue": 33.0,
+        "adresse_brute": "Weber Gustave, dir. du Théâtre, Boul. deGrancy, 33",
+        "ville": "Lausanne",
+        "type_simplifie": "Spectacle / Sociabilité",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "33 Boul. de Grancy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 30262,
+        "nom": "Wolf Alois",
+        "metier": "m. d’hôtel",
+        "nomRue": "Va Maggiore,Malley",
+        "numRue": null,
+        "adresse_brute": "Wolf Alois, m. d’hôtel, Va Maggiore,Malley",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6299998,
+          46.5235449
+        ]
+      },
+      "properties": {
+        "id": 30270,
+        "nom": "AVolf-Turquais Francis",
+        "metier": "emp. hôtel",
+        "nomRue": "r.Pré-du-Marché",
+        "numRue": 7.0,
+        "adresse_brute": "AVolf-Turquais Francis, emp. hôtel, r.Pré-du-Marché, 7",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "7 Rue Pré-du-Marché, Lausanne, Switzerland"
       }
     }
   ]
