@@ -448,55 +448,55 @@ function normaliserCategorie(properties, annee) {
 
   // ── 1832 ─────────────────────────────────────────────
   if (annee === 1832) {
-    const t = (properties.typesimplifie1832 || '').trim();
-    const map = {
-      // Avec accents
-      'Hôtel Auberge':          'Hôtel / Pension',
-      'Débit de boisson':       'Bar / Café',
-      'Café-billard':           'Café-Billard',
-      'Spectacle Sociabilité':  'Spectacle / Sociabilité',
-      // Sans accents (encodage source)
-      'Htel Auberge':           'Hôtel / Pension',
-      'Dbit de boisson':        'Bar / Café',
-      'Caf-billard':            'Café-Billard',
-      'Spectacle Sociabilit':   'Spectacle / Sociabilité',
-      // Commun
-      'Traiteur Restaurant':    'Restaurant',
-      'Brasserie':              'Brasserie',
+    const t = (
+      properties.type_simplifie_1832 ||   // ← nom réel du champ
+      properties.typesimplifie1832   ||   // fallback ancienne version
+      ''
+    ).trim();
+
+  const map = {
+    'Débit de boisson':       'Bar / Café',
+    'Traiteur / Restaurant':  'Restaurant',
+    'Hôtel / Auberge':        'Hôtel / Pension',
+    'Café-billard':           'Café-Billard',
+    'Spectacle / Sociabilité':'Spectacle / Sociabilité',
+    'Brasserie':              'Brasserie',
     };
     return map[t] || 'Autre';
-  }
+   }
 
   // ── 1888 ─────────────────────────────────────────────
   if (annee === 1888) {
-    const t = (properties.typesimplifie || '').trim();
-    // Catégories principales directes
-    if (t === 'Café' || t === 'Caf') return 'Bar / Café';
-    if (t === 'Pinte')               return 'Bar / Café';
-    if (t === 'Hôtel' || t === 'Htel') return 'Hôtel / Pension';
-    if (t === 'Brasserie')           return 'Brasserie';
-    if (t === 'Restaurant')          return 'Restaurant';
-    if (t === 'Cabaret')             return 'Bar / Café';
-    if (t === 'Théâtre' || t === 'Theatre') return 'Spectacle / Sociabilité';
-    if (t === 'Cercle')              return 'Club / Société';
+    const t = (properties.type_simplifie || '').trim();
+
+    // Catégories directes
+    if (t === 'Café')     return 'Bar / Café';
+    if (t === 'Pinte')    return 'Bar / Café';
+    if (t === 'Hôtel')    return 'Hôtel / Pension';
+    if (t === 'Brasserie') return 'Brasserie';
+
+    // Affinage des "Autre" via le champ 'use'
     if (t === 'Autre') {
-      // Affinage via le champ 'use'
       const use = (properties.use || '').toLowerCase();
-      if (use.includes('casino') || use.includes('théâtre') || use.includes('theatre')) return 'Spectacle / Sociabilité';
-      if (use.includes('billard'))              return 'Café-Billard';
-      if (use.includes('jeux de quille'))       return 'Spectacle / Sociabilité';
-      if (use.includes('brasserie'))            return 'Brasserie';
-      if (use.includes('salle manger') || use.includes('salle à manger')) return 'Restaurant';
-      if (use.includes('restaurant'))           return 'Restaurant';
-      if (use.includes('salle vitr'))           return 'Club / Société';
-      if (use.includes('entre de salle') || use.includes('entrée de salle')) return 'Club / Société';
-      if (use.includes('salle') && !use.includes('billard')) return 'Club / Société';
+
+      // Casino-Théâtre
+      if (use.includes('casino') || use.includes('théâtre')) return 'Spectacle / Sociabilité';
+      // Billard
+      if (use.includes('billard'))        return 'Café-Billard';
+      // Jeux de quilles
+      if (use.includes('jeux de quille')) return 'Spectacle / Sociabilité';
+      // Salle à manger
+      if (use.includes('salle à manger') || use.includes('salle manger')) return 'Restaurant';
+      // Salles de réunion / société (salle vitrée, magasins+salle, entrée de salle, salle seule)
+      if (use.includes('salle vitrée'))   return 'Club / Société';
+      if (use.includes('entrée de salle')) return 'Club / Société';
+      if (use.includes('salle'))          return 'Club / Société';
       // Balcons, hangars, forges, chaudières → vraiment Autre
       return 'Autre';
-    }
-    return t || 'Autre';
   }
 
+    return 'Autre';
+  }
   // ── 1923 ─────────────────────────────────────────────
   if (annee === 1923) {
     const t = (properties.type_simplifie || properties.typesimplifie || '').trim();
@@ -528,27 +528,25 @@ function normaliserCategorie(properties, annee) {
   }
 
   // ── 1951 ─────────────────────────────────────────────
-  if (annee === 1951) {
-    const t = (properties.typesimplifie1951 || '').trim();
+  if (annee === 1951) { 
+    const t = (
+      properties.type_simplifie_1951 ||  // ← nom réel du champ
+      properties.typesimplifie1951   ||  // fallback ancienne version
+      ''
+    ).trim();
+
     const map = {
-      // Sans accents (encodage source dominant)
-      'Htel Auberge':         'Hôtel / Pension',
-      'Caf Bar':              'Bar / Café',
-      'Restaurant Traiteur':  'Restaurant',
-      'Thtre Spectacle':      'Spectacle / Sociabilité',
-      'Cercle Club Socit':    'Club / Société',
-      'Caf-Billard':          'Café-Billard',
-      // Avec accents (au cas où)
-      'Hôtel Auberge':        'Hôtel / Pension',
-      'Café Bar':             'Bar / Café',
-      'Théâtre Spectacle':    'Spectacle / Sociabilité',
-      'Cercle Club Société':  'Club / Société',
-      'Café-Billard':         'Café-Billard',
-      // Variante avec slash
-      'Brasserie':            'Brasserie',
+      'Hôtel / Auberge':           'Hôtel / Pension',
+      'Restaurant / Traiteur':     'Restaurant',
+      'Café / Bar':                'Bar / Café',
+      'Théâtre / Spectacle':       'Spectacle / Sociabilité',
+      'Cercle / Club / Société':   'Club / Société',
+      'Brasserie':                 'Brasserie',
+      'Café-Billard':              'Café-Billard',
+      'Cabaret / Dancing / Boîte': 'Club / Discothèque',
     };
     return map[t] || 'Autre';
-  }
+}
 
   // ── 2026 (OpenStreetMap) ──────────────────────────────
   if (annee === 2026) {
