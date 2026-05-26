@@ -125,17 +125,16 @@ header{
 .cat-btn:hover{border-color:var(--cat-color,var(--accent));color:var(--text);}
 .cat-btn:disabled,.cat-btn[disabled]{opacity:.3;pointer-events:none;}
 
-/* ── MAP — hauteur explicite via calc ─────────────────── */
+/* ── MAP ─────────────────────────────────────────────── */
 #map-wrap{
-  /* Prend tout l'espace restant après header + controls */
   flex:1 1 auto;
-  min-height:0;          /* Essentiel pour que flex:1 fonctionne dans une colonne */
+  min-height:0;
   position:relative;
   overflow:hidden;
 }
 #map{
-  position:absolute;     /* Détaché du flux pour que Leaflet voie une taille réelle */
-  inset:0;               /* top:0 right:0 bottom:0 left:0 */
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
 }
@@ -156,7 +155,6 @@ header{
 .leaflet-control-attribution{background:oklch(from var(--bg) l c h/.85)!important;color:var(--text-faint)!important;font-size:10px!important;}
 .leaflet-control-attribution a{color:var(--text-muted)!important;}
 
-/* Popup styles */
 .popup-header{border-bottom:1px solid var(--divider);padding-bottom:var(--space-3);margin-bottom:var(--space-3);}
 .popup-name{font-family:var(--font-display);font-style:italic;font-size:var(--text-lg);color:var(--text);line-height:1.2;}
 .popup-cat{display:inline-flex;align-items:center;gap:var(--space-1);margin-top:var(--space-1);font-size:var(--text-xs);padding:2px 8px;border-radius:var(--radius-full);font-weight:500;}
@@ -289,77 +287,166 @@ const PERIODS = [
   { year:2026, label:'2026', file:'2026.geojson' },
 ];
 
+// Catégories normalisées du site avec leurs couleurs
 const CAT_COLORS = {
-  'café / bar / débit':      '#c4954a',
-  'restaurant / traiteur':   '#6daa45',
-  'hôtel / pension':         '#5591c7',
-  'spectacle / sociabilité': '#a86fdf',
-  'brasserie':               '#da7101',
-  'cercle / club':           '#d19900',
-  'boîte de nuit':           '#dd6974',
-  'autre':                   '#7a7974',
+  'Bar / Café':              '#c4954a',
+  'Restaurant':              '#6daa45',
+  'Hôtel / Pension':         '#5591c7',
+  'Brasserie':               '#da7101',
+  'Spectacle / Sociabilité': '#a86fdf',
+  'Club / Société':          '#d19900',
+  'Club / Discothèque':      '#dd6974',
+  'Autre':                   '#7a7974',
 };
 
-function normalizeCategory(raw) {
-  if (!raw) return 'autre';
-  const c = raw.toLowerCase();
-  if (c==='nightclub') return 'boîte de nuit';
-  if (c==='bar'||c==='pub') return 'café / bar / débit';
-  if (c==='cafe') return 'café / bar / débit';
-  if (c==='restaurant') return 'restaurant / traiteur';
-  if (c==='hotel') return 'hôtel / pension';
-  if (c==='theatre'||c==='cinema') return 'spectacle / sociabilité';
-  if (c.includes('débit')||c.includes('debit')||c.includes('café')||c.includes('cafe')||
-      c.includes('caf-billard')||c.includes('cabaret')||c.includes('sommelier')||c.includes('pinte'))
-    return 'café / bar / débit';
-  if (c.includes('restaurant')||c.includes('traiteur')||c.includes('restaur')||
-      c.includes('cuisinier')||c.includes('cuisin'))
-    return 'restaurant / traiteur';
-  if (c.includes('hôtel')||c.includes('hotel')||c.includes('auberge')||c.includes('pension')||
-      c.includes('pensionnat')||c.includes('hôtelier')||c.includes('htel'))
-    return 'hôtel / pension';
-  if (c.includes('spectacle')||c.includes('théâtre')||c.includes('theatre')||c.includes('cinéma')||
-      c.includes('cinema')||c.includes('artiste')||c.includes('musicien')||
-      c.includes('confiseur')||c.includes('pâtissier')||c.includes('patissier')||c.includes('sociabil'))
-    return 'spectacle / sociabilité';
-  if (c.includes('brasserie')||c.includes('brasseur')) return 'brasserie';
-  if (c.includes('cercle')||c.includes('club')||c.includes('société')||c.includes('societe'))
-    return 'cercle / club';
-  if (c.includes('nightclub')||c.includes('boîte')||c.includes('boite')||c.includes('night'))
-    return 'boîte de nuit';
-  return 'autre';
+// ═══════════════════════════════════════════════════════
+//  MAPPING DES CATÉGORIES GEOJSON → CATÉGORIES DU SITE
+// ═══════════════════════════════════════════════════════
+function normaliserCategorie(properties, annee) {
+
+  // ── 1832 ─────────────────────────────────────────────
+  if (annee === 1832) {
+    const t = (properties.typesimplifie1832 || '').trim();
+    const map = {
+      'Hôtel Auberge':          'Hôtel / Pension',
+      'Htel Auberge':           'Hôtel / Pension',  // sans accent
+      'Débit de boisson':        'Bar / Café',
+      'Dbit de boisson':         'Bar / Café',       // sans accent
+      'Café-billard':            'Bar / Café',
+      'Caf-billard':             'Bar / Café',       // sans accent
+      'Traiteur Restaurant':     'Restaurant',
+      'Brasserie':               'Brasserie',
+      'Spectacle Sociabilité':   'Spectacle / Sociabilité',
+      'Spectacle Sociabilit':    'Spectacle / Sociabilité', // sans accent
+    };
+    return map[t] || 'Autre';
+  }
+
+  // ── 1888 ─────────────────────────────────────────────
+  if (annee === 1888) {
+    const t = (properties.typesimplifie || '').trim();
+    const map = {
+      'Café':       'Bar / Café',
+      'Caf':        'Bar / Café',        // sans accent
+      'Pinte':      'Bar / Café',
+      'Cabaret':    'Bar / Café',
+      'Hôtel':      'Hôtel / Pension',
+      'Hotel':      'Hôtel / Pension',   // sans accent
+      'Auberge':    'Hôtel / Pension',
+      'Pension':    'Hôtel / Pension',
+      'Restaurant': 'Restaurant',
+      'Brasserie':  'Brasserie',
+      'Théâtre':    'Spectacle / Sociabilité',
+      'Theatre':    'Spectacle / Sociabilité', // sans accent
+      'Cercle':     'Club / Société',
+    };
+    return map[t] || 'Autre';
+  }
+
+  // ── 1923 ─────────────────────────────────────────────
+  if (annee === 1923) {
+    const t = (properties.type_simplifie || properties.typesimplifie || '').trim();
+    const map = {
+      'Hôtel Auberge':          'Hôtel / Pension',
+      'Htel Auberge':           'Hôtel / Pension',
+      'Débit de boisson':        'Bar / Café',
+      'Dbit de boisson':         'Bar / Café',
+      'Café-billard':            'Bar / Café',
+      'Caf-billard':             'Bar / Café',
+      'Traiteur Restaurant':     'Restaurant',
+      'Brasserie':               'Brasserie',
+      'Spectacle Sociabilité':   'Spectacle / Sociabilité',
+      'Spectacle Sociabilit':    'Spectacle / Sociabilité',
+      'Cercle Club Société':     'Club / Société',
+      'Cercle Club Socit':      'Club / Société',
+    };
+    return map[t] || 'Autre';
+  }
+
+  // ── 1951 ─────────────────────────────────────────────
+  if (annee === 1951) {
+    const t = (properties.typesimplifie1951 || '').trim();
+    const map = {
+      'Hôtel Auberge':         'Hôtel / Pension',
+      'Hotel Auberge':         'Hôtel / Pension',
+      'Café Bar':              'Bar / Café',
+      'Caf Bar':               'Bar / Café',      // sans accent
+      'Restaurant Traiteur':   'Restaurant',
+      'Brasserie':             'Brasserie',
+      'Café-Billard':          'Bar / Café',
+      'Caf-Billard':           'Bar / Café',      // sans accent
+      'Théâtre Spectacle':     'Spectacle / Sociabilité',
+      'Thtre Spectacle':       'Spectacle / Sociabilité', // sans accent
+      'Cercle Club Société':   'Club / Société',
+      'Cercle Club Socit':    'Club / Société',   // sans accent
+    };
+    return map[t] || 'Autre';
+  }
+
+  // ── 2026 (OpenStreetMap) ──────────────────────────────
+  if (annee === 2026) {
+    const tourism = (properties.tourism || '').trim().toLowerCase();
+    if (tourism === 'hotel' || tourism === 'hostel') return 'Hôtel / Pension';
+    const a = (properties.amenity || '').trim().toLowerCase();
+    const map = {
+      'restaurant': 'Restaurant',
+      'cafe':       'Bar / Café',
+      'bar':        'Bar / Café',
+      'pub':        'Bar / Café',
+      'nightclub':  'Club / Discothèque',
+      'theatre':    'Spectacle / Sociabilité',
+      'cinema':     'Spectacle / Sociabilité',
+      'hotel':      'Hôtel / Pension',
+      'hostel':     'Hôtel / Pension',
+    };
+    return map[a] || 'Autre';
+  }
+
+  return 'Autre';
 }
 
+// ═══════════════════════════════════════════════════════
+//  EXTRACTION DES PROPRIÉTÉS SELON L'ANNÉE
+// ═══════════════════════════════════════════════════════
 function extractProps(props, y) {
-  let nom, metier, adresse, cat, precision;
-  if (y===1832) {
-    nom=props.nom||'—'; metier=props.metier||'';
-    adresse=props.adressebrute||props['adresse_brute']||'';
-    cat=props.typesimplifie1832||props['typesimplifie1832']||'';
-    precision=props.geocodageprecision||props['geocodage_precision']||null;
-  } else if (y===1888) {
-    nom=props.owner||'—'; metier=props.use||'';
-    adresse=props.adressecomplete||props['adresse_complete']||'';
-    cat=props.typesimplifie||props['typesimplifie']||'';
-    precision=null;
-  } else if (y===1923) {
-    nom=props.nom||'—'; metier=props.metier||'';
-    adresse=props['adresse_brute']||props.adressebrute||'';
-    cat=props['type_simplifie']||props.type_simplifie||'';
-    precision=props['geocodage_precision']||props.geocodage_precision||null;
-  } else if (y===1951) {
-    nom=props.nom||'—'; metier=props.profession||'';
-    adresse=props.lignebrute||props.adresse||'';
-    cat=props.typesimplifie1951||props['typesimplifie1951']||'';
-    precision=props.geocodageprecision||null;
-  } else if (y===2026) {
-    nom=props.name||'—'; metier=props.amenity||'';
-    const num=props['addr:housenumber']||props.addrhousenumber||'';
-    const rue=props['addr:street']||props.addrstreet||'';
-    adresse=[num,rue].filter(Boolean).join(' ')||'';
-    cat=props.amenity||''; precision='adresse';
+  let nom, metier, adresse, catRaw, precision;
+
+  if (y === 1832) {
+    nom      = props.nom || '—';
+    metier   = props.metier || '';
+    adresse  = props.adressebrute || props['adresse_brute'] || '';
+    catRaw   = props.typesimplifie1832 || '';
+    precision= props.geocodageprecision || props['geocodage_precision'] || null;
+  } else if (y === 1888) {
+    nom      = props.owner || '—';
+    metier   = props.use || '';
+    adresse  = props.adressecomplete || props['adresse_complete'] || '';
+    catRaw   = props.typesimplifie || '';
+    precision= null;
+  } else if (y === 1923) {
+    nom      = props.nom || '—';
+    metier   = props.metier || '';
+    adresse  = props['adresse_brute'] || props.adressebrute || '';
+    catRaw   = props['type_simplifie'] || props.type_simplifie || '';
+    precision= props['geocodage_precision'] || props.geocodage_precision || null;
+  } else if (y === 1951) {
+    nom      = props.nom || '—';
+    metier   = props.profession || '';
+    adresse  = props.lignebrute || props.adresse || '';
+    catRaw   = props.typesimplifie1951 || '';
+    precision= props.geocodageprecision || null;
+  } else if (y === 2026) {
+    nom      = props.name || '—';
+    metier   = props.amenity || '';
+    const num= props['addr:housenumber'] || props.addrhousenumber || '';
+    const rue= props['addr:street']      || props.addrstreet      || '';
+    adresse  = [num, rue].filter(Boolean).join(' ') || '';
+    catRaw   = props.amenity || '';
+    precision= 'adresse';
   }
-  return {nom,metier,adresse,cat,precision,catNorm:normalizeCategory(cat)};
+
+  const catNorm = normaliserCategorie(props, y);
+  return { nom, metier, adresse, catRaw, catNorm, precision };
 }
 
 // ═══════════════════════════════════════════════════════
@@ -375,12 +462,12 @@ const state = {
 // ═══════════════════════════════════════════════════════
 //  CARTE
 // ═══════════════════════════════════════════════════════
-const map = L.map('map',{center:[46.521,6.631],zoom:14});
+const map = L.map('map', { center:[46.521, 6.631], zoom:14 });
 let tileBase, tileLabels;
 
 function setTiles() {
-  const dark = document.documentElement.getAttribute('data-theme')==='dark';
-  if (tileBase) map.removeLayer(tileBase);
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (tileBase)   map.removeLayer(tileBase);
   if (tileLabels) map.removeLayer(tileLabels);
   const baseUrl = dark
     ? 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
@@ -389,8 +476,8 @@ function setTiles() {
     ? 'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'
     : 'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png';
   const attr = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OSM</a> &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>';
-  tileBase   = L.tileLayer(baseUrl,{attribution:attr,subdomains:'abcd',maxZoom:19}).addTo(map);
-  tileLabels = L.tileLayer(labUrl, {attribution:'',  subdomains:'abcd',maxZoom:19}).addTo(map);
+  tileBase   = L.tileLayer(baseUrl, { attribution:attr, subdomains:'abcd', maxZoom:19 }).addTo(map);
+  tileLabels = L.tileLayer(labUrl,  { attribution:'',   subdomains:'abcd', maxZoom:19 }).addTo(map);
 }
 setTiles();
 
@@ -416,60 +503,62 @@ async function loadPeriod(p) {
 // ═══════════════════════════════════════════════════════
 //  RENDU MARQUEURS
 // ═══════════════════════════════════════════════════════
-function esc(s){ return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'):'';}
+function esc(s) {
+  return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '';
+}
 
 function buildPopup(props, y) {
-  const {nom,metier,adresse,catNorm,precision} = extractProps(props,y);
-  const color = CAT_COLORS[catNorm]||'#7a7974';
-  const precClass = precision==='adresse'?'prec-adresse':precision==='ville'?'prec-ville':'prec-null';
-  const precLabel = precision==='adresse'?'Adresse exacte':precision==='ville'?'Position approchée':'Précision inconnue';
+  const { nom, metier, adresse, catRaw, catNorm, precision } = extractProps(props, y);
+  const color     = CAT_COLORS[catNorm] || '#7a7974';
+  const precClass = precision==='adresse' ? 'prec-adresse' : precision==='ville' ? 'prec-ville' : 'prec-null';
+  const precLabel = precision==='adresse' ? 'Adresse exacte' : precision==='ville' ? 'Position approchée' : 'Précision inconnue';
   return `
     <div class="popup-header">
       <div class="popup-name">${esc(nom)}</div>
-      ${metier?`<span class="popup-cat" style="background:${color}22;color:${color};border:1px solid ${color}55">${esc(metier)}</span>`:''}
+      ${metier ? `<span class="popup-cat" style="background:${color}22;color:${color};border:1px solid ${color}55">${esc(metier)}</span>` : ''}
     </div>
-    ${adresse?`<div class="popup-row"><strong>Adresse</strong>${esc(adresse)}</div>`:''}
+    ${adresse ? `<div class="popup-row"><strong>Adresse</strong>${esc(adresse)}</div>` : ''}
     <div class="popup-row"><strong>Catégorie</strong>${esc(catNorm)}</div>
     <div class="popup-row"><strong>Période</strong>${y}</div>
-    ${precision!==null?`<div class="popup-precision"><div class="precision-dot ${precClass}"></div>${precLabel}</div>`:''}
+    ${precision !== null ? `<div class="popup-precision"><div class="precision-dot ${precClass}"></div>${precLabel}</div>` : ''}
   `;
 }
 
 function renderMarkers() {
   markersLayer.clearLayers();
-  const period = PERIODS[state.periodIdx];
+  const period   = PERIODS[state.periodIdx];
   const features = state.data[period.year] || [];
   let count = 0;
 
   features.forEach(f => {
     if (!f.geometry?.coordinates) return;
-    const [lng,lat] = f.geometry.coordinates;
-    if (!lat||!lng||isNaN(lat)||isNaN(lng)) return;
+    const [lng, lat] = f.geometry.coordinates;
+    if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
 
-    const props = f.properties||{};
-    const {catNorm,precision} = extractProps(props,period.year);
+    const props    = f.properties || {};
+    const { catNorm, precision } = extractProps(props, period.year);
     if (!state.activeCats.has(catNorm)) return;
 
-    const color  = CAT_COLORS[catNorm]||'#7a7974';
-    const fallback = precision==='ville';
-    const r = fallback?6:7;
+    const color   = CAT_COLORS[catNorm] || '#7a7974';
+    const fallback = precision === 'ville';
+    const r = fallback ? 6 : 7;
 
-    const m = L.circleMarker([lat,lng],{
-      radius:r, color, weight:fallback?1.5:2,
-      opacity:fallback?.55:.9,
-      fillColor:color, fillOpacity:fallback?.35:.75,
-      dashArray:fallback?'4 3':null,
+    const m = L.circleMarker([lat, lng], {
+      radius:r, color, weight:fallback ? 1.5 : 2,
+      opacity:fallback ? .55 : .9,
+      fillColor:color, fillOpacity:fallback ? .35 : .75,
+      dashArray:fallback ? '4 3' : null,
     });
 
-    m.bindPopup(buildPopup(props,period.year),{maxWidth:280});
-    m.on('mouseover',function(){this.setStyle({radius:r+2,fillOpacity:.95,opacity:1});this.openPopup();});
-    m.on('mouseout', function(){this.setStyle({radius:r,fillOpacity:fallback?.35:.75,opacity:fallback?.55:.9});});
+    m.bindPopup(buildPopup(props, period.year), { maxWidth:280 });
+    m.on('mouseover', function(){ this.setStyle({ radius:r+2, fillOpacity:.95, opacity:1 }); this.openPopup(); });
+    m.on('mouseout',  function(){ this.setStyle({ radius:r, fillOpacity:fallback?.35:.75, opacity:fallback?.55:.9 }); });
     markersLayer.addLayer(m);
     count++;
   });
 
   document.getElementById('countNum').textContent = count.toLocaleString('fr-CH');
-  document.getElementById('empty-state').style.display = count===0?'block':'none';
+  document.getElementById('empty-state').style.display = count === 0 ? 'block' : 'none';
 }
 
 // ═══════════════════════════════════════════════════════
@@ -479,11 +568,11 @@ function initSlider() {
   const slider  = document.getElementById('yearSlider');
   const display = document.getElementById('yearDisplay');
   const ticks   = document.getElementById('yearTicks');
-  ticks.innerHTML = PERIODS.map(p=>`<span>${p.label}</span>`).join('');
+  ticks.innerHTML = PERIODS.map(p => `<span>${p.label}</span>`).join('');
 
   const update = () => {
-    const pct = (slider.value/slider.max)*100;
-    slider.style.setProperty('--pct',pct+'%');
+    const pct = (slider.value / slider.max) * 100;
+    slider.style.setProperty('--pct', pct + '%');
     display.textContent = PERIODS[slider.value].label;
   };
   update();
@@ -502,15 +591,15 @@ function initSlider() {
 // ═══════════════════════════════════════════════════════
 function initCatFilters() {
   const container = document.getElementById('catFilters');
-  Object.entries(CAT_COLORS).forEach(([cat,color]) => {
+  Object.entries(CAT_COLORS).forEach(([cat, color]) => {
     const btn = document.createElement('button');
-    btn.className='cat-btn active';
-    btn.dataset.cat=cat;
-    btn.style.setProperty('--cat-color',color);
-    btn.innerHTML=`<div class="dot"></div>${cat}`;
-    btn.addEventListener('click',()=>{
-      if(state.activeCats.has(cat)){state.activeCats.delete(cat);btn.classList.remove('active');}
-      else{state.activeCats.add(cat);btn.classList.add('active');}
+    btn.className = 'cat-btn active';
+    btn.dataset.cat = cat;
+    btn.style.setProperty('--cat-color', color);
+    btn.innerHTML = `<div class="dot"></div>${cat}`;
+    btn.addEventListener('click', () => {
+      if (state.activeCats.has(cat)) { state.activeCats.delete(cat); btn.classList.remove('active'); }
+      else                           { state.activeCats.add(cat);    btn.classList.add('active');    }
       renderMarkers();
     });
     container.appendChild(btn);
@@ -518,12 +607,12 @@ function initCatFilters() {
 }
 
 function refreshCatButtons() {
-  const year = PERIODS[state.periodIdx].year;
-  const present = new Set((state.data[year]||[]).map(f=>{
-    const {catNorm}=extractProps(f.properties||{},year);
+  const year    = PERIODS[state.periodIdx].year;
+  const present = new Set((state.data[year] || []).map(f => {
+    const { catNorm } = extractProps(f.properties || {}, year);
     return catNorm;
   }));
-  document.querySelectorAll('.cat-btn').forEach(btn=>{
+  document.querySelectorAll('.cat-btn').forEach(btn => {
     btn.disabled = !present.has(btn.dataset.cat);
   });
 }
@@ -532,20 +621,20 @@ function refreshCatButtons() {
 //  THÈME
 // ═══════════════════════════════════════════════════════
 (function(){
-  const btn=document.querySelector('[data-theme-toggle]');
-  let t='dark';
-  document.documentElement.setAttribute('data-theme',t);
+  const btn = document.querySelector('[data-theme-toggle]');
+  let t = 'dark';
+  document.documentElement.setAttribute('data-theme', t);
   setIcon(t);
-  btn.addEventListener('click',()=>{
-    t=t==='dark'?'light':'dark';
-    document.documentElement.setAttribute('data-theme',t);
+  btn.addEventListener('click', () => {
+    t = t === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
     setIcon(t);
     setTiles();
   });
-  function setIcon(t){
-    btn.innerHTML=t==='dark'
-      ?`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
-      :`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  function setIcon(t) {
+    btn.innerHTML = t === 'dark'
+      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
   }
 })();
 
@@ -558,13 +647,10 @@ async function init() {
   await loadPeriod(PERIODS[0]);
   renderMarkers();
   refreshCatButtons();
-
-  // Forcer Leaflet à recalculer la taille après le rendu complet
-  setTimeout(()=>{ map.invalidateSize(); }, 100);
-
+  setTimeout(() => { map.invalidateSize(); }, 100);
   const loading = document.getElementById('loading');
   loading.classList.add('fade-out');
-  setTimeout(()=>{ loading.style.display='none'; }, 600);
+  setTimeout(() => { loading.style.display = 'none'; }, 600);
 }
 
 init();
