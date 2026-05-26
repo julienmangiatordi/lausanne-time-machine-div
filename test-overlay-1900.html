@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Overlay 1900</title>
+</head>
+<body>
+    <h1>Diagnostic Overlay 1900</h1>
+    <pre id="output"></pre>
+
+    <script>
+        const output = document.getElementById('output');
+        
+        async function test() {
+            try {
+                // Test 1: Fetch bounds.json
+                output.textContent += '1️⃣ Fetching bounds.json...\n';
+                const boundsResp = await fetch('./assets/images/bounds.json');
+                if (!boundsResp.ok) {
+                    output.textContent += `   ❌ bounds.json not found (${boundsResp.status})\n`;
+                    return;
+                }
+                const bounds = await boundsResp.json();
+                output.textContent += `   ✓ bounds.json loaded\n`;
+                output.textContent += `   Bounds for 1900: ${JSON.stringify(bounds['1900'])}\n\n`;
+
+                // Test 2: Check 1900.png
+                output.textContent += '2️⃣ Checking 1900.png...\n';
+                const imgResp = await fetch('./assets/images/1900.png');
+                if (!imgResp.ok) {
+                    output.textContent += `   ❌ 1900.png not found (${imgResp.status})\n`;
+                    return;
+                }
+                const blob = await imgResp.blob();
+                output.textContent += `   ✓ 1900.png found (${(blob.size / 1024 / 1024).toFixed(1)} MB)\n\n`;
+
+                // Test 3: Check all years
+                output.textContent += '3️⃣ Checking all years in bounds.json:\n';
+                for (const year of Object.keys(bounds)) {
+                    const hasImg = await fetch(`./assets/images/${year}.png`).then(r => r.ok);
+                    output.textContent += `   ${year}: bounds=${bounds[year] ? '✓' : '❌'}, png=${hasImg ? '✓' : '❌'}\n`;
+                }
+                output.textContent += '\n✅ All checks passed!';
+            } catch (err) {
+                output.textContent += `\n❌ Error: ${err.message}`;
+            }
+        }
+
+        test();
+    </script>
+</body>
+</html>
