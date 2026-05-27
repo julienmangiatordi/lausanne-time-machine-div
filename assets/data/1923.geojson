@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "nom": "Ægertcr-Iff Oscar",
+        "metier": "boulanger",
+        "nomRue": "aven.Recordon",
+        "numRue": 5.0,
+        "adresse_brute": "Ægertcr-Iff Oscar, boulanger, aven.Recordon, 5",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6313553,
+          46.5244551
+        ]
+      },
+      "properties": {
+        "id": 152,
+        "nom": "Æscbmann-Roth Hans",
+        "metier": "boulanger",
+        "nomRue": "Valentin",
+        "numRue": 0.0,
+        "adresse_brute": "Æscbmann-Roth Hans, boulanger, Valentin, 00",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Valentin, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6271014,
           46.5241229
         ]
@@ -21,6 +65,50 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "6 Maupas, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 784,
+        "nom": "Auras-Cahoussat G.",
+        "metier": "boulanger",
+        "nomRue": "av.d’Echnllens",
+        "numRue": 79.0,
+        "adresse_brute": "Auras-Cahoussat G., boulanger, av.d’Echnllens, 79",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6315867,
+          46.5223335
+        ]
+      },
+      "properties": {
+        "id": 1209,
+        "nom": "Barbey-Wagnières François",
+        "metier": "boulanger",
+        "nomRue": "r. St-Laurent",
+        "numRue": 30.0,
+        "adresse_brute": "Barbey-Wagnières François, boulanger, r. St-Laurent, 30",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "30 Rue St-Laurent, Lausanne, Switzerland"
       }
     },
     {
@@ -72,6 +160,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1503,
+        "nom": "Baudat-Cavin Alfred",
+        "metier": "aubergiste",
+        "nomRue": "Auberge de Montherond",
+        "numRue": null,
+        "adresse_brute": "Baudat-Cavin Alfred, aubergiste, Auberge de Montherond",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6362534,
           46.5192738
         ]
@@ -94,6 +204,182 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.636361,
+          46.5200647
+        ]
+      },
+      "properties": {
+        "id": 1579,
+        "nom": "Bauhofer-Hirsbruliner Herrn",
+        "metier": "confiseur",
+        "nomRue": "Bourg",
+        "numRue": 47.0,
+        "adresse_brute": "Bauhofer-Hirsbruliner Herrn, confiseur, Bourg, 47",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "47 Bourg, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1584,
+        "nom": "Baumann Fréd",
+        "metier": "pâtissier",
+        "nomRue": "Pont aise",
+        "numRue": 56.0,
+        "adresse_brute": "Baumann Fréd, pâtissier, Pont aise, 56",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1634,
+        "nom": "Baumgavtner-Fattebcrt Gottfried",
+        "metier": "pâtissier",
+        "nomRue": "Foutaise",
+        "numRue": 38.0,
+        "adresse_brute": "Baumgavtner-Fattebcrt Gottfried, pâtissier, Foutaise, 38",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1638,
+        "nom": "Baunigartner-Leu Jacob",
+        "metier": "confiseur",
+        "nomRue": "Jiuclionnet",
+        "numRue": 5.0,
+        "adresse_brute": "Baunigartner-Leu Jacob, confiseur, Jiuclionnet, 5",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 1642,
+        "nom": "Baumgartner-Staub Justin",
+        "metier": "restaurât.,café Deux-Gares",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Baumgartner-Staub Justin, restaurât.,café Deux-Gares, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6336209,
+          46.5164762
+        ]
+      },
+      "properties": {
+        "id": 1975,
+        "nom": "Benz Otto",
+        "metier": "confiseur",
+        "nomRue": "av. d’Ouchy",
+        "numRue": 3.0,
+        "adresse_brute": "Benz Otto, confiseur, av. d’Ouchy, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Avenue d’Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 2178,
+        "nom": "Beron-Etter Johann",
+        "metier": "brasseur",
+        "nomRue": "LaVionne, Montoie",
+        "numRue": null,
+        "adresse_brute": "Beron-Etter Johann, brasseur, LaVionne, Montoie",
+        "ville": "Lausanne",
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.639802,
+          46.5271627
+        ]
+      },
+      "properties": {
+        "id": 2267,
+        "nom": "Bertlioiid-Pittet Georges",
+        "metier": "pâtissier",
+        "nomRue": "Vallon",
+        "numRue": 10.0,
+        "adresse_brute": "Bertlioiid-Pittet Georges, pâtissier, Vallon, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "10 Vallon, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -107,6 +393,28 @@
         "adresse_brute": "Bertotti-Balma Henri, café, Clicneau-de-Bourg, 29",
         "ville": "Lausanne",
         "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 2323,
+        "nom": "Besia Assunta",
+        "metier": "Hôtel du Mouton",
+        "nomRue": "Rôti lion",
+        "numRue": null,
+        "adresse_brute": "Besia Assunta, Hôtel du Mouton, Rôti lion",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
@@ -138,6 +446,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.635251,
+          46.5186275
+        ]
+      },
+      "properties": {
+        "id": 2408,
+        "nom": "Bétrix-Buniier Fritz",
+        "metier": "confiseur",
+        "nomRue": "av. duThéâtre",
+        "numRue": 4.0,
+        "adresse_brute": "Bétrix-Buniier Fritz, confiseur, av. duThéâtre, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Avenue du Théâtre, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 2554,
+        "nom": "Bigler Germaine",
+        "metier": "café",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Bigler Germaine, café, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -151,6 +503,94 @@
         "adresse_brute": "Bigler Marguer, café, Industr., La Sallaz",
         "ville": "Lausanne",
         "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 2841,
+        "nom": "Blanc-Grillet Alfred,",
+        "metier": "dame', 'café, m. a.",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Blanc-Grillet Alfred,, dame', 'café, m. a., []",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6366354,
+          46.5207447
+        ]
+      },
+      "properties": {
+        "id": 3081,
+        "nom": "Blondel Charles",
+        "metier": "confiseur",
+        "nomRue": "Bourg",
+        "numRue": 5.0,
+        "adresse_brute": "Blondel Charles, confiseur, Bourg, 5",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "5 Bourg, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.638803,
+          46.5186612
+        ]
+      },
+      "properties": {
+        "id": 3085,
+        "nom": "Blondel Jules",
+        "metier": "confiseur",
+        "nomRue": "Villamont",
+        "numRue": 15.0,
+        "adresse_brute": "Blondel Jules, confiseur, Villamont, 15",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "15 Villamont, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 3093,
+        "nom": "Blondel-Golaz Jules",
+        "metier": "confiseur",
+        "nomRue": "av. deVillamont",
+        "numRue": 15.0,
+        "adresse_brute": "Blondel-Golaz Jules, confiseur, av. deVillamont, 15",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
@@ -226,6 +666,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6319908,
+          46.5291289
+        ]
+      },
+      "properties": {
+        "id": 3915,
+        "nom": "Bouvet-Panero Joseph",
+        "metier": "confiseur",
+        "nomRue": "r.de la Borde",
+        "numRue": 27.0,
+        "adresse_brute": "Bouvet-Panero Joseph, confiseur, r.de la Borde, 27",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "27 Rue de la Borde, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -239,6 +701,182 @@
         "adresse_brute": "Bovey-Bovat Ernest, café dos Alliés, Pont aise, 48",
         "ville": "Lausanne",
         "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4068,
+        "nom": "Bovy-Mouillct Eugène",
+        "metier": "confiseur",
+        "nomRue": "av.W. Fraisse",
+        "numRue": 10.0,
+        "adresse_brute": "Bovy-Mouillct Eugène, confiseur, av.W. Fraisse, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6348675,
+          46.5180673
+        ]
+      },
+      "properties": {
+        "id": 4170,
+        "nom": "Bravand-Winistorfcr Friedrich",
+        "metier": "pâtissier",
+        "nomRue": "Beau-Séjour",
+        "numRue": 7.0,
+        "adresse_brute": "Bravand-Winistorfcr Friedrich, pâtissier, Beau-Séjour, 7",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "7 Beau-Séjour, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4354,
+        "nom": "Bron Firmili",
+        "metier": "confiseur",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Bron Firmili, confiseur, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4416,
+        "nom": "JBrossy-Pasche Ch",
+        "metier": "boulanger",
+        "nomRue": "av. dela Harpe",
+        "numRue": 25.0,
+        "adresse_brute": "JBrossy-Pasche Ch, boulanger, av. dela Harpe, 25",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4459,
+        "nom": "Brugger Léon",
+        "metier": "boulanger",
+        "nomRue": "Aie",
+        "numRue": 39.0,
+        "adresse_brute": "Brugger Léon, boulanger, Aie, 39",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6336885,
+          46.5244057
+        ]
+      },
+      "properties": {
+        "id": 4563,
+        "nom": "Bryand Adalbert",
+        "metier": "limonadier",
+        "nomRue": "Deux-Marchés",
+        "numRue": 24.0,
+        "adresse_brute": "Bryand Adalbert, limonadier, Deux-Marchés, 24",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "24 Deux-Marchés, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6269228,
+          46.5069306
+        ]
+      },
+      "properties": {
+        "id": 4593,
+        "nom": "Bûcher Johannes",
+        "metier": "pâtissier",
+        "nomRue": "Beau-Rivage.",
+        "numRue": null,
+        "adresse_brute": "Bûcher Johannes, pâtissier, Beau-Rivage.",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Avenue d'Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 4769,
+        "nom": "Burger Albert",
+        "metier": "m. d’hôtel",
+        "nomRue": "H. Central",
+        "numRue": null,
+        "adresse_brute": "Burger Albert, m. d’hôtel, H. Central",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
@@ -292,6 +930,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6271014,
+          46.5241229
+        ]
+      },
+      "properties": {
+        "id": 5435,
+        "nom": "Cavht-Panchaud Emile",
+        "metier": "boulanger",
+        "nomRue": "r.Maupas",
+        "numRue": 6.0,
+        "adresse_brute": "Cavht-Panchaud Emile, boulanger, r.Maupas, 6",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "6 Rue Maupas, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 5479,
+        "nom": "Cerf-Deisler Jules",
+        "metier": "confiseur",
+        "nomRue": "Marthe-ray",
+        "numRue": 3.0,
+        "adresse_brute": "Cerf-Deisler Jules, confiseur, Marthe-ray, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6486216,
           46.516663
         ]
@@ -336,6 +1018,138 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 5769,
+        "nom": "Chappuis Jeanne",
+        "metier": "f. de cuisine', 'Hôtel National",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Chappuis Jeanne, f. de cuisine', 'Hôtel National, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6317587,
+          46.5296033
+        ]
+      },
+      "properties": {
+        "id": 5989,
+        "nom": "Chassot-Nicolas François-Joaeh",
+        "metier": "confiseur",
+        "nomRue": "Borde",
+        "numRue": 31.0,
+        "adresse_brute": "Chassot-Nicolas François-Joaeh, confiseur, Borde, 31",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "31 Borde, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 6016,
+        "nom": "Chatelain-Pctter Alexis",
+        "metier": "brasseur",
+        "nomRue": "av.de F nui ce",
+        "numRue": 39.0,
+        "adresse_brute": "Chatelain-Pctter Alexis, brasseur, av.de F nui ce, 39",
+        "ville": "Lausanne",
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 6065,
+        "nom": "Chanbert-Baud Louis",
+        "metier": "employé trams.Café de l’Avenir, Chailly",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Chanbert-Baud Louis, employé trams.Café de l’Avenir, Chailly, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6137823,
+          46.5161015
+        ]
+      },
+      "properties": {
+        "id": 6082,
+        "nom": "Chaudron-Clerc Louis",
+        "metier": "pâtissier",
+        "nomRue": "av.de Cour",
+        "numRue": 2.0,
+        "adresse_brute": "Chaudron-Clerc Louis, pâtissier, av.de Cour, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 Avenue de Cour, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 6318,
+        "nom": "Chevalley-Félix Henri",
+        "metier": "anc, boulanger, Haute Lande, Montoie",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Chevalley-Félix Henri, anc, boulanger, Haute Lande, Montoie, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.628834,
           46.5237573
         ]
@@ -358,8 +1172,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.635616,
-          46.5207161
+          6.6354897,
+          46.5206413
         ]
       },
       "properties": {
@@ -395,6 +1209,138 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "9 Rue Neuve, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 6820,
+        "nom": "Conne-Barbey Raoul",
+        "metier": "boulanger",
+        "nomRue": "Aie30.",
+        "numRue": null,
+        "adresse_brute": "Conne-Barbey Raoul, boulanger, Aie30.",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 6825,
+        "nom": "Conne-Panchaud Emile",
+        "metier": "boulanger",
+        "nomRue": "Aie",
+        "numRue": 4.0,
+        "adresse_brute": "Conne-Panchaud Emile, boulanger, Aie, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 7103,
+        "nom": "Cornut-Barîiiss Emile",
+        "metier": "confiseur",
+        "nomRue": "C-h.-de.Bourg",
+        "numRue": 28.0,
+        "adresse_brute": "Cornut-Barîiiss Emile, confiseur, C-h.-de.Bourg, 28",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 7392,
+        "nom": "Grossier René-Gustave",
+        "metier": "boulanger",
+        "nomRue": "Escal.-du-Marché",
+        "numRue": 1.0,
+        "adresse_brute": "Grossier René-Gustave, boulanger, Escal.-du-Marché, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6298216,
+          46.5240301
+        ]
+      },
+      "properties": {
+        "id": 7729,
+        "nom": "Daccord-Grivel Auguste",
+        "metier": "anc. boulanger",
+        "nomRue": "Pré-du-Marché 10 a.",
+        "numRue": null,
+        "adresse_brute": "Daccord-Grivel Auguste, anc. boulanger, Pré-du-Marché 10 a.",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Pré-du-Marché 10 a., Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6313977,
+          46.5305066
+        ]
+      },
+      "properties": {
+        "id": 8208,
+        "nom": "Uécosterd Jules",
+        "metier": "confiseur",
+        "nomRue": "Borde",
+        "numRue": 41.0,
+        "adresse_brute": "Uécosterd Jules, confiseur, Borde, 41",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "41 Borde, Lausanne, Switzerland"
       }
     },
     {
@@ -446,6 +1392,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6318565,
+          46.5155046
+        ]
+      },
+      "properties": {
+        "id": 8637,
+        "nom": "Demont-Fontolliet Auguste",
+        "metier": "confiseur",
+        "nomRue": "Simplon",
+        "numRue": 5.0,
+        "adresse_brute": "Demont-Fontolliet Auguste, confiseur, Simplon, 5",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "5 Simplon, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6173621,
+          46.5281172
+        ]
+      },
+      "properties": {
+        "id": 8642,
+        "nom": "Deinont-Ptelffer Robert",
+        "metier": "pâtissier",
+        "nomRue": "av. d’Yverdon",
+        "numRue": 4.0,
+        "adresse_brute": "Deinont-Ptelffer Robert, pâtissier, av. d’Yverdon, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Avenue d’Yverdon, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6207401,
           46.5296059
         ]
@@ -461,6 +1451,28 @@
         "type_simplifie": "Hôtel / Auberge",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "26 Avenue Bergières, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6163043,
+          46.5250801
+        ]
+      },
+      "properties": {
+        "id": 8793,
+        "nom": "Desarzens-Sumi Charles",
+        "metier": "boulanger",
+        "nomRue": "av. Recordon",
+        "numRue": 1.0,
+        "adresse_brute": "Desarzens-Sumi Charles, boulanger, av. Recordon, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Avenue Recordon, Lausanne, Switzerland"
       }
     },
     {
@@ -556,6 +1568,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6514913,
+          46.5264051
+        ]
+      },
+      "properties": {
+        "id": 9350,
+        "nom": "Dubi-Rossler Paul",
+        "metier": "boulanger",
+        "nomRue": "av. deChailly",
+        "numRue": 2.0,
+        "adresse_brute": "Dubi-Rossler Paul, boulanger, av. deChailly, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 Avenue de Chailly, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 9390,
+        "nom": "Dubois-Cherplllod Henri",
+        "metier": "liquoriste",
+        "nomRue": "ch. Vinet",
+        "numRue": 28.0,
+        "adresse_brute": "Dubois-Cherplllod Henri, liquoriste, ch. Vinet, 28",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 9420,
+        "nom": "Dubois-Pasche Marius",
+        "metier": "boulanger",
+        "nomRue": "La.Châtelaine 1, r. de Genève",
+        "numRue": null,
+        "adresse_brute": "Dubois-Pasche Marius, boulanger, La.Châtelaine 1, r. de Genève",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -591,6 +1669,160 @@
         "adresse_brute": "Dumuld-Slebenmann Louis, maîtred’hôtel, Montngibert, 6",
         "ville": "Lausanne",
         "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 10102,
+        "nom": "Dutoit-Durussel Alois",
+        "metier": "limonadier",
+        "nomRue": "m.ovv. 14. Bellevaux.",
+        "numRue": null,
+        "adresse_brute": "Dutoit-Durussel Alois, limonadier, m.ovv. 14. Bellevaux.",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6321103,
+          46.5214909
+        ]
+      },
+      "properties": {
+        "id": 10231,
+        "nom": "Ecoffey-Gillicron Henri",
+        "metier": "anc. boulanger",
+        "nomRue": "Louve",
+        "numRue": 12.0,
+        "adresse_brute": "Ecoffey-Gillicron Henri, anc. boulanger, Louve, 12",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "12 Louve, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5964783,
+          46.5824035
+        ]
+      },
+      "properties": {
+        "id": 10337,
+        "nom": "Ellenberger-Glaus Ernest",
+        "metier": "boulanger",
+        "nomRue": "Martheray",
+        "numRue": 2.0,
+        "adresse_brute": "Ellenberger-Glaus Ernest, boulanger, Martheray, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 Martheray, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 10397,
+        "nom": "Emery-Rccordon Alfred",
+        "metier": "boulanger",
+        "nomRue": "mais Luthi, Com-",
+        "numRue": null,
+        "adresse_brute": "Emery-Rccordon Alfred, boulanger, mais Luthi, Com-",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6380581,
+          46.519315
+        ]
+      },
+      "properties": {
+        "id": 10418,
+        "nom": "Engel-Crombie Emile",
+        "metier": "boulanger",
+        "nomRue": "rueEtraz",
+        "numRue": 2.0,
+        "adresse_brute": "Engel-Crombie Emile, boulanger, rueEtraz, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "2 rue Etraz, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6334697,
+          46.5219484
+        ]
+      },
+      "properties": {
+        "id": 10554,
+        "nom": "Etter-Chappuis Emile",
+        "metier": "boulanger",
+        "nomRue": "Esc.du-Marché",
+        "numRue": 1.0,
+        "adresse_brute": "Etter-Chappuis Emile, boulanger, Esc.du-Marché, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Esc.du-Marché, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 10741,
+        "nom": "Fatton-Martin Alfred",
+        "metier": "pâtissier",
+        "nomRue": "av.du Simplon",
+        "numRue": 20.0,
+        "adresse_brute": "Fatton-Martin Alfred, pâtissier, av.du Simplon, 20",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
@@ -666,6 +1898,138 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6316762,
+          46.515685
+        ]
+      },
+      "properties": {
+        "id": 11727,
+        "nom": "Frossard, - Grassi - Ding Joseph-Vital•",
+        "metier": "boulanger",
+        "nomRue": "Simplon",
+        "numRue": 4.0,
+        "adresse_brute": "Frossard, - Grassi - Ding Joseph-Vital•, boulanger, Simplon, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Simplon, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.636361,
+          46.5200647
+        ]
+      },
+      "properties": {
+        "id": 11792,
+        "nom": "Furrer Robert",
+        "metier": "pâtissier",
+        "nomRue": "Bourg",
+        "numRue": 47.0,
+        "adresse_brute": "Furrer Robert, pâtissier, Bourg, 47",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "47 Bourg, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 12021,
+        "nom": "Garin-Clerc Louis",
+        "metier": "boulanger",
+        "nomRue": "Chailly.RT",
+        "numRue": 8784.0,
+        "adresse_brute": "Garin-Clerc Louis, boulanger, Chailly.RT, 8784",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6197041,
+          46.5268323
+        ]
+      },
+      "properties": {
+        "id": 12080,
+        "nom": "Gaudard-Stockli Edouard",
+        "metier": "pâtissier",
+        "nomRue": "av. de France",
+        "numRue": 41.0,
+        "adresse_brute": "Gaudard-Stockli Edouard, pâtissier, av. de France, 41",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "41 Avenue de France, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6336209,
+          46.5164762
+        ]
+      },
+      "properties": {
+        "id": 12233,
+        "nom": "Geiser Karl",
+        "metier": "pâtissier",
+        "nomRue": "av. d'Ouchy",
+        "numRue": 3.0,
+        "adresse_brute": "Geiser Karl, pâtissier, av. d'Ouchy, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Avenue d'Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6310836,
+          46.5218464
+        ]
+      },
+      "properties": {
+        "id": 12417,
+        "nom": "Gennanier Prosper",
+        "metier": "pâtissier",
+        "nomRue": "GrandSt-Jean",
+        "numRue": 22.0,
+        "adresse_brute": "Gennanier Prosper, pâtissier, GrandSt-Jean, 22",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "22 Grand St-Jean, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.5944965,
           46.5242519
         ]
@@ -688,8 +2052,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6318981,
-          46.5192667
+          6.6929467,
+          46.5533939
+        ]
+      },
+      "properties": {
+        "id": 12656,
+        "nom": "Gilliéron-Dessauges Paul",
+        "metier": "boulanger-épicier",
+        "nomRue": "Vers-chez-les-Blanc.",
+        "numRue": null,
+        "adresse_brute": "Gilliéron-Dessauges Paul, boulanger-épicier, Vers-chez-les-Blanc.",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Vers-chez-les-Blanc., Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6319413,
+          46.5192631
         ]
       },
       "properties": {
@@ -754,6 +2140,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6319813,
+          46.5144242
+        ]
+      },
+      "properties": {
+        "id": 13676,
+        "nom": "Grosjean-Deiss Albert",
+        "metier": "confiseur",
+        "nomRue": "av.d'Ouchy",
+        "numRue": 23.0,
+        "adresse_brute": "Grosjean-Deiss Albert, confiseur, av.d'Ouchy, 23",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "23 Avenue d'Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 13832,
+        "nom": "Guenzi Jean",
+        "metier": "boulanger",
+        "nomRue": "Aie",
+        "numRue": 4.0,
+        "adresse_brute": "Guenzi Jean, boulanger, Aie, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 13974,
+        "nom": "Guignet-Chapallaz François",
+        "metier": "voyag.,liquoriste, av. d’Echallens 78",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Guignet-Chapallaz François, voyag.,liquoriste, av. d’Echallens 78, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 13986,
+        "nom": "Gullland-Diserens Charles",
+        "metier": "boulanger",
+        "nomRue": ",m. Ferraris, Bellevaux.",
+        "numRue": null,
+        "adresse_brute": "Gullland-Diserens Charles, boulanger, ,m. Ferraris, Bellevaux.",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6273681,
           46.5297854
         ]
@@ -776,6 +2250,116 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 14190,
+        "nom": "Hadom-Hâche Fritz",
+        "metier": "boulanger",
+        "nomRue": ", LeTrèfle, Bellevaux. RT2657",
+        "numRue": null,
+        "adresse_brute": "Hadom-Hâche Fritz, boulanger, , LeTrèfle, Bellevaux. RT2657",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6391862,
+          46.5215169
+        ]
+      },
+      "properties": {
+        "id": 14227,
+        "nom": "Häfelfingcr Max",
+        "metier": "opér. de cinéma",
+        "nomRue": "r.Ancienne Douane",
+        "numRue": 1.0,
+        "adresse_brute": "Häfelfingcr Max, opér. de cinéma, r.Ancienne Douane, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Spectacle / Sociabilité",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Rue Ancienne Douane, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6367916,
+          46.5201823
+        ]
+      },
+      "properties": {
+        "id": 14325,
+        "nom": "Hartmann-Cholly Hermann",
+        "metier": "boulanger",
+        "nomRue": "Caroline",
+        "numRue": 3.0,
+        "adresse_brute": "Hartmann-Cholly Hermann, boulanger, Caroline, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Caroline, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 14926,
+        "nom": "Howald-Baudin Gottfried",
+        "metier": "boulanger",
+        "nomRue": "La Gracieuse, La Sallaz",
+        "numRue": null,
+        "adresse_brute": "Howald-Baudin Gottfried, boulanger, La Gracieuse, La Sallaz",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6382594,
+          46.5258784
+        ]
+      },
+      "properties": {
+        "id": 15159,
+        "nom": "Hurter-Chapuia Louis",
+        "metier": "pâtissier",
+        "nomRue": "Industrie",
+        "numRue": 7.0,
+        "adresse_brute": "Hurter-Chapuia Louis, pâtissier, Industrie, 7",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "7 Industrie, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6268328,
           46.5299975
         ]
@@ -791,6 +2375,94 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "11 Avenue Mont-Blanc, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6286724,
+          46.5157387
+        ]
+      },
+      "properties": {
+        "id": 15234,
+        "nom": "Imobersieg Jacob",
+        "metier": "boulanger",
+        "nomRue": "Grancy",
+        "numRue": 26.0,
+        "adresse_brute": "Imobersieg Jacob, boulanger, Grancy, 26",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "26 Grancy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6298676,
+          46.5223736
+        ]
+      },
+      "properties": {
+        "id": 15363,
+        "nom": "Jaccard-Ardin Jules",
+        "metier": "pâtissier",
+        "nomRue": "Haldimand",
+        "numRue": 18.0,
+        "adresse_brute": "Jaccard-Ardin Jules, pâtissier, Haldimand, 18",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "18 Haldimand, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 15728,
+        "nom": "Jaquier-Vuagnaux Paul",
+        "metier": "boulanger",
+        "nomRue": "Le Grutli, Bellevaux-Dessous",
+        "numRue": null,
+        "adresse_brute": "Jaquier-Vuagnaux Paul, boulanger, Le Grutli, Bellevaux-Dessous",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 16040,
+        "nom": "Jordan-Ecoffey Franc",
+        "metier": "confiseur",
+        "nomRue": "r.Aie",
+        "numRue": 29.0,
+        "adresse_brute": "Jordan-Ecoffey Franc, confiseur, r.Aie, 29",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -842,8 +2514,162 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6208817,
-          46.5211333
+          6.6347129,
+          46.5262934
+        ]
+      },
+      "properties": {
+        "id": 16434,
+        "nom": "Kirschmann -Julien",
+        "metier": "limonadier",
+        "nomRue": "pl. Tunnel",
+        "numRue": 12.0,
+        "adresse_brute": "Kirschmann -Julien, limonadier, pl. Tunnel, 12",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "12 Place Tunnel, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 16561,
+        "nom": "Kohler Joséphine",
+        "metier": "gouv.. Hôtel Mirabeau",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Kohler Joséphine, gouv.. Hôtel Mirabeau, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 16686,
+        "nom": "Kranier-Buttet Ernest",
+        "metier": "confiseur",
+        "nomRue": "ruedu Pont",
+        "numRue": 7.0,
+        "adresse_brute": "Kranier-Buttet Ernest, confiseur, ruedu Pont, 7",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6335837,
+          46.5251672
+        ]
+      },
+      "properties": {
+        "id": 16765,
+        "nom": "Krusi Emile",
+        "metier": "pâtissier",
+        "nomRue": "r. Tunnel",
+        "numRue": 8.0,
+        "adresse_brute": "Krusi Emile, pâtissier, r. Tunnel, 8",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Rue Tunnel, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6322629,
+          46.5285643
+        ]
+      },
+      "properties": {
+        "id": 16884,
+        "nom": "Kiipper-Aeberbard Emile",
+        "metier": "boulanger",
+        "nomRue": "Borde",
+        "numRue": 19.0,
+        "adresse_brute": "Kiipper-Aeberbard Emile, boulanger, Borde, 19",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "19 Borde, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6319147,
+          46.5266168
+        ]
+      },
+      "properties": {
+        "id": 16975,
+        "nom": "Lagallsse-Augsburger Camille",
+        "metier": "pâtissier",
+        "nomRue": "r. des Glaciers",
+        "numRue": 6.0,
+        "adresse_brute": "Lagallsse-Augsburger Camille, pâtissier, r. des Glaciers, 6",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "6 Rue des Glaciers, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 17068,
+        "nom": "Lang-Meister Jean",
+        "metier": "pâtissier",
+        "nomRue": "avenuedu Mont-Blanc",
+        "numRue": 9.0,
+        "adresse_brute": "Lang-Meister Jean, pâtissier, avenuedu Mont-Blanc, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6159677,
+          46.5209373
         ]
       },
       "properties": {
@@ -857,6 +2683,28 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "10 Avenue Tivoli, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5513862,
+          46.5520225
+        ]
+      },
+      "properties": {
+        "id": 17202,
+        "nom": "Laurent-Kohly Aug",
+        "metier": "liquoriste",
+        "nomRue": "r. duJura",
+        "numRue": 3.0,
+        "adresse_brute": "Laurent-Kohly Aug, liquoriste, r. duJura, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Rue du Jura, Lausanne, Switzerland"
       }
     },
     {
@@ -886,6 +2734,160 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 17477,
+        "nom": "Lehmann-Martin Charles",
+        "metier": "pâtissier",
+        "nomRue": "Maunas",
+        "numRue": 9.0,
+        "adresse_brute": "Lehmann-Martin Charles, pâtissier, Maunas, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 17679,
+        "nom": "Liechti-Merinoud Hans",
+        "metier": "chocolatier",
+        "nomRue": "•ililancn. Bel'(‘vaux.",
+        "numRue": null,
+        "adresse_brute": "Liechti-Merinoud Hans, chocolatier, •ililancn. Bel'(‘vaux.",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 17680,
+        "nom": "Liechti-Ilupp Albert",
+        "metier": "brasseur",
+        "nomRue": "Va Sé-veliu 2, av. Tivoli",
+        "numRue": null,
+        "adresse_brute": "Liechti-Ilupp Albert, brasseur, Va Sé-veliu 2, av. Tivoli",
+        "ville": "Lausanne",
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 17843,
+        "nom": "Longchamp Céline",
+        "metier": "ling.. Hôtel Belvédère.",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Longchamp Céline, ling.. Hôtel Belvédère., []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 18376,
+        "nom": "Marchand-Hugard Charles",
+        "metier": "confiseur",
+        "nomRue": "pl. du Tunnel 1(",
+        "numRue": 1.0,
+        "adresse_brute": "Marchand-Hugard Charles, confiseur, pl. du Tunnel 1(, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 18504,
+        "nom": "Marguerat-Parisod Alois",
+        "metier": "boulanger",
+        "nomRue": "Madeleine'11. RT9961",
+        "numRue": null,
+        "adresse_brute": "Marguerat-Parisod Alois, boulanger, Madeleine'11. RT9961",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 18686,
+        "nom": "Martin Daniel",
+        "metier": "directeur Hôtel Montana,ch. de Pré Fleuri",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Martin Daniel, directeur Hôtel Montana,ch. de Pré Fleuri, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.630284,
           46.5218008
         ]
@@ -901,6 +2903,28 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "12 Grand Pont, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6385998,
+          46.5193358
+        ]
+      },
+      "properties": {
+        "id": 19005,
+        "nom": "Matthey-Bugnion André",
+        "metier": "confiseur",
+        "nomRue": "r.Etraz 16bis",
+        "numRue": null,
+        "adresse_brute": "Matthey-Bugnion André, confiseur, r.Etraz 16bis",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Rue Etraz 16bis, Lausanne, Switzerland"
       }
     },
     {
@@ -952,6 +2976,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6316998,
+          46.5217224
+        ]
+      },
+      "properties": {
+        "id": 19214,
+        "nom": "Mayor-Mayerat-Corthésy Auguste",
+        "metier": "limonadier",
+        "nomRue": "Grand St-Jean",
+        "numRue": 4.0,
+        "adresse_brute": "Mayor-Mayerat-Corthésy Auguste, limonadier, Grand St-Jean, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Grand St-Jean, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -974,6 +3020,116 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6310052,
+          46.5219154
+        ]
+      },
+      "properties": {
+        "id": 19479,
+        "nom": "Mercier Cyrille-Henri",
+        "metier": "confiseur",
+        "nomRue": "pl. GrandSt-Jean",
+        "numRue": 1.0,
+        "adresse_brute": "Mercier Cyrille-Henri, confiseur, pl. GrandSt-Jean, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Place Grand St-Jean, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 19563,
+        "nom": "Mennod-Brélaz Ami",
+        "metier": "brasseur",
+        "nomRue": "aven.Vulliemin",
+        "numRue": 30.0,
+        "adresse_brute": "Mennod-Brélaz Ami, brasseur, aven.Vulliemin, 30",
+        "ville": "Lausanne",
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 20000,
+        "nom": "Michon-Melloni Albert",
+        "metier": "emp. CFF.,mais de la brasserie, Contigny",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Michon-Melloni Albert, emp. CFF.,mais de la brasserie, Contigny, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 20217,
+        "nom": "Mojonnier-Beaud Louis",
+        "metier": "pâtissier",
+        "nomRue": "ruedu Pont",
+        "numRue": 2.0,
+        "adresse_brute": "Mojonnier-Beaud Louis, pâtissier, ruedu Pont, 2",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6267678,
+          46.5241695
+        ]
+      },
+      "properties": {
+        "id": 20288,
+        "nom": "Monuard-Anker Ch",
+        "metier": "boulanger",
+        "nomRue": "Maupas",
+        "numRue": 32.0,
+        "adresse_brute": "Monuard-Anker Ch, boulanger, Maupas, 32",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "32 Maupas, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -987,6 +3143,50 @@
         "adresse_brute": "Monnier-Burger Alcide, g. de café, Chauerau, 15",
         "ville": "Lausanne",
         "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6300258,
+          46.5301293
+        ]
+      },
+      "properties": {
+        "id": 20615,
+        "nom": "Morier-Antonin Auguste",
+        "metier": "boulanger",
+        "nomRue": "Pontaise",
+        "numRue": 26.0,
+        "adresse_brute": "Morier-Antonin Auguste, boulanger, Pontaise, 26",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "26 Pontaise, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 20728,
+        "nom": "Mottaz-Décostcrd Albert",
+        "metier": "boulanger",
+        "nomRue": "Retraites 2, r. de Genève",
+        "numRue": null,
+        "adresse_brute": "Mottaz-Décostcrd Albert, boulanger, Retraites 2, r. de Genève",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
@@ -1040,6 +3240,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 20866,
+        "nom": "Muller Jeanne",
+        "metier": "gouvern.. Hôtel Carlton",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Muller Jeanne, gouvern.. Hôtel Carlton, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6336209,
+          46.5164762
+        ]
+      },
+      "properties": {
+        "id": 20888,
+        "nom": "Muller-Blanc Rod",
+        "metier": "boulanger",
+        "nomRue": "ChaletRosemont. av. Ouchy",
+        "numRue": 3.0,
+        "adresse_brute": "Muller-Blanc Rod, boulanger, ChaletRosemont. av. Ouchy, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Avenue d'Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6328671,
           46.5211232
         ]
@@ -1062,8 +3306,96 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6259508,
-          46.5088007
+          6.6252151,
+          46.5127227
+        ]
+      },
+      "properties": {
+        "id": 21297,
+        "nom": "Noeth-Kohm Georges",
+        "metier": "brasseur",
+        "nomRue": "av.de la Harpe",
+        "numRue": 10.0,
+        "adresse_brute": "Noeth-Kohm Georges, brasseur, av.de la Harpe, 10",
+        "ville": "Lausanne",
+        "type_simplifie": "Brasserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "10 Avenue de la Harpe, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6335837,
+          46.5251672
+        ]
+      },
+      "properties": {
+        "id": 21335,
+        "nom": "Notz-Petrova Albert",
+        "metier": "pâtissier",
+        "nomRue": "r. duTunnel",
+        "numRue": 8.0,
+        "adresse_brute": "Notz-Petrova Albert, pâtissier, r. duTunnel, 8",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Rue du Tunnel, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6194285,
+          46.5262561
+        ]
+      },
+      "properties": {
+        "id": 21401,
+        "nom": "Xydeggcr-Sclimid Jean",
+        "metier": "confiseur",
+        "nomRue": "av.d’Echallens",
+        "numRue": 38.0,
+        "adresse_brute": "Xydeggcr-Sclimid Jean, confiseur, av.d’Echallens, 38",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "38 Avenue d’Echallens, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 21482,
+        "nom": "Ogay-Mojonnier Jules",
+        "metier": "boulanger",
+        "nomRue": "r.Martheray",
+        "numRue": 34.0,
+        "adresse_brute": "Ogay-Mojonnier Jules, boulanger, r.Martheray, 34",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6254584,
+          46.5146227
         ]
       },
       "properties": {
@@ -1106,6 +3438,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 21628,
+        "nom": "Ozelley-Dépraz Gustave",
+        "metier": "boulanger",
+        "nomRue": "r. Curt at",
+        "numRue": 25.0,
+        "adresse_brute": "Ozelley-Dépraz Gustave, boulanger, r. Curt at, 25",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6336668,
+          46.5205684
+        ]
+      },
+      "properties": {
+        "id": 21848,
+        "nom": "Pahnd-Gonet Erne",
+        "metier": "boulanger",
+        "nomRue": "r. St-François",
+        "numRue": 6.0,
+        "adresse_brute": "Pahnd-Gonet Erne, boulanger, r. St-François, 6",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "6 Rue St-François, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6376787,
           46.5200556
         ]
@@ -1121,6 +3497,182 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "10 Enning, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6271952,
+          46.5073732
+        ]
+      },
+      "properties": {
+        "id": 22799,
+        "nom": "Perrln-Mayor Alfred",
+        "metier": "pâtissier",
+        "nomRue": "Ou-chy",
+        "numRue": 76.0,
+        "adresse_brute": "Perrln-Mayor Alfred, pâtissier, Ou-chy, 76",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "76 Avenue d'Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 22971,
+        "nom": "Petter-Bergoz Paul",
+        "metier": "boulanger",
+        "nomRue": "r. del’Ale",
+        "numRue": 39.0,
+        "adresse_brute": "Petter-Bergoz Paul, boulanger, r. del’Ale, 39",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6199592,
+          46.5237081
+        ]
+      },
+      "properties": {
+        "id": 23142,
+        "nom": "Pichard-Kuffer Henri",
+        "metier": "confiseur",
+        "nomRue": "ch.de Boston",
+        "numRue": 25.0,
+        "adresse_brute": "Pichard-Kuffer Henri, confiseur, ch.de Boston, 25",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "25 Chemin de Boston, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6312469,
+          46.5223252
+        ]
+      },
+      "properties": {
+        "id": 23166,
+        "nom": "Pldoux Ernest",
+        "metier": "boulanger",
+        "nomRue": "St-Laurent",
+        "numRue": 9.0,
+        "adresse_brute": "Pldoux Ernest, boulanger, St-Laurent, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "9 St-Laurent, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 23244,
+        "nom": "Piguet-Bringold Jules",
+        "metier": "pâtissier",
+        "nomRue": "ruedes Echelettes",
+        "numRue": 3.0,
+        "adresse_brute": "Piguet-Bringold Jules, pâtissier, ruedes Echelettes, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 23680,
+        "nom": "Porchet-Stettler Robert",
+        "metier": "boulanger",
+        "nomRue": "av. du Simplou",
+        "numRue": 9.0,
+        "adresse_brute": "Porchet-Stettler Robert, boulanger, av. du Simplou, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 23698,
+        "nom": "Pothclunc Marie",
+        "metier": "d. de buffet",
+        "nomRue": "r. Si-Laurent",
+        "numRue": 29.0,
+        "adresse_brute": "Pothclunc Marie, d. de buffet, r. Si-Laurent, 29",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6333323,
+          46.5212745
+        ]
+      },
+      "properties": {
+        "id": 23758,
+        "nom": "Prahin-fialsiger Jules",
+        "metier": "pâtissier",
+        "nomRue": "r. duPont",
+        "numRue": 9.0,
+        "adresse_brute": "Prahin-fialsiger Jules, pâtissier, r. duPont, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "9 Rue du Pont, Lausanne, Switzerland"
       }
     },
     {
@@ -1172,8 +3724,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6254584,
-          46.5146227
+          6.6259508,
+          46.5088007
         ]
       },
       "properties": {
@@ -1238,6 +3790,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6298227,
+          46.5306998
+        ]
+      },
+      "properties": {
+        "id": 24348,
+        "nom": "Regamcy-Magne Louis",
+        "metier": "admin. de cinéma",
+        "nomRue": "Pontaise",
+        "numRue": 40.0,
+        "adresse_brute": "Regamcy-Magne Louis, admin. de cinéma, Pontaise, 40",
+        "ville": "Lausanne",
+        "type_simplifie": "Spectacle / Sociabilité",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "40 Pontaise, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6331206,
           46.5220904
         ]
@@ -1253,6 +3827,28 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "2 Madeleine, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 24636,
+        "nom": "Reymond-Fusay Alfred",
+        "metier": "g. de café,Pontaise, 43 bis",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Reymond-Fusay Alfred, g. de café,Pontaise, 43 bis, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
       }
     },
     {
@@ -1282,6 +3878,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6351012,
+          46.5204851
+        ]
+      },
+      "properties": {
+        "id": 24918,
+        "nom": "Ritter-Hirschl Julien",
+        "metier": "boulanger",
+        "nomRue": "Rôtillon",
+        "numRue": 19.0,
+        "adresse_brute": "Ritter-Hirschl Julien, boulanger, Rôtillon, 19",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "19 Rôtillon, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -1297,6 +3915,138 @@
         "type_simplifie": "Hôtel / Auberge",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6261889,
+          46.5243247
+        ]
+      },
+      "properties": {
+        "id": 25129,
+        "nom": "Rochat-Rochat Marins",
+        "metier": "limonadier",
+        "nomRue": "Petit-Rocher",
+        "numRue": 4.0,
+        "adresse_brute": "Rochat-Rochat Marins, limonadier, Petit-Rocher, 4",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "4 Petit-Rocher, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 25159,
+        "nom": "Rod-Binder Ernest",
+        "metier": "boulanger",
+        "nomRue": "aven.Recordon lObis",
+        "numRue": null,
+        "adresse_brute": "Rod-Binder Ernest, boulanger, aven.Recordon lObis",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 25373,
+        "nom": "Itosset-N Eug",
+        "metier": "confiseur",
+        "nomRue": "yf fenegger",
+        "numRue": null,
+        "adresse_brute": "Itosset-N Eug, confiseur, yf fenegger",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6348149,
+          46.5201839
+        ]
+      },
+      "properties": {
+        "id": 25374,
+        "nom": "Rosset-Oberll Emile",
+        "metier": "confiseur",
+        "nomRue": "r. deBourg",
+        "numRue": 17.0,
+        "adresse_brute": "Rosset-Oberll Emile, confiseur, r. deBourg, 17",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "17 Rue de Bourg, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6449059,
+          46.5174773
+        ]
+      },
+      "properties": {
+        "id": 25434,
+        "nom": "Rossier Marcel",
+        "metier": "confiseur",
+        "nomRue": "Mousquines",
+        "numRue": 3.0,
+        "adresse_brute": "Rossier Marcel, confiseur, Mousquines, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 Mousquines, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6347287,
+          46.5209449
+        ]
+      },
+      "properties": {
+        "id": 25460,
+        "nom": "Rossier-Lack Jules",
+        "metier": "m. d’hôtel",
+        "nomRue": "rueCentrale",
+        "numRue": 3.0,
+        "adresse_brute": "Rossier-Lack Jules, m. d’hôtel, rueCentrale, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "3 rue Centrale, Lausanne, Switzerland"
       }
     },
     {
@@ -1326,6 +4076,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6298216,
+          46.5240301
+        ]
+      },
+      "properties": {
+        "id": 26393,
+        "nom": "Schenker Walter",
+        "metier": "Boulanger",
+        "nomRue": "Pré-du-Marche",
+        "numRue": 8.0,
+        "adresse_brute": "Schenker Walter, Boulanger, Pré-du-Marche, 8",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Pré-du-Marche, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 26686,
+        "nom": "Schneider-Belet Robert-Ch",
+        "metier": "pâtissier",
+        "nomRue": "Aie",
+        "numRue": 9.0,
+        "adresse_brute": "Schneider-Belet Robert-Ch, pâtissier, Aie, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 26745,
+        "nom": "Schënenberger-Eggler Auguste",
+        "metier": "confiseur",
+        "nomRue": "Pt-Chêne",
+        "numRue": 22.0,
+        "adresse_brute": "Schënenberger-Eggler Auguste, confiseur, Pt-Chêne, 22",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 26784,
+        "nom": "Schrœter-Lottcnbacli Emile",
+        "metier": "conduct,d’hôtel, av. Grammont 2",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Schrœter-Lottcnbacli Emile, conduct,d’hôtel, av. Grammont 2, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6331206,
           46.5220904
         ]
@@ -1341,6 +4179,94 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "2 Madeleine, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6217124,
+          46.529481
+        ]
+      },
+      "properties": {
+        "id": 26983,
+        "nom": "Seeger-Clot Maurice",
+        "metier": "confiseur",
+        "nomRue": "ch. duPresbytère",
+        "numRue": 1.0,
+        "adresse_brute": "Seeger-Clot Maurice, confiseur, ch. duPresbytère, 1",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "1 Chemin du Presbytère, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 27011,
+        "nom": "Seiler-Dentan Hermann",
+        "metier": "ex-confiseur,v. Sévelin 2, av. de Tivoli",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Seiler-Dentan Hermann, ex-confiseur,v. Sévelin 2, av. de Tivoli, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 27276,
+        "nom": "Skrobancek-Schneider Marie",
+        "metier": "gouv.,Hôtel Central",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Skrobancek-Schneider Marie, gouv.,Hôtel Central, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 27376,
+        "nom": "Spinner-Tanner Aug",
+        "metier": "boulanger",
+        "nomRue": "v.Sans Souci",
+        "numRue": null,
+        "adresse_brute": "Spinner-Tanner Aug, boulanger, v.Sans Souci",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -1370,6 +4296,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6271768,
+          46.5075945
+        ]
+      },
+      "properties": {
+        "id": 27520,
+        "nom": "Steiner Jacob",
+        "metier": "pâtissier",
+        "nomRue": "av. Ouchy",
+        "numRue": 70.0,
+        "adresse_brute": "Steiner Jacob, pâtissier, av. Ouchy, 70",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "70 Avenue Ouchy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6256619,
           46.5115801
         ]
@@ -1385,6 +4333,28 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "18 Avenue de la Harpe, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 27800,
+        "nom": "Sumser Julien",
+        "metier": "direct. Hôtel Cecil",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Sumser Julien, direct. Hôtel Cecil, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
       }
     },
     {
@@ -1436,6 +4406,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.625169,
+          46.5149756
+        ]
+      },
+      "properties": {
+        "id": 28172,
+        "nom": "Thoinas-Felder Aimé",
+        "metier": "boulanger",
+        "nomRue": "av.Dapples",
+        "numRue": 25.0,
+        "adresse_brute": "Thoinas-Felder Aimé, boulanger, av.Dapples, 25",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "25 Avenue Dapples, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6298353,
           46.5230375
         ]
@@ -1451,6 +4443,50 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "38 St-Laurent, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 28525,
+        "nom": "Truan-Muller Louis",
+        "metier": "liquoriste",
+        "nomRue": "Ane.Douane",
+        "numRue": 3.0,
+        "adresse_brute": "Truan-Muller Louis, liquoriste, Ane.Douane, 3",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 28631,
+        "nom": "Uhlmann-Rochat Georges",
+        "metier": "boulanger",
+        "nomRue": "Mousquincs",
+        "numRue": 9.0,
+        "adresse_brute": "Uhlmann-Rochat Georges, boulanger, Mousquincs, 9",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "ville",
+        "adresse_geocodage": "Lausanne, Switzerland (fallback)"
       }
     },
     {
@@ -1502,6 +4538,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.6241686,
+          46.5249883
+        ]
+      },
+      "properties": {
+        "id": 28830,
+        "nom": "Vannereau - Pelot Henri",
+        "metier": "confiseur",
+        "nomRue": "Echelettes",
+        "numRue": 7.0,
+        "adresse_brute": "Vannereau - Pelot Henri, confiseur, Echelettes, 7",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "7 Echelettes, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 29078,
+        "nom": "Villard Léon",
+        "metier": "nett', 'Hôtel Central",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Villard Léon, nett', 'Hôtel Central, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6327025,
+          46.5218269
+        ]
+      },
+      "properties": {
+        "id": 29317,
+        "nom": "Vogel Camille",
+        "metier": "chass.. Hôtel Savoy",
+        "nomRue": "[]",
+        "numRue": null,
+        "adresse_brute": "Vogel Camille, chass.. Hôtel Savoy, []",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "[], Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6327025,
           46.5218269
         ]
@@ -1517,6 +4619,50 @@
         "type_simplifie": "Débit de boisson",
         "geocodage_precision": "ville",
         "adresse_geocodage": "Lausanne, Switzerland (fallback)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6244342,
+          46.5127024
+        ]
+      },
+      "properties": {
+        "id": 29453,
+        "nom": "Vonga-Lavanchy Robert",
+        "metier": "boulanger",
+        "nomRue": "av. Beauregard",
+        "numRue": 7.0,
+        "adresse_brute": "Vonga-Lavanchy Robert, boulanger, av. Beauregard, 7",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "7 Avenue Beauregard, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6256943,
+          46.5201602
+        ]
+      },
+      "properties": {
+        "id": 29608,
+        "nom": "Vultier-Perroulaz Arnold",
+        "metier": "café",
+        "nomRue": "Casino-Théâtre",
+        "numRue": null,
+        "adresse_brute": "Vultier-Perroulaz Arnold, café, Casino-Théâtre",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "Casino-Théâtre, Lausanne, Switzerland"
       }
     },
     {
@@ -1561,6 +4707,116 @@
         "type_simplifie": "Spectacle / Sociabilité",
         "geocodage_precision": "adresse",
         "adresse_geocodage": "33 Boul. de Grancy, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6237659,
+          46.5246236
+        ]
+      },
+      "properties": {
+        "id": 29812,
+        "nom": "Weber-Niklaus Jules",
+        "metier": "boulanger",
+        "nomRue": "av.de France",
+        "numRue": 18.0,
+        "adresse_brute": "Weber-Niklaus Jules, boulanger, av.de France, 18",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "18 Avenue de France, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6253598,
+          46.524141
+        ]
+      },
+      "properties": {
+        "id": 29814,
+        "nom": "Weber-Perret Francis",
+        "metier": "liquoriste",
+        "nomRue": "pl.Chauderon",
+        "numRue": 20.0,
+        "adresse_brute": "Weber-Perret Francis, liquoriste, pl.Chauderon, 20",
+        "ville": "Lausanne",
+        "type_simplifie": "Débit de boisson",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "20 Place Chauderon, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6360482,
+          46.5168673
+        ]
+      },
+      "properties": {
+        "id": 30006,
+        "nom": "Werner-Schörl Ernest",
+        "metier": "Hôtel National",
+        "nomRue": "av. de la Gare",
+        "numRue": 16.0,
+        "adresse_brute": "Werner-Schörl Ernest, Hôtel National, av. de la Gare, 16",
+        "ville": "Lausanne",
+        "type_simplifie": "Hôtel / Auberge",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "16 Avenue de la Gare, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6310836,
+          46.5218464
+        ]
+      },
+      "properties": {
+        "id": 30024,
+        "nom": "Wetter-Hcrmann Arnold",
+        "metier": "boulanger",
+        "nomRue": "Grand St-Jean",
+        "numRue": 33.0,
+        "adresse_brute": "Wetter-Hcrmann Arnold, boulanger, Grand St-Jean, 33",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "33 Grand St-Jean, Lausanne, Switzerland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6328671,
+          46.5211232
+        ]
+      },
+      "properties": {
+        "id": 30132,
+        "nom": "Wildi-Dnfanx Rodolphe",
+        "metier": "confiseur",
+        "nomRue": "Petit St-Jean",
+        "numRue": 8.0,
+        "adresse_brute": "Wildi-Dnfanx Rodolphe, confiseur, Petit St-Jean, 8",
+        "ville": "Lausanne",
+        "type_simplifie": "Boulangerie / Pâtisserie",
+        "geocodage_precision": "adresse",
+        "adresse_geocodage": "8 Petit St-Jean, Lausanne, Switzerland"
       }
     },
     {
