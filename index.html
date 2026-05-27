@@ -314,6 +314,31 @@ header{
   .filters-section{min-width:100%;}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+/* ── QUARTIER BADGE ──────────────────────────────────── */
+#quartier-badge {
+  position:absolute;bottom:var(--space-6);left:var(--space-4);z-index:800;
+  background:oklch(from var(--surface) l c h/.92);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-3) var(--space-4);backdrop-filter:blur(8px);
+  box-shadow:var(--shadow-md);font-size:var(--text-xs);
+  display:none;min-width:160px;
+  transition:opacity var(--transition);
+}
+#quartier-badge.visible { display:block; }
+.quartier-badge-label {
+  color:var(--text-muted);text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:var(--space-2);
+}
+.quartier-badge-name {
+  font-family:var(--font-display);font-style:italic;
+  font-size:var(--text-lg);color:var(--accent);line-height:1.2;
+  margin-bottom:var(--space-1);
+}
+.quartier-badge-count { color:var(--text-muted); }
+.quartier-badge-pending {
+  color:var(--text-faint);font-style:italic;
+}
 </style>
 </head>
 <body>
@@ -407,6 +432,12 @@ header{
     <div class="evol-info-title">Densité</div>
     <div class="heat-grad"></div>
     <div class="heat-grad-labels"><span>Faible</span><span>Forte</span></div>
+  </div>
+
+  <div id="quartier-badge">
+    <div class="quartier-badge-label">Quartier dominant</div>
+    <div class="quartier-badge-name" id="quartier-name">—</div>
+    <div class="quartier-badge-count" id="quartier-count"></div>
   </div>
 
   <div id="legend">
@@ -955,6 +986,195 @@ function renderMarkers() {
   updateVisibleCount();
   map.off('moveend', updateVisibleCount);
   map.on('moveend', updateVisibleCount);
+
+  updateQuartierBadge();
+}
+
+// ═══════════════════════════════════════════════════════
+//  QUARTIER CACHE & GEOCODING
+// ═══════════════════════════════════════════════════════
+const CACHE_KEY = 'ltm_quarter_cache';
+const CACHE_VERSION = 'v2';
+const CACHE_VERSION_KEY = 'ltm_quarter_cache_version';
+
+// Vider le cache si la version a changé
+if (localStorage.getItem(CACHE_VERSION_KEY) !== CACHE_VERSION) {
+  localStorage.removeItem(CACHE_KEY);
+  localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
+}
+
+function cacheGet() {
+  try { return JSON.parse(localStorage.getItem(CACHE_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function cacheSet(cache) {
+  try { localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); }
+  catch {} // ignore quota errors silently
+}
+
+function cacheCoordKey(lat, lng) {
+  return `${lat.toFixed(3)},${lng.toFixed(3)}`;
+}
+
+// ═══════════════════════════════════════════════════════
+//  NOMINATIM RATE-LIMITED QUEUE
+// ═══════════════════════════════════════════════════════
+const nominatimQueue = {
+  _queue: [],
+  _running: false,
+
+  enqueue(key, lat, lng) {
+    return new Promise(resolve => {
+      this._queue.push({ key, lat, lng, resolve });
+      if (!this._running) this._drain();
+    });
+  },
+
+  async _drain() {
+    this._running = true;
+    while (this._queue.length) {
+      const { key, lat, lng, resolve } = this._queue.shift();
+      const cache = cacheGet();
+      if (cache[key] !== undefined) { resolve(cache[key]); continue; }
+      const result = await fetchNominatimQuartier(lat, lng);
+      cache[key] = result;
+      cacheSet(cache);
+      resolve(result);
+      if (this._queue.length) await sleep(1050);
+    }
+    this._running = false;
+  }
+};
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+const POSTCODE_QUARTIER = {
+  '1001': 'Centre-Ville',
+  '1002': 'Pontaise',
+  '1003': 'Bourg / Riponne',
+  '1004': 'Borde / Vallon',
+  '1005': 'Université / Rumine',
+  '1006': 'Ouchy / Montchoisi',
+  '1007': 'Chailly',
+  '1008': 'Prilly',
+  '1010': 'Sallaz / Vennes',
+  '1011': 'Lausanne-Nord',
+  '1012': 'Lausanne-Chailly',
+  '1014': 'Lausanne-Blécherette',
+  '1018': 'Lausanne-Nord',
+  '1020': 'Renens',
+};
+
+async function fetchNominatimQuartier(lat, lng) {
+  try {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=16&addressdetails=1`;
+    const resp = await fetch(url, {
+      headers: { 'Accept-Language': 'fr', 'User-Agent': 'LausanneTimeMachine/1.0' }
+    });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const pc = (data.address || {}).postcode || null;
+    return POSTCODE_QUARTIER[pc] || pc || null;
+  } catch {
+    return null;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  QUARTIER DOMINANT — BADGE UPDATE
+// ═══════════════════════════════════════════════════════
+let quartierEpoch = 0;
+
+async function updateQuartierBadge() {
+  if (evol.active) {
+    hideQuartierBadge();
+    return;
+  }
+
+  const myEpoch = ++quartierEpoch;
+  const period  = PERIODS[state.periodIdx];
+  const features = state.data[period.year] || [];
+  const cache   = cacheGet();
+
+  const points = [];
+  features.forEach(f => {
+    if (!f.geometry?.coordinates) return;
+    const [lng, lat] = f.geometry.coordinates;
+    if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
+    const { catNorm, precision } = extractProps(f.properties || {}, period.year);
+    if (!state.activeCats.has(catNorm)) return;
+    if (precision === 'ville') return; // exclure les points geocodés au centroïde ville
+    points.push({ lat, lng, catNorm });
+  });
+
+  if (points.length === 0) { hideQuartierBadge(); return; }
+
+  const toFetch = [];
+  points.forEach(pt => {
+    const key = cacheCoordKey(pt.lat, pt.lng);
+    if (cache[key] === undefined) toFetch.push({ key, lat: pt.lat, lng: pt.lng });
+  });
+
+  const seen = new Set();
+  const uniqueToFetch = toFetch.filter(({ key }) => {
+    if (seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+
+  if (uniqueToFetch.length > 0) {
+    showQuartierBadgePending();
+
+    const fetchPromises = uniqueToFetch.map(({ key, lat, lng }) =>
+      nominatimQueue.enqueue(key, lat, lng)
+    );
+
+    fetchPromises.forEach(p => {
+      p.then(() => {
+        if (quartierEpoch !== myEpoch) return;
+        renderQuartierBadge(points);
+      });
+    });
+
+    await Promise.all(fetchPromises);
+    if (quartierEpoch !== myEpoch) return;
+  }
+
+  renderQuartierBadge(points);
+}
+
+function renderQuartierBadge(points) {
+  const cache = cacheGet();
+  const tally = {};
+
+  points.forEach(pt => {
+    const key     = cacheCoordKey(pt.lat, pt.lng);
+    const quarter = cache[key];
+    if (!quarter) return;
+    tally[quarter] = (tally[quarter] || 0) + 1;
+  });
+
+  const entries = Object.entries(tally).sort((a, b) => b[1] - a[1]);
+  if (entries.length === 0) { hideQuartierBadge(); return; }
+
+  const [topName, topCount] = entries[0];
+  const badge = document.getElementById('quartier-badge');
+  document.getElementById('quartier-name').textContent  = topName;
+  document.getElementById('quartier-name').className    = 'quartier-badge-name';
+  document.getElementById('quartier-count').textContent = `${topCount} lieu${topCount > 1 ? 'x' : ''}`;
+  badge.classList.add('visible');
+}
+
+function showQuartierBadgePending() {
+  const badge = document.getElementById('quartier-badge');
+  document.getElementById('quartier-name').textContent = 'calcul en cours…';
+  document.getElementById('quartier-name').className   = 'quartier-badge-name quartier-badge-pending';
+  document.getElementById('quartier-count').textContent = '';
+  badge.classList.add('visible');
+}
+
+function hideQuartierBadge() {
+  document.getElementById('quartier-badge').classList.remove('visible');
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1191,6 +1411,7 @@ async function initEvolution() {
 function activerModeEvolution() {
   evol.active = true;
   markersLayer.clearLayers();
+  hideQuartierBadge();
   map.off('moveend');
   document.getElementById('controls').style.display   = 'none';
   document.getElementById('evol-panel').classList.add('visible');
