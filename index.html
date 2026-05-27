@@ -430,8 +430,9 @@ header{
       Trajectoire
     </div>
     <div id="evol-cat-legend" style="display:none;margin-top:8px;">
-    <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:4px;">Catégories</div>
-    <div id="evol-cat-legend-items"></div>
+      <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:4px;">Catégories</div>
+      <div id="evol-cat-legend-items"></div>
+    </div>
   </div>
 
   <div id="heat-legend">
@@ -1000,7 +1001,7 @@ function renderMarkers() {
 //  QUARTIER CACHE & GEOCODING
 // ═══════════════════════════════════════════════════════
 const CACHE_KEY = 'ltm_quarter_cache';
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_VERSION_KEY = 'ltm_quarter_cache_version';
 
 // Vider le cache si la version a changé
@@ -1112,11 +1113,17 @@ async function updateQuartierBadge() {
     if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
     const { catNorm, precision } = extractProps(f.properties || {}, period.year);
     if (!state.activeCats.has(catNorm)) return;
-    if (precision === 'ville') return; // exclure les points geocodés au centroïde ville
+    if (precision === 'ville') return;
     points.push({ lat, lng, catNorm });
   });
 
-  if (points.length === 0) { hideQuartierBadge(); return; }
+  if (points.length === 0) {
+    document.getElementById('quartier-name').textContent = `0 pts (${period.year})`;
+    document.getElementById('quartier-name').className = 'quartier-badge-name quartier-badge-pending';
+    document.getElementById('quartier-count').textContent = '';
+    document.getElementById('quartier-badge').classList.add('visible');
+    return;
+  }
 
   const toFetch = [];
   points.forEach(pt => {
