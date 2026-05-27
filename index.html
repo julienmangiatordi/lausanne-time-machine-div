@@ -292,7 +292,10 @@ header{
 
 /* ── HEATMAP GRADIENT LEGEND ─────────────────────────── */
 #heat-legend {
-  position:absolute;bottom: calc(var(--space-6) + 180px);left:var(--space-4);z-index:800;
+  position: absolute;
+  bottom: var(--space-6);
+  left: var(--space-4);
+  z-index: 800;
   background:oklch(from var(--surface) l c h/.92);
   border:1px solid var(--border);border-radius:var(--radius-lg);
   padding:var(--space-3) var(--space-4);backdrop-filter:blur(8px);
