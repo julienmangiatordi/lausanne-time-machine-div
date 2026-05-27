@@ -998,10 +998,12 @@ const CACHE_VERSION = 'v2';
 const CACHE_VERSION_KEY = 'ltm_quarter_cache_version';
 
 // Vider le cache si la version a changé
-if (localStorage.getItem(CACHE_VERSION_KEY) !== CACHE_VERSION) {
-  localStorage.removeItem(CACHE_KEY);
-  localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
-}
+try {
+  if (localStorage.getItem(CACHE_VERSION_KEY) !== CACHE_VERSION) {
+    localStorage.removeItem(CACHE_KEY);
+    localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
+  }
+} catch(e) {}
 
 function cacheGet() {
   try { return JSON.parse(localStorage.getItem(CACHE_KEY) || '{}'); }
