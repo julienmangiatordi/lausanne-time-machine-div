@@ -790,28 +790,70 @@ const markersLayer = L.layerGroup().addTo(map);
 // ═══════════════════════════════════════════════════════
 async function loadImageOverlays() {
   const overlays = {};
+  
+  // Définir l'opacité par année
+  const opacityByYear = {
+    '1832': 0.7,
+    '1888': 0.7,
+    '1923': 0.7,
+    '1951': 0.95  // ← Augmenté pour 1951
+  };
+  
   try {
     const boundsResp = await fetch('./assets/images/bounds.json');
-    if (!boundsResp.ok) return;
+    if (!boundsResp.ok) {
+      console.warn('[Overlay] bounds.json not found');
+      return;
+    }
+    
     const boundsData = await boundsResp.json();
+    console.log('[Overlay] Loaded bounds:', boundsData);
+    
     for (const p of PERIODS) {
       const imageUrl = `./assets/images/${p.label}.png`;
-      if (!boundsData[p.label]) continue;
-      const bounds = boundsData[p.label];
+      const boundsKey = p.label;
+      
+      if (!boundsData[boundsKey]) {
+        console.debug(`[Overlay] No bounds for ${p.label}`);
+        continue;
+      }
+      
+      const bounds = boundsData[boundsKey];
+      
       try {
+        console.log(`[Overlay] Attempting to load ${p.label}...`);
+        
         const imgResp = await fetch(imageUrl);
-        if (!imgResp.ok) continue;
+        if (!imgResp.ok) {
+          console.warn(`[Overlay] PNG not found for ${p.label}: ${imgResp.status}`);
+          continue;
+        }
+        
+        // Utiliser l'opacité spécifique à l'année
         const overlay = L.imageOverlay(imageUrl, bounds, {
-          opacity: 0.7, interactive: false,
+          opacity: opacityByYear[p.label] || 0.7,
+          interactive: false,
           className: `overlay-${p.label}`
         });
+        
         overlays[`${p.label} (Carte historique)`] = overlay;
-      } catch {}
+        console.log(`✓ [Overlay] Successfully loaded overlay for ${p.label}`, { bounds });
+        
+      } catch (err) {
+        console.error(`✗ [Overlay] Failed to load overlay for ${p.label}:`, err.message);
+      }
     }
+    
     if (Object.keys(overlays).length > 0) {
-      overlaysControl = L.control.layers(null, overlays, { collapsed:false }).addTo(map);
+      overlaysControl = L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+      console.log(`✓ [Overlay] Added ${Object.keys(overlays).length} overlay(s) to layers control`);
+    } else {
+      console.warn('[Overlay] No overlays were loaded');
     }
-  } catch {}
+    
+  } catch (err) {
+    console.error('[Overlay] Error in loadImageOverlays:', err.message);
+  }
 }
 setTimeout(() => { loadImageOverlays(); }, 500);
 
