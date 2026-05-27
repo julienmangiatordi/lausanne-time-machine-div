@@ -12246,54 +12246,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.6327025,
-          46.5218269
-        ]
-      },
-      "properties": {
-        "nom": "Hanna ESberli",
-        "prenom": "Hanna",
-        "nom_famille": "ESberli",
-        "organisation": null,
-        "profession": "Hôtel Royal, av. d’Ouchy",
-        "adresse": null,
-        "type_simplifie_1951": "Hôtel / Auberge",
-        "ligne_brute": "— Hanna, Hôtel Royal, av. d’Ouchy.",
-        "ville": "Lausanne",
-        "annee": 1951,
-        "geocodage_precision": "adresse",
-        "adresse_geocodage": "Lausanne, Switzerland"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.1452442,
-          46.213331
-        ]
-      },
-      "properties": {
-        "nom": "Marguerite ESberli",
-        "prenom": "Marguerite",
-        "nom_famille": "ESberli",
-        "organisation": null,
-        "profession": null,
-        "adresse": "Hôtel Royal",
-        "type_simplifie_1951": "Hôtel / Auberge",
-        "ligne_brute": "— Marguerite, Hôtel Royal.",
-        "ville": "Lausanne",
-        "annee": 1951,
-        "geocodage_precision": "adresse",
-        "adresse_geocodage": "Hôtel Royal, Lausanne, Switzerland"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           6.6375552,
           46.5173138
         ]
