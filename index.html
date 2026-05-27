@@ -796,7 +796,7 @@ async function loadImageOverlays() {
     '1832': 0.7,
     '1888': 0.7,
     '1923': 0.7,
-    '1951': 0.95  // ← Augmenté pour 1951
+    '1951': 0.7  
   };
   
   try {
@@ -810,7 +810,7 @@ async function loadImageOverlays() {
     console.log('[Overlay] Loaded bounds:', boundsData);
     
     for (const p of PERIODS) {
-      const imageUrl = `./assets/images/${p.label}.png`;
+      const imageUrl = `./assets/images/${p.label}.png?v=${Date.now()}`;
       const boundsKey = p.label;
       
       if (!boundsData[boundsKey]) {
