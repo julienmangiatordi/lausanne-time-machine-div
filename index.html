@@ -432,7 +432,6 @@ const CAT_COLORS = {
   'Bar / Café':              '#c4954a',
   'Restaurant':              '#6daa45',
   'Hôtel / Pension':         '#5591c7',
-  'Brasserie':               '#da7101',
   'Spectacle / Sociabilité': '#a86fdf',
   'Club / Société':          '#d19900',
   'Club / Discothèque':      '#dd6974',
@@ -619,7 +618,7 @@ function normaliserCategorie(properties, annee) {
       'Hôtel / Auberge':         'Hôtel / Pension',
       'Café-billard':            'Café-Billard',
       'Spectacle / Sociabilité': 'Spectacle / Sociabilité',
-      'Brasserie':               'Brasserie',
+      'Brasserie':               'Bar / Café',
     };
     return map[t] || 'Autre';
   }
@@ -629,7 +628,7 @@ function normaliserCategorie(properties, annee) {
     if (t === 'Café')      return 'Bar / Café';
     if (t === 'Pinte')     return 'Bar / Café';
     if (t === 'Hôtel')     return 'Hôtel / Pension';
-    if (t === 'Brasserie') return 'Brasserie';
+    if (t === 'Brasserie') return 'Bar / Café';
     if (t === 'Autre') {
       const use = (properties.use || '').toLowerCase();
       if (use.includes('casino') || use.includes('théâtre')) return 'Spectacle / Sociabilité';
@@ -651,7 +650,7 @@ function normaliserCategorie(properties, annee) {
       'Traiteur / Restaurant':   'Restaurant',
       'Hôtel / Auberge':         'Hôtel / Pension',
       'Débit de boisson':        'Bar / Café',
-      'Brasserie':               'Brasserie',
+      'Brasserie':               'Bar / Café',
       'Hôtel Auberge':           'Hôtel / Pension',
       'Htel Auberge':            'Hôtel / Pension',
       'Dbit de boisson':         'Bar / Café',
@@ -678,7 +677,7 @@ function normaliserCategorie(properties, annee) {
       'Café / Bar':                'Bar / Café',
       'Théâtre / Spectacle':       'Spectacle / Sociabilité',
       'Cercle / Club / Société':   'Club / Société',
-      'Brasserie':                 'Brasserie',
+      'Brasserie':                 'Bar / Café',
       'Café-Billard':              'Café-Billard',
       'Cabaret / Dancing / Boîte': 'Club / Discothèque',
     };
